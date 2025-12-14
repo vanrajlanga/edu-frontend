@@ -10,7 +10,7 @@ function AdmissionBanner({ className }) {
         <div
           className={cn(
             'relative overflow-hidden',
-            'bg-gradient-to-r from-amber-50 via-orange-50 to-amber-50',
+            'bg-gradient-to-r from-blue-50 via-sky-50 to-blue-50',
             'rounded-2xl',
             'px-6 py-10 md:px-12 md:py-12'
           )}
@@ -20,11 +20,11 @@ function AdmissionBanner({ className }) {
             <div className="absolute right-0 top-0 bottom-0 w-1/2 opacity-[0.15]">
               <svg className="h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none">
                 <defs>
-                  <pattern id="grid" width="8" height="8" patternUnits="userSpaceOnUse">
-                    <path d="M 8 0 L 0 0 0 8" fill="none" stroke="#F59E0B" strokeWidth="0.3" />
+                  <pattern id="grid-admission" width="8" height="8" patternUnits="userSpaceOnUse">
+                    <path d="M 8 0 L 0 0 0 8" fill="none" stroke="#3B82F6" strokeWidth="0.3" />
                   </pattern>
                 </defs>
-                <rect width="100" height="100" fill="url(#grid)" />
+                <rect width="100" height="100" fill="url(#grid-admission)" />
               </svg>
             </div>
           </div>
@@ -35,7 +35,7 @@ function AdmissionBanner({ className }) {
             <div className="flex-1 text-center md:text-left max-w-xl">
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3">
                 Know your chances of{' '}
-                <span className="text-orange-500">Admission</span>
+                <span className="text-blue-600">Admission</span>
               </h2>
               <p className="text-gray-600 text-sm md:text-base">
                 Get personalized predictions based on your profile, scores, and preferences
@@ -109,10 +109,10 @@ function AdmissionBanner({ className }) {
                 className={cn(
                   'inline-flex items-center gap-3',
                   'px-8 py-4 md:px-10 md:py-5',
-                  'bg-orange-500 hover:bg-orange-600',
+                  'bg-blue-600 hover:bg-blue-700',
                   'text-white font-semibold text-lg',
                   'rounded-full',
-                  'shadow-lg shadow-orange-500/25 hover:shadow-xl hover:shadow-orange-500/30',
+                  'shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/30',
                   'transform hover:-translate-y-0.5',
                   'transition-all duration-200'
                 )}

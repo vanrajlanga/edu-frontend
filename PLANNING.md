@@ -9,21 +9,38 @@ A modern education portal built with Next.js 16, React 19, and Tailwind CSS 4.
 ## Current Implementation Status
 
 ### Completed Sections ✅
+
+#### Layout Components
 1. **Header** - Fixed header with transparent variant
 2. **Navbar** - Navigation with dropdowns and search
-3. **HeroSection** - Landing hero with search and stats
-4. **StudyGoalSection** - Horizontal scrollable course category cards
-5. **ExploreProgramsSection** - Filter tabs with 6 feature cards (Ranking, Find Colleges, Compare, Exams, Predictor, Course Finder)
-6. **TopCollegesSection** - Hierarchical filter tabs with college ranking list
-7. **TopUniversitiesSection** - 2-row horizontal scroll grid of university cards
-8. **AdmissionBanner** - CTA banner with illustration
+3. **Footer** - Multi-column links, social icons, scroll-to-top button
+
+#### Hero & Navigation
+4. **HeroSection** - Landing hero with search and stats
+
+#### Content Sections
+5. **StudyGoalSection** - Horizontal scrollable course category cards
+6. **ExploreProgramsSection** - Filter tabs with 6 feature cards (Ranking, Find Colleges, Compare, Exams, Predictor, Course Finder)
+7. **TopCollegesSection** - Hierarchical filter tabs with college ranking list
+8. **TopUniversitiesSection** - 2-row horizontal scroll grid of university cards
+9. **CollegeRankingSection** - Ranking table with agency filter tabs and year dropdown
+10. **TopStudyPlacesSection** - City cards with unique Indian landmark SVG icons
+11. **ExploreCoursesSection** - Course cards with level filter tabs (Bachelors, Masters, etc.)
+12. **BoardExamSection** - CBSE Class XII and X quick links
+13. **TopExamsSection** - Exam cards with unique exam icon illustrations
+14. **AdmissionLinksSection** - Admission 2025 quick links
+15. **LatestNewsSection** - News cards with category filter tabs (Exam, College, Admission)
+16. **StudyAbroadSection** - Country cards with landmark illustrations and guides
+17. **TopCoursesLinksSection** - Top courses quick links
+
+#### Banners
+18. **AdmissionBanner** - CTA banner with blue gradient theme
+19. **SubscribeBanner** - Simple CTA banner with blue theme
+20. **CourseFinderBanner** - Two-tone banner with illustration
+21. **NewsletterSection** - Subscription form with email, phone, course dropdown
 
 ### Pending Sections 📋
-- Latest News Section
-- Exam Alerts Section
-- Study Abroad Section
-- Testimonials Section
-- Footer
+- *(Homepage complete - all sections implemented)*
 
 ---
 
@@ -49,7 +66,7 @@ A modern education portal built with Next.js 16, React 19, and Tailwind CSS 4.
 │  └── blue-900:   #1E3A8A                                        │
 │                                                                 │
 │  Slate (Secondary/Neutral)                                      │
-│  ├── slate-50:   #F8FAFC                                        │
+│  ├── slate-50:   #F8FAFC  ← Alternate backgrounds               │
 │  ├── slate-100:  #F1F5F9                                        │
 │  ├── slate-200:  #E2E8F0                                        │
 │  ├── slate-300:  #CBD5E1                                        │
@@ -72,8 +89,8 @@ A modern education portal built with Next.js 16, React 19, and Tailwind CSS 4.
 │  Accent Colors                                                  │
 │  ├── amber-400:  #FBBF24  ← Stars, Ratings                      │
 │  ├── amber-500:  #F59E0B  ← Highlights                          │
-│  ├── orange-500: #F97316  ← CTA Buttons (Banner)                │
-│  └── orange-600: #EA580C                                        │
+│  ├── emerald-500: #10B981 ← Success, Checkmarks                 │
+│  └── purple-500: #8B5CF6  ← Admission category                  │
 │                                                                 │
 │  Semantic Colors                                                │
 │  ├── success:    #10B981 (emerald-500)                          │
@@ -149,14 +166,17 @@ src/
 │   │   ├── Input.jsx          ✅
 │   │   ├── Badge.jsx          ✅
 │   │   ├── Card.jsx           ✅
-│   │   ├── Icon.jsx           ✅
+│   │   ├── Icon.jsx           ✅ (40+ icons including social)
 │   │   ├── Avatar.jsx         ✅
+│   │   ├── QuickLink.jsx      ✅ (QuickLinkPill, QuickLinkGroup)
 │   │   └── index.js           ✅
 │   │
 │   ├── layout/                # Layout components
 │   │   ├── Header.jsx         ✅
 │   │   ├── Navbar.jsx         ✅
-│   │   ├── Footer.jsx         📋 (pending)
+│   │   ├── Footer.jsx         ✅ (multi-column, social icons)
+│   │   ├── Container.jsx      ✅
+│   │   ├── Section.jsx        ✅
 │   │   └── index.js           ✅
 │   │
 │   ├── cards/                 # Card variants
@@ -164,22 +184,41 @@ src/
 │   │   ├── ProgramCard.jsx        ✅ (6 variants)
 │   │   ├── CollegeListItem.jsx    ✅
 │   │   ├── TopUniversityCard.jsx  ✅
+│   │   ├── RankingTableRow.jsx    ✅ (table row + header)
+│   │   ├── CityCard.jsx           ✅ (10 landmark icons)
+│   │   ├── CourseCard.jsx         ✅
+│   │   ├── ExamCard.jsx           ✅ (7 exam icons)
+│   │   ├── NewsCard.jsx           ✅ (category colors)
+│   │   ├── StudyAbroadCard.jsx    ✅ (10 country landmarks)
 │   │   └── index.js               ✅
 │   │
 │   ├── sections/              # Homepage sections
-│   │   ├── HeroSection.jsx        ✅
-│   │   ├── StudyGoalSection.jsx   ✅
-│   │   ├── ExploreProgramsSection.jsx  ✅
-│   │   ├── TopCollegesSection.jsx      ✅
-│   │   ├── TopUniversitiesSection.jsx  ✅
-│   │   ├── AdmissionBanner.jsx         ✅
-│   │   └── index.js                    ✅
+│   │   ├── HeroSection.jsx            ✅
+│   │   ├── StudyGoalSection.jsx       ✅
+│   │   ├── ExploreProgramsSection.jsx ✅
+│   │   ├── TopCollegesSection.jsx     ✅
+│   │   ├── TopUniversitiesSection.jsx ✅
+│   │   ├── AdmissionBanner.jsx        ✅ (blue theme)
+│   │   ├── CollegeRankingSection.jsx  ✅
+│   │   ├── SubscribeBanner.jsx        ✅ (blue theme)
+│   │   ├── TopStudyPlacesSection.jsx  ✅
+│   │   ├── ExploreCoursesSection.jsx  ✅
+│   │   ├── CourseFinderBanner.jsx     ✅
+│   │   ├── BoardExamSection.jsx       ✅
+│   │   ├── TopExamsSection.jsx        ✅
+│   │   ├── AdmissionLinksSection.jsx  ✅
+│   │   ├── LatestNewsSection.jsx      ✅
+│   │   ├── StudyAbroadSection.jsx     ✅
+│   │   ├── TopCoursesLinksSection.jsx ✅
+│   │   ├── NewsletterSection.jsx      ✅
+│   │   └── index.js                   ✅
 │   │
 │   └── common/                # Shared compound components
 │       ├── SearchBar.jsx          ✅
 │       ├── Logo.jsx               ✅
 │       ├── ProgramFilterTabs.jsx  ✅
 │       ├── CollegeFilterTabs.jsx  ✅
+│       ├── AgencyFilterTabs.jsx   ✅
 │       ├── AlertBanner.jsx        ✅
 │       ├── GoalSelector.jsx       ✅
 │       ├── ExploreDropdown.jsx    ✅
@@ -187,233 +226,107 @@ src/
 │       └── index.js               ✅
 │
 ├── lib/
-│   └── cn.js                  ✅ (className merger)
+│   ├── cn.js                  ✅ (className merger)
+│   └── formatters.js          ✅ (number/date formatters)
 │
 └── app/
     ├── layout.js              ✅
-    ├── page.js                ✅
+    ├── page.js                ✅ (21 sections)
     └── globals.css            ✅
 ```
 
 ---
 
-## Implemented Sections
-
-### 1. Header & Navbar
+## Homepage Section Order
 
 ```
-┌──────────────────────────────────────────────────────────────────────┐
-│  [EduPortal Logo]                                                    │
-│                                                                      │
-│  Colleges▼  Exams▼  Courses  News                     🔍  [Login]   │
-└──────────────────────────────────────────────────────────────────────┘
-```
-
-### 2. Hero Section
-
-```
-┌──────────────────────────────────────────────────────────────────────┐
-│  (gradient background with decorative elements)                      │
-│                                                                      │
-│          Find Your Dream College                                     │
-│          Discover 25,000+ colleges across India                      │
-│                                                                      │
-│    ╭─────────────────────────────────────────────────────────────╮  │
-│    │  🔍  Search colleges, courses, exams...            [Search] │  │
-│    ╰─────────────────────────────────────────────────────────────╯  │
-│                                                                      │
-│    ┌─────────┐  ┌─────────┐  ┌─────────┐  ┌─────────┐              │
-│    │ 25,000+ │  │  500+   │  │ 1 Lakh+ │  │   50+   │              │
-│    │Colleges │  │ Exams   │  │ Reviews │  │Rankings │              │
-│    └─────────┘  └─────────┘  └─────────┘  └─────────┘              │
-└──────────────────────────────────────────────────────────────────────┘
-```
-
-### 3. Study Goal Section
-
-```
-┌──────────────────────────────────────────────────────────────────────┐
-│  Select Your Study Goal                                              │
-│                                                                      │
-│  ◀ ┌───────────┐ ┌───────────┐ ┌───────────┐ ┌───────────┐ ┌──── ▶ │
-│    │Engineering│ │Management │ │ Commerce  │ │   Arts    │ │Med    │
-│    │ ⚙️ 6347   │ │ 📊 7977   │ │ 💼 5063   │ │ 📚 5706   │ │ ❤️    │
-│    │ Colleges  │ │ Colleges  │ │ Colleges  │ │ Colleges  │ │ Col   │
-│    │           │ │           │ │           │ │           │ │       │
-│    │ BE/B.Tech │ │ MBA/PGDM  │ │ B.Com     │ │ BA        │ │ MBBS  │
-│    │ Diploma   │ │ BBA/BMS   │ │ M.Com     │ │ MA        │ │ PG    │
-│    │ ME/M.Tech │ │ Exec MBA  │ │           │ │ BFA       │ │ Med   │
-│    └───────────┘ └───────────┘ └───────────┘ └───────────┘ └────   │
-│                                                                      │
-└──────────────────────────────────────────────────────────────────────┘
-```
-
-### 4. Explore Programs Section
-
-```
-┌──────────────────────────────────────────────────────────────────────┐
-│  Explore Programs                                                    │
-│                                                                      │
-│  [All] [BE/B.Tech] [MBA/PGDM] [MBBS] [ME/M.Tech] [B.Sc] ...         │
-│  (scrollable filter tabs)                                            │
-│                                                                      │
-│  ┌─────────────────┐ ┌─────────────────┐ ┌─────────────────┐        │
-│  │   📊 Ranking    │ │  🔍 Find        │ │  ⚖️ Compare     │        │
-│  │   India's Top   │ │  Colleges       │ │  Colleges       │        │
-│  │   Colleges      │ │  Best match     │ │  Side by side   │        │
-│  │   [View →]      │ │  [Find →]       │ │  [Compare →]    │        │
-│  └─────────────────┘ └─────────────────┘ └─────────────────┘        │
-│                                                                      │
-│  ┌─────────────────┐ ┌─────────────────┐ ┌─────────────────┐        │
-│  │   📝 Exams      │ │  🎯 College     │ │  📚 Course      │        │
-│  │   Upcoming      │ │  Predictor      │ │  Finder         │        │
-│  │   entrance      │ │  Know chances   │ │  Find right     │        │
-│  │   [View →]      │ │  [Predict →]    │ │  [Find →]       │        │
-│  └─────────────────┘ └─────────────────┘ └─────────────────┘        │
-└──────────────────────────────────────────────────────────────────────┘
-```
-
-### 5. Top Colleges Section (Hierarchical Filters)
-
-```
-┌──────────────────────────────────────────────────────────────────────┐
-│  Top 10 Colleges                                    [View All →]     │
-│                                                                      │
-│  Initial State (no filter):                                          │
-│  [BE/B.Tech] [MBA/PGDM] [MBBS] [ME/M.Tech] [B.Sc] [BA] ...    →     │
-│  ────────────────────────────────────────────────────────────────    │
-│                                                                      │
-│  After selecting BE/B.Tech:                                          │
-│  [BE/B.Tech ✕] │ [Computer Science] [Mechanical] [ECE] [Civil] → │
-│  ────────────────────────────────────────────────────────────────    │
-│                                                                      │
-│  After selecting secondary filter:                                   │
-│  [BE/B.Tech ✕] [Computer Science ✕] │ [Mechanical] [ECE] ...    → │
-│  ────────────────────────────────────────────────────────────────    │
-│                                                                      │
-│  ┌────────────────────────────────────────────────────────────────┐ │
-│  │ 1 │ 🏛️ IIT Madras          │ NIRF #1 │ 98.5% │ May 15 │ 2.5L │ │
-│  ├────────────────────────────────────────────────────────────────┤ │
-│  │ 2 │ 🏛️ IIT Delhi           │ NIRF #2 │ 98.2% │ May 15 │ 2.5L │ │
-│  ├────────────────────────────────────────────────────────────────┤ │
-│  │ 3 │ 🏛️ IIT Bombay          │ NIRF #3 │ 98.0% │ May 15 │ 2.5L │ │
-│  └────────────────────────────────────────────────────────────────┘ │
-│                                                                      │
-│              [View All BE/B.Tech Colleges →]                         │
-└──────────────────────────────────────────────────────────────────────┘
-```
-
-### 6. Top Universities Section (2-Row Grid)
-
-```
-┌──────────────────────────────────────────────────────────────────────┐
-│  Top Universities/Colleges                                           │
-│                                                                      │
-│  ┌─────────────┐ ┌─────────────┐ ┌─────────────┐ ┌─────────────┐    │
-│  │ [Image]     │ │ [Image]     │ │ [Image]     │ │ [Image]     │  ▶ │
-│  │ cd 10/10   │ │ cd 10/10   │ │ cd 10/10   │ │ cd 10/10   │    │
-│  │ 🏛️ IIMA     │ │ 🏛️ IITB     │ │ 🏛️ CU       │ │ 🏛️ IITD     │    │
-│  │ MBA ★4.6   │ │ MBA ★4.4   │ │ B.Tech ★4.4│ │ B.Tech ★4.7│    │
-│  │ 27.50L     │ │ 7.68L      │ │ 2.35L      │ │ 2.28L      │    │
-│  │ View Fees →│ │ View Fees →│ │ View Fees →│ │ View Fees →│    │
-│  │ Brochure → │ │ Brochure → │ │ Brochure → │ │ Brochure → │    │
-│  │ Compare →  │ │ Compare →  │ │ Compare →  │ │ Compare →  │    │
-│  └─────────────┘ └─────────────┘ └─────────────┘ └─────────────┘    │
-│  ┌─────────────┐ ┌─────────────┐ ┌─────────────┐ ┌─────────────┐    │
-│  │ 🏛️ SRCC     │ │ 🏛️ IHM      │ │ 🏛️ NALSAR   │ │ 🏛️ NIT-T    │  ▶ │
-│  │ BA ★4.3    │ │ BHM ★4.1   │ │ MBA ★4.5   │ │ B.Tech ★4.5│    │
-│  └─────────────┘ └─────────────┘ └─────────────┘ └─────────────┘    │
-│                                                                      │
-└──────────────────────────────────────────────────────────────────────┘
-```
-
-### 7. Admission Banner
-
-```
-┌──────────────────────────────────────────────────────────────────────┐
-│  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░   │
-│  (amber/orange gradient background with grid pattern)                │
-│                                                                      │
-│     Know your chances of Admission            👤══[Start Now →]     │
-│     Get personalized predictions...           📖                    │
-│                                                                      │
-└──────────────────────────────────────────────────────────────────────┘
+1.  Header (fixed)
+2.  Navbar (fixed below header)
+3.  HeroSection
+4.  StudyGoalSection
+5.  ExploreProgramsSection
+6.  TopCollegesSection
+7.  TopUniversitiesSection
+8.  AdmissionBanner
+9.  CollegeRankingSection
+10. SubscribeBanner
+11. TopStudyPlacesSection
+12. ExploreCoursesSection
+13. CourseFinderBanner
+14. BoardExamSection
+15. TopExamsSection
+16. AdmissionLinksSection
+17. LatestNewsSection
+18. StudyAbroadSection
+19. TopCoursesLinksSection
+20. NewsletterSection
+21. Footer
 ```
 
 ---
 
-## Component Specifications
+## Custom SVG Illustrations
 
-### CollegeFilterTabs
+### City Landmarks (CityCard)
+- Delhi: India Gate
+- Mumbai: Gateway of India
+- Bangalore: Vidhana Soudha
+- Chennai: Marina Lighthouse
+- Hyderabad: Charminar
+- Kolkata: Victoria Memorial
+- Pune: Shaniwar Wada
+- Jaipur: Hawa Mahal
+- Ahmedabad: Sabarmati Ashram
+- Lucknow: Bara Imambara
 
-**Behavior:**
-- Single row that changes based on selection state
-- No filter applied → Shows all primary courses as equal pills
-- Filter applied → Shows selected with ✕, separator, then secondary options
-- Click ✕ on primary → Returns to all courses view
-- Click ✕ on secondary → Removes that secondary filter
+### Exam Icons (ExamCard)
+- CUET, NEET, JEE, GATE, CAT, UPSC (unique icon per exam)
 
-**Props:**
+### Country Landmarks (StudyAbroadCard)
+- USA: Statue of Liberty
+- UK: Big Ben
+- Canada: CN Tower
+- Australia: Sydney Opera House
+- Germany: Brandenburg Gate
+- France: Eiffel Tower
+- Ireland: Dublin Castle
+- New Zealand: Sky Tower
+- Singapore: Marina Bay Sands
+- Dubai: Burj Khalifa
+
+---
+
+## Reusable Patterns
+
+### Horizontal Carousel Pattern
+Used in: StudyGoalSection, TopUniversitiesSection, TopStudyPlacesSection, ExploreCoursesSection, TopExamsSection, LatestNewsSection, StudyAbroadSection
+
 ```jsx
-{
-  primaryFilters: [{ value: 'btech', label: 'BE/B.Tech' }, ...],
-  secondaryFiltersMap: {
-    btech: [{ value: 'cs', label: 'Computer Science' }, ...],
-    mba: [{ value: 'cat', label: 'CAT' }, ...],
-  },
-  selectedPrimary: string | null,
-  selectedSecondary: string[],
-  onPrimaryChange: (value) => void,
-  onSecondaryChange: (values) => void,
-}
+// Standard carousel with scroll detection
+const scrollContainerRef = useRef(null);
+const [canScrollLeft, setCanScrollLeft] = useState(false);
+const [canScrollRight, setCanScrollRight] = useState(true);
+
+// checkScrollPosition, scroll functions...
 ```
 
-### TopUniversityCard
+### Quick Links Pattern
+Used in: BoardExamSection, AdmissionLinksSection, TopCoursesLinksSection
 
-**Layout:**
-```
-┌─────────────────────────────────────────┐
-│  [Campus Image]              cd 10/10  │
-│  🏛️ College Name - [Short]             │
-│     Location | Accreditations           │
-├─────────────────────────────────────────┤
-│  MBA/PGDM                    ★ 4.6/5   │
-│  27.50 Lacs Total Fees      59 reviews │
-│  Ranked 428 out of 2000 CWUR           │
-├─────────────────────────────────────────┤
-│  View All Courses and fees          →  │
-│  Download Brochure                  →  │
-│  Compare                            →  │
-└─────────────────────────────────────────┘
+```jsx
+<QuickLinkGroup
+  title="Section Title"
+  links={[{ label: 'Link', href: '/path' }, ...]}
+/>
 ```
 
-### CollegeListItem
+### Filter Tabs Pattern
+Used in: ExploreProgramsSection, TopCollegesSection, CollegeRankingSection, ExploreCoursesSection, LatestNewsSection
 
-**Layout:**
+```jsx
+const [activeTab, setActiveTab] = useState('default');
+// Pill-shaped buttons with active state
 ```
-┌──────────────────────────────────────────────────────────────────┐
-│  [1] 🏛️ IIT Madras          NIRF #1  98.5%  May 15  2.5L    →  │
-│       Chennai, TN ★4.9                                          │
-└──────────────────────────────────────────────────────────────────┘
-```
-
----
-
-## Pending Implementation
-
-### Sections to Build
-1. **Latest News Section** - Featured article + news list
-2. **Exam Alerts Section** - Upcoming exams with status badges
-3. **Study Abroad Section** - Country cards with stats
-4. **Testimonials Section** - Carousel of student reviews
-5. **Footer** - Links, newsletter, social icons
-
-### Components to Build
-- NewsCard (featured + compact variants)
-- ExamCard
-- CountryCard
-- TestimonialCard
-- Footer component
 
 ---
 
@@ -424,6 +337,28 @@ src/
 3. **Filter Tabs**: Horizontal scroll with scroll indicators
 4. **College List**: Condensed mobile layout with expandable details
 5. **2-Row Grid**: Changes to single-row carousel on mobile
+6. **Footer**: Stacked columns, simplified layout
+
+---
+
+## Future Enhancements
+
+### Potential New Pages
+- College Detail Page
+- Course Detail Page
+- Exam Detail Page
+- News Article Page
+- Study Abroad Country Page
+- Search Results Page
+- Compare Colleges Page
+
+### Potential New Features
+- Dark mode toggle
+- User authentication
+- Favorites/Bookmarks
+- College predictor tool
+- Course finder wizard
+- Notification preferences
 
 ---
 
@@ -433,4 +368,5 @@ src/
 - **React**: 19 with React Compiler
 - **Styling**: Tailwind CSS 4 via PostCSS
 - **Fonts**: Geist Sans & Geist Mono
-- **Icons**: Custom Icon component with SVG sprites
+- **Icons**: Custom Icon component with 40+ SVG icons
+- **Utilities**: clsx + tailwind-merge for className handling

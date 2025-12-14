@@ -23,3 +23,4 @@ export {
   DropdownLabel,
 } from './Dropdown';
 export { Icon, icons, iconSizes } from './Icon';
+export { QuickLink, QuickLinkGroup } from './QuickLink';

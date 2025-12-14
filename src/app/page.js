@@ -1,5 +1,5 @@
-import { Header, Navbar } from '@/components/layout';
-import { HeroSection, StudyGoalSection, ExploreProgramsSection, TopCollegesSection, TopUniversitiesSection, AdmissionBanner } from '@/components/sections';
+import { Header, Navbar, Footer } from '@/components/layout';
+import { HeroSection, StudyGoalSection, ExploreProgramsSection, TopCollegesSection, TopUniversitiesSection, AdmissionBanner, CollegeRankingSection, SubscribeBanner, TopStudyPlacesSection, ExploreCoursesSection, CourseFinderBanner, BoardExamSection, TopExamsSection, AdmissionLinksSection, LatestNewsSection, StudyAbroadSection, TopCoursesLinksSection, NewsletterSection } from '@/components/sections';
 
 export default function Home() {
   return (
@@ -30,17 +30,44 @@ export default function Home() {
       {/* Admission Banner */}
       <AdmissionBanner />
 
-      {/* Placeholder for other sections */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            More Sections Coming Soon
-          </h2>
-          <p className="text-gray-600">
-            College Discovery, Top Courses, Exam Alerts, Study Abroad, and more...
-          </p>
-        </div>
-      </section>
+      {/* College Ranking Section */}
+      <CollegeRankingSection />
+
+      {/* Subscribe Banner */}
+      <SubscribeBanner />
+
+      {/* Top Study Places Section */}
+      <TopStudyPlacesSection />
+
+      {/* Explore Courses Section */}
+      <ExploreCoursesSection />
+
+      {/* Course Finder Banner */}
+      <CourseFinderBanner />
+
+      {/* Board Exam Section */}
+      <BoardExamSection />
+
+      {/* Top Exams Section */}
+      <TopExamsSection />
+
+      {/* Admission Links Section */}
+      <AdmissionLinksSection />
+
+      {/* Latest News Section */}
+      <LatestNewsSection />
+
+      {/* Study Abroad Section */}
+      <StudyAbroadSection />
+
+      {/* Top Courses Links Section */}
+      <TopCoursesLinksSection />
+
+      {/* Newsletter Section */}
+      <NewsletterSection />
+
+      {/* Footer */}
+      <Footer />
     </main>
   );
 }
