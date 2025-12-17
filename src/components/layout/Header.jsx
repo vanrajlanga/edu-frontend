@@ -64,7 +64,7 @@ function Header({ transparent = false, className }) {
         className
       )}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Left Section: Logo + Goal Selector */}
           <div className="flex items-center gap-3 lg:gap-5">
