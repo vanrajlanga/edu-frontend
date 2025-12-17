@@ -83,8 +83,8 @@ function HeroSection({ className }) {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* pt-32 = 128px to account for fixed Header (64px) + Navbar (48px) + some spacing */}
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center min-h-[85vh] pt-36 pb-16 lg:pt-40 lg:pb-20">
+        {/* pt-44 = 176px to account for fixed Header (64px) + Navbar (44px) + NewsTicker (36px) + spacing */}
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center min-h-[85vh] pt-44 pb-16 lg:pt-44 lg:pb-20">
 
           {/* Left Content */}
           <div

@@ -1,4 +1,4 @@
-import { Header, Navbar, Footer } from '@/components/layout';
+import { Header, Navbar, NewsTicker, Footer } from '@/components/layout';
 import { HeroSection, StudyGoalSection, ExploreProgramsSection, TopCollegesSection, TopUniversitiesSection, AdmissionBanner, CollegeRankingSection, SubscribeBanner, TopStudyPlacesSection, ExploreCoursesSection, CourseFinderBanner, BoardExamSection, TopExamsSection, AdmissionLinksSection, LatestNewsSection, StudyAbroadSection, TopCoursesLinksSection, NewsletterSection } from '@/components/sections';
 
 export default function Home() {
@@ -10,6 +10,7 @@ export default function Home() {
       {/* Navigation Bar */}
       <div className="fixed top-16 left-0 right-0 z-40">
         <Navbar variant="transparent" />
+        <NewsTicker />
       </div>
 
       {/* Hero Section */}

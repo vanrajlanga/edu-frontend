@@ -9,4 +9,5 @@ export {
 } from './Section';
 export { Header } from './Header';
 export { Navbar } from './Navbar';
+export { NewsTicker } from './NewsTicker';
 export { Footer } from './Footer';
