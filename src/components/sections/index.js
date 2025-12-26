@@ -17,3 +17,8 @@ export { LatestNewsSection } from './LatestNewsSection';
 export { StudyAbroadSection } from './StudyAbroadSection';
 export { TopCoursesLinksSection } from './TopCoursesLinksSection';
 export { NewsletterSection } from './NewsletterSection';
+export { CollegeListingHeader } from './CollegeListingHeader';
+export { CollegeFilterSection } from './CollegeFilterSection';
+export { CollegeResultsSection } from './CollegeResultsSection';
+export { GridViewSection } from './GridViewSection';
+export { ListViewSection } from './ListViewSection';

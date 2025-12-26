@@ -44,38 +44,37 @@ function NewsletterSection({ className }) {
   };
 
   return (
-    <section className={cn('py-16 bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 relative overflow-hidden', className)}>
-      {/* Background Decorations */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Gradient circles */}
-        <div className="absolute -top-24 -right-24 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl" />
-        <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-indigo-500/20 rounded-full blur-3xl" />
-        {/* Grid pattern */}
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAwIDEwIEwgNDAgMTAgTSAxMCAwIEwgMTAgNDAgTSAwIDIwIEwgNDAgMjAgTSAyMCAwIEwgMjAgNDAgTSAwIDMwIEwgNDAgMzAgTSAzMCAwIEwgMzAgNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-50" />
+    <section className={cn('py-12 bg-gradient-to-r from-green-900 via-green-700 to-green-600 relative overflow-hidden', className)}>
+      {/* Decorative elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-10">
+        <div className="absolute top-0 left-1/4 w-64 h-64 bg-green-300 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-green-400 rounded-full blur-3xl" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="max-w-4xl mx-auto">
-          {/* Header */}
-          <div className="text-center mb-10">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-white/10 backdrop-blur-sm mb-6">
-              <Icon name="bell" size="xl" className="text-white" />
+        <div className="max-w-5xl mx-auto">
+          {/* Compact Header with Icon */}
+          <div className="text-center mb-6">
+            <div className="flex items-center justify-center gap-3 mb-3">
+              <div className="w-12 h-12 rounded-full bg-green-300/20 backdrop-blur-sm flex items-center justify-center">
+                <Icon name="bell" size="lg" className="text-green-50" />
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-white">
+                Subscribe To Our Newsletter
+              </h2>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
-              Subscribe To Our Newsletter
-            </h2>
-            <p className="text-blue-100 text-lg max-w-xl mx-auto">
+            <p className="text-green-50/90 text-base max-w-2xl mx-auto">
               Get College Notifications, Exam Notifications and News Updates directly in your inbox
             </p>
           </div>
 
-          {/* Form */}
-          <form onSubmit={handleSubmit} className="bg-white rounded-2xl shadow-2xl p-6 md:p-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+          {/* Compact Form */}
+          <form onSubmit={handleSubmit} className="bg-white/95 backdrop-blur-sm rounded-xl shadow-xl p-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-4">
               {/* Email Input */}
               <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                  <Icon name="email" size="md" className="text-gray-400" />
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <Icon name="email" size="sm" className="text-gray-400" />
                 </div>
                 <input
                   type="email"
@@ -85,10 +84,10 @@ function NewsletterSection({ className }) {
                   placeholder="Enter your email id"
                   required
                   className={cn(
-                    'w-full pl-12 pr-4 py-3.5 rounded-xl',
-                    'border-2 border-gray-200',
-                    'text-gray-900 placeholder-gray-400',
-                    'focus:border-blue-500 focus:ring-2 focus:ring-blue-100',
+                    'w-full pl-10 pr-3 py-3 rounded-lg',
+                    'border border-gray-300',
+                    'text-gray-900 placeholder-gray-400 text-sm',
+                    'focus:border-green-800 focus:ring-1 focus:ring-green-800',
                     'transition-all duration-200 outline-none'
                   )}
                 />
@@ -96,8 +95,8 @@ function NewsletterSection({ className }) {
 
               {/* Phone Input */}
               <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                  <Icon name="phone" size="md" className="text-gray-400" />
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <Icon name="phone" size="sm" className="text-gray-400" />
                 </div>
                 <input
                   type="tel"
@@ -107,10 +106,10 @@ function NewsletterSection({ className }) {
                   placeholder="Enter your mobile no"
                   required
                   className={cn(
-                    'w-full pl-12 pr-4 py-3.5 rounded-xl',
-                    'border-2 border-gray-200',
-                    'text-gray-900 placeholder-gray-400',
-                    'focus:border-blue-500 focus:ring-2 focus:ring-blue-100',
+                    'w-full pl-10 pr-3 py-3 rounded-lg',
+                    'border border-gray-300',
+                    'text-gray-900 placeholder-gray-400 text-sm',
+                    'focus:border-green-800 focus:ring-1 focus:ring-green-800',
                     'transition-all duration-200 outline-none'
                   )}
                 />
@@ -118,8 +117,8 @@ function NewsletterSection({ className }) {
 
               {/* Course Dropdown */}
               <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                  <Icon name="graduationCap" size="md" className="text-gray-400" />
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <Icon name="graduationCap" size="sm" className="text-gray-400" />
                 </div>
                 <select
                   name="course"
@@ -127,10 +126,10 @@ function NewsletterSection({ className }) {
                   onChange={handleChange}
                   required
                   className={cn(
-                    'w-full pl-12 pr-10 py-3.5 rounded-xl appearance-none',
-                    'border-2 border-gray-200',
-                    'text-gray-900',
-                    'focus:border-blue-500 focus:ring-2 focus:ring-blue-100',
+                    'w-full pl-10 pr-8 py-3 rounded-lg appearance-none',
+                    'border border-gray-300',
+                    'text-gray-900 text-sm',
+                    'focus:border-green-800 focus:ring-1 focus:ring-green-800',
                     'transition-all duration-200 outline-none',
                     'bg-white cursor-pointer',
                     !formData.course && 'text-gray-400'
@@ -142,36 +141,34 @@ function NewsletterSection({ className }) {
                     </option>
                   ))}
                 </select>
-                <div className="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none">
-                  <Icon name="chevronDown" size="md" className="text-gray-400" />
+                <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                  <Icon name="chevronDown" size="sm" className="text-gray-400" />
                 </div>
               </div>
             </div>
 
-            {/* Submit Button */}
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-              <p className="text-sm text-gray-500 flex items-center gap-2">
-                <Icon name="shield" size="sm" className="text-green-500" />
+            {/* Submit Row */}
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
+              <p className="text-xs text-gray-500 flex items-center gap-1.5">
+                <Icon name="shield" size="sm" className="text-emerald-500" />
                 We respect your privacy. Unsubscribe anytime.
               </p>
               <button
                 type="submit"
                 disabled={isSubmitting}
                 className={cn(
-                  'w-full sm:w-auto px-8 py-3.5 rounded-xl',
-                  'bg-gradient-to-r from-blue-500 to-blue-600',
-                  'text-white font-semibold text-base',
-                  'hover:from-blue-600 hover:to-blue-700',
-                  'shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40',
-                  'transform hover:-translate-y-0.5',
+                  'w-full sm:w-auto px-8 py-3 rounded-lg',
+                  'bg-green-800 hover:bg-green-900',
+                  'text-white font-semibold text-sm',
+                  'shadow-md hover:shadow-lg',
                   'transition-all duration-200',
                   'flex items-center justify-center gap-2',
-                  'disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none'
+                  'disabled:opacity-70 disabled:cursor-not-allowed'
                 )}
               >
                 {isSubmitting ? (
                   <>
-                    <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <svg className="animate-spin h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                       <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                       <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                     </svg>
@@ -180,29 +177,29 @@ function NewsletterSection({ className }) {
                 ) : (
                   <>
                     <span>Subscribe Now</span>
-                    <Icon name="send" size="md" />
+                    <Icon name="send" size="sm" />
                   </>
                 )}
               </button>
             </div>
           </form>
 
-          {/* Trust Badges */}
-          <div className="flex flex-wrap items-center justify-center gap-6 mt-8">
-            <div className="flex items-center gap-2 text-blue-100/80 text-sm">
-              <Icon name="check" size="sm" className="text-green-400" />
+          {/* Compact Trust Badges */}
+          <div className="flex flex-wrap items-center justify-center gap-6 mt-6">
+            <div className="flex items-center gap-1.5 text-white/80 text-sm">
+              <Icon name="check" size="sm" className="text-emerald-400" />
               <span>100K+ Subscribers</span>
             </div>
-            <div className="flex items-center gap-2 text-blue-100/80 text-sm">
-              <Icon name="check" size="sm" className="text-green-400" />
+            <div className="flex items-center gap-1.5 text-white/80 text-sm">
+              <Icon name="check" size="sm" className="text-emerald-400" />
               <span>Daily Updates</span>
             </div>
-            <div className="flex items-center gap-2 text-blue-100/80 text-sm">
-              <Icon name="check" size="sm" className="text-green-400" />
+            <div className="flex items-center gap-1.5 text-white/80 text-sm">
+              <Icon name="check" size="sm" className="text-emerald-400" />
               <span>Exam Alerts</span>
             </div>
-            <div className="flex items-center gap-2 text-blue-100/80 text-sm">
-              <Icon name="check" size="sm" className="text-green-400" />
+            <div className="flex items-center gap-1.5 text-white/80 text-sm">
+              <Icon name="check" size="sm" className="text-emerald-400" />
               <span>Admission Updates</span>
             </div>
           </div>

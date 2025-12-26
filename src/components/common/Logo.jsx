@@ -20,7 +20,7 @@ function Logo({ size = 'md', className, ...props }) {
       )}
       {...props}
     >
-      <span className="text-blue-500">Edu</span>
+      <span className="text-green-800">Edu</span>
       <span className="text-gray-800">Portal</span>
     </Link>
   );

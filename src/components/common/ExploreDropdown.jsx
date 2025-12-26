@@ -5,74 +5,111 @@ import Link from 'next/link';
 import { cn } from '@/lib/cn';
 import { Icon } from '../ui/Icon';
 
-// Explore menu items
-const exploreItems = [
+// Explore menu items - Column 1
+const exploreItemsCol1 = [
   {
-    id: 'universities',
-    label: 'Top Universities',
-    description: 'Explore top-ranked universities',
-    href: '/universities',
+    id: 'universities-colleges',
+    label: 'Top Universities & Colleges',
+    href: '/universities-colleges',
     icon: 'building',
-  },
-  {
-    id: 'colleges',
-    label: 'Top Colleges',
-    description: 'Find best colleges near you',
-    href: '/colleges',
-    icon: 'graduationCap',
   },
   {
     id: 'courses',
     label: 'Top Courses',
-    description: 'Discover trending courses',
     href: '/courses',
     icon: 'book',
   },
   {
+    id: 'reviews',
+    label: 'Read College Reviews',
+    href: '/reviews',
+    icon: 'star',
+  },
+  {
+    id: 'admission-alerts',
+    label: 'Admission Alerts 2025',
+    href: '/admission-alerts',
+    icon: 'bell',
+  },
+  {
+    id: 'institute',
+    label: 'Institute (Counselling, Coaching and More)',
+    href: '/institute',
+    icon: 'graduationCap',
+  },
+  {
+    id: 'predictor',
+    label: 'College Predictor',
+    href: '/predictor',
+    icon: 'chart',
+  },
+  {
+    id: 'practice',
+    label: 'Practice Questions',
+    href: '/practice-questions',
+    icon: 'clipboard',
+  },
+  {
+    id: 'scholarship',
+    label: 'Scholarship',
+    href: '/scholarship',
+    icon: 'award',
+  },
+];
+
+// Explore menu items - Column 2
+const exploreItemsCol2 = [
+  {
+    id: 'study-abroad',
+    label: 'Study Abroad',
+    href: '/study-abroad',
+    icon: 'globe',
+    badge: 'Get upto 50% discount on Visa Fees',
+    badgeColor: 'emerald',
+  },
+  {
+    id: 'abroad-exams',
+    label: 'Abroad Exams',
+    href: '/abroad-exams',
+    icon: 'clipboard',
+  },
+  {
     id: 'exams',
     label: 'Exams',
-    description: 'Exam dates, syllabus & more',
     href: '/exams',
     icon: 'clipboard',
   },
   {
-    id: 'study-abroad',
-    label: 'Study Abroad',
-    description: 'Universities worldwide',
-    href: '/study-abroad',
-    icon: 'globe',
-  },
-  {
     id: 'news',
-    label: 'News & Articles',
-    description: 'Latest education updates',
+    label: 'News',
     href: '/news',
     icon: 'newspaper',
   },
   {
-    id: 'rankings',
-    label: 'College Rankings',
-    description: 'NIRF, QS & more',
-    href: '/rankings',
-    icon: 'trophy',
+    id: 'education-loan',
+    label: 'Education Loan',
+    href: '/education-loan',
+    icon: 'banknote',
   },
   {
-    id: 'reviews',
-    label: 'Reviews',
-    description: 'Read student reviews',
-    href: '/reviews',
-    icon: 'star',
+    id: 'ask-question',
+    label: 'Ask a Question',
+    href: '/ask-question',
+    icon: 'messageCircle',
+  },
+  {
+    id: 'test-series',
+    label: 'Test Series',
+    href: '/test-series',
+    icon: 'clipboard',
+  },
+  {
+    id: 'course-finder',
+    label: 'Course Finder',
+    href: '/course-finder',
+    icon: 'search',
   },
 ];
-
-// Promotional card data
-const promoCard = {
-  title: 'Write a Review',
-  subtitle: 'Earn Upto',
-  amount: '₹300',
-  description: 'Share your college experience',
-  href: '/write-review',
-};
 
 function ExploreDropdown({ isOpen, onClose, triggerRef, className }) {
   const dropdownRef = useRef(null);
@@ -113,9 +150,9 @@ function ExploreDropdown({ isOpen, onClose, triggerRef, className }) {
       ref={dropdownRef}
       className={cn(
         'absolute top-full right-0 mt-2',
-        'w-[580px]',
-        'bg-surface rounded-xl shadow-xl',
-        'border border-border',
+        'w-[800px]',
+        'bg-white rounded-xl shadow-lg',
+        'border border-gray-200',
         'overflow-hidden',
         'animate-in fade-in slide-in-from-top-2 duration-200',
         'z-50',
@@ -123,113 +160,138 @@ function ExploreDropdown({ isOpen, onClose, triggerRef, className }) {
       )}
     >
       <div className="flex">
-        {/* Menu Items - 2 columns */}
-        <div className="flex-1 p-4">
-          <div className="grid grid-cols-2 gap-1">
-            {exploreItems.map((item) => (
-              <Link
-                key={item.id}
-                href={item.href}
-                onClick={onClose}
-                className={cn(
-                  'flex items-start gap-3 p-3 rounded-xl',
-                  'hover:bg-surface-alt transition-colors',
-                  'group'
-                )}
-              >
-                <div
+        {/* Left Side: Menu Items */}
+        <div className="flex-1 p-5">
+          {/* Title */}
+          <h3 className="text-lg font-bold text-gray-900 mb-3 px-2">Explore More</h3>
+
+          {/* Two Columns */}
+          <div className="grid grid-cols-2 gap-x-6">
+            {/* Column 1 */}
+            <div>
+              {exploreItemsCol1.map((item) => (
+                <Link
+                  key={item.id}
+                  href={item.href}
+                  onClick={onClose}
                   className={cn(
-                    'w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0',
-                    'bg-blue-100 group-hover:bg-blue-200 transition-colors'
+                    'flex items-center gap-2.5 px-2 py-1.5 rounded-md',
+                    'hover:bg-gray-50 transition-colors',
+                    'group'
                   )}
                 >
                   <Icon
                     name={item.icon}
                     size="sm"
-                    className="text-blue-500 group-hover:text-blue-600 transition-colors"
+                    className="text-green-800 flex-shrink-0"
                   />
-                </div>
-                <div className="min-w-0 pt-0.5">
-                  <div className="font-medium text-sm text-text-primary group-hover:text-blue-600 transition-colors">
+                  <span className="text-sm text-gray-700 group-hover:text-gray-900">
                     {item.label}
+                  </span>
+                </Link>
+              ))}
+            </div>
+
+            {/* Column 2 */}
+            <div>
+              {exploreItemsCol2.map((item) => (
+                <Link
+                  key={item.id}
+                  href={item.href}
+                  onClick={onClose}
+                  className={cn(
+                    'flex items-center gap-2.5 px-2 py-1.5 rounded-md',
+                    'hover:bg-gray-50 transition-colors',
+                    'group'
+                  )}
+                >
+                  <Icon
+                    name={item.icon}
+                    size="sm"
+                    className="text-green-800 flex-shrink-0"
+                  />
+                  <div className="flex-1 min-w-0 flex items-center gap-2">
+                    <span className="text-sm text-gray-700 group-hover:text-gray-900">
+                      {item.label}
+                    </span>
+                    {item.badge && (
+                      <span className="text-[9px] px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-700 font-medium whitespace-nowrap">
+                        {item.badge}
+                      </span>
+                    )}
                   </div>
-                  <div className="text-xs text-text-muted line-clamp-1">
-                    {item.description}
-                  </div>
-                </div>
-              </Link>
-            ))}
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
 
-        {/* Promotional Card */}
-        <div className="w-44 p-3 bg-surface-alt border-l border-border">
+        {/* Right Side: Promotional Banner */}
+        <div className="w-64 bg-gradient-to-br from-orange-50 to-orange-100 border-l border-gray-200">
           <Link
-            href={promoCard.href}
+            href="/write-review"
             onClick={onClose}
-            className={cn(
-              'block rounded-xl p-4',
-              'bg-gradient-to-br from-blue-500 to-blue-600',
-              'text-white',
-              'hover:shadow-coral transition-shadow',
-              'group'
-            )}
+            className="block h-full p-5 hover:bg-gradient-to-br hover:from-orange-100 hover:to-orange-150 transition-colors group"
           >
-            <div className="text-sm font-medium opacity-90">
-              {promoCard.title}
-            </div>
-            <div className="text-xs opacity-75 mt-1">{promoCard.subtitle}</div>
-            <div className="text-2xl font-bold mt-0.5">{promoCard.amount}</div>
-            <div className="text-xs opacity-75 mt-2">{promoCard.description}</div>
-            <div className="flex items-center gap-1 mt-3 text-sm font-medium">
-              Write Now
-              <Icon
-                name="arrowRight"
-                size="sm"
-                className="group-hover:translate-x-1 transition-transform"
-              />
+            <div className="text-center">
+              {/* Text */}
+              <div className="mb-2">
+                <p className="text-lg font-bold text-gray-900 leading-tight">
+                  "Write a Review
+                </p>
+                <p className="text-base font-semibold text-gray-800">
+                  & Earn Upto <span className="text-2xl font-bold text-orange-500">₹300</span>"
+                </p>
+              </div>
+
+              {/* Approval */}
+              <div className="flex items-center justify-center gap-1.5 mb-3 text-xs text-gray-700">
+                <svg className="w-4 h-4 text-emerald-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                </svg>
+                <span className="font-medium">Approval in 15 Minutes*</span>
+              </div>
+
+              {/* Stars */}
+              <div className="flex justify-center gap-1 mb-3">
+                {[1, 2, 3, 4].map((star) => (
+                  <svg key={star} className="w-6 h-6 text-orange-400 fill-current" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                ))}
+                <svg className="w-6 h-6 text-orange-200 fill-current" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              </div>
+
+              {/* Illustration */}
+              <div className="mt-3">
+                <svg className="w-full h-auto" viewBox="0 0 200 120" fill="none">
+                  {/* Laptop */}
+                  <rect x="20" y="80" width="160" height="6" fill="#475569" rx="2" />
+                  <rect x="40" y="25" width="120" height="60" fill="#1e293b" rx="3" />
+                  <rect x="46" y="30" width="108" height="50" fill="#fff" rx="2" />
+
+                  {/* Document lines */}
+                  <rect x="52" y="36" width="40" height="3" fill="#fb923c" rx="1" />
+                  <rect x="52" y="42" width="90" height="2" fill="#cbd5e1" rx="1" />
+                  <rect x="52" y="47" width="85" height="2" fill="#cbd5e1" rx="1" />
+                  <rect x="52" y="52" width="88" height="2" fill="#cbd5e1" rx="1" />
+                  <rect x="52" y="57" width="80" height="2" fill="#cbd5e1" rx="1" />
+
+                  {/* Bookmark */}
+                  <path d="M120 32 L128 32 L128 52 L124 48 L120 52 Z" fill="#fb923c" />
+
+                  {/* Hand with pen */}
+                  <ellipse cx="160" cy="70" rx="10" ry="13" fill="#fbbf24" opacity="0.9" />
+                  <line x1="155" y1="60" x2="158" y2="78" stroke="#1e293b" strokeWidth="2.5" strokeLinecap="round" />
+                  <line x1="155" y1="60" x2="155" y2="54" stroke="#fb923c" strokeWidth="2.5" strokeLinecap="round" />
+                  <circle cx="155" cy="52" r="2" fill="#fb923c" />
+                </svg>
+              </div>
             </div>
           </Link>
-
-          {/* Quick Links */}
-          <div className="mt-3 space-y-1">
-            <Link
-              href="/compare"
-              onClick={onClose}
-              className="flex items-center gap-2 px-2 py-2 rounded-lg text-sm text-text-secondary hover:text-blue-500 hover:bg-surface transition-colors"
-            >
-              <Icon name="compare" size="sm" />
-              Compare Colleges
-            </Link>
-            <Link
-              href="/scholarships"
-              onClick={onClose}
-              className="flex items-center gap-2 px-2 py-2 rounded-lg text-sm text-text-secondary hover:text-blue-500 hover:bg-surface transition-colors"
-            >
-              <Icon name="award" size="sm" />
-              Scholarships
-            </Link>
-          </div>
         </div>
-      </div>
-
-      {/* Bottom Bar */}
-      <div className="px-4 py-3 bg-blue-900 flex items-center justify-between">
-        <div className="flex items-center gap-2 text-white/80 text-sm">
-          <Icon name="sparkles" size="sm" className="text-sky-400" />
-          <span>Not sure where to start?</span>
-        </div>
-        <Link
-          href="/counselling"
-          onClick={onClose}
-          className={cn(
-            'px-4 py-1.5 rounded-lg text-sm font-medium',
-            'bg-blue-500 text-white',
-            'hover:bg-blue-600 transition-colors'
-          )}
-        >
-          Get Free Counselling
-        </Link>
       </div>
     </div>
   );

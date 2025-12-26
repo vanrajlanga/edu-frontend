@@ -4,8 +4,8 @@ import { forwardRef } from 'react';
 import { cn } from '@/lib/cn';
 
 const inputVariants = {
-  default: 'bg-surface border-border focus:border-blue-500',
-  filled: 'bg-surface-alt border-transparent focus:border-blue-500',
+  default: 'bg-surface border-border focus:border-green-800',
+  filled: 'bg-surface-alt border-transparent focus:border-green-800',
 };
 
 const inputSizes = {
@@ -58,7 +58,7 @@ const Input = forwardRef(
               'w-full rounded-[var(--radius-md)]',
               'border transition-colors duration-[var(--duration-fast)]',
               'placeholder:text-text-muted',
-              'focus:outline-none focus:ring-2 focus:ring-blue-500/20',
+              'focus:outline-none focus:ring-2 focus:ring-green-500/20',
               // Variant
               inputVariants[variant],
               // Size

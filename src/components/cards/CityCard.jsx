@@ -185,7 +185,7 @@ function CityCard({
         'p-5',
         'bg-white rounded-xl',
         'border border-gray-100',
-        'hover:border-blue-200 hover:shadow-md',
+        'hover:border-green-200 hover:shadow-md',
         'transition-all duration-200',
         'group',
         className
@@ -195,7 +195,7 @@ function CityCard({
       <div
         className={cn(
           'w-16 h-16 mb-3',
-          'text-blue-500 group-hover:text-blue-600',
+          'text-green-800 group-hover:text-green-900',
           'transition-colors duration-200'
         )}
       >
@@ -203,7 +203,7 @@ function CityCard({
       </div>
 
       {/* City Name */}
-      <h3 className="text-sm font-semibold text-gray-900 text-center group-hover:text-blue-600 transition-colors">
+      <h3 className="text-sm font-semibold text-gray-900 text-center group-hover:text-green-900 transition-colors">
         {name}
       </h3>
 

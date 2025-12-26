@@ -149,7 +149,7 @@ function NotificationDropdown({ isOpen, onClose, triggerRef, className }) {
               'px-4 py-2.5 rounded-lg',
               'border border-border',
               'text-sm text-text-primary',
-              'hover:border-blue-300 transition-colors'
+              'hover:border-green-300 transition-colors'
             )}
           >
             <span>{currentFilter?.label}</span>
@@ -178,7 +178,7 @@ function NotificationDropdown({ isOpen, onClose, triggerRef, className }) {
                     'hover:bg-surface-alt transition-colors',
                     'first:rounded-t-lg last:rounded-b-lg',
                     selectedFilter === option.id
-                      ? 'text-blue-500 bg-blue-50'
+                      ? 'text-green-800 bg-green-50'
                       : 'text-text-primary'
                   )}
                 >
@@ -218,7 +218,7 @@ function NotificationDropdown({ isOpen, onClose, triggerRef, className }) {
                     <Link
                       href={notification.href}
                       onClick={onClose}
-                      className="text-blue-500 hover:text-blue-600 font-normal ml-1"
+                      className="text-green-800 hover:text-green-900 font-normal ml-1"
                     >
                       ...Read More
                     </Link>
@@ -238,7 +238,7 @@ function NotificationDropdown({ isOpen, onClose, triggerRef, className }) {
         <Link
           href="/notifications"
           onClick={onClose}
-          className="block text-center text-sm font-medium text-blue-500 hover:text-blue-600 transition-colors"
+          className="block text-center text-sm font-medium text-green-800 hover:text-green-900 transition-colors"
         >
           View All Notifications
         </Link>

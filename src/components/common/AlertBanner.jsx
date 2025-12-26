@@ -7,10 +7,10 @@ import { Button } from '../ui/Button';
 
 const alertVariants = {
   info: {
-    bg: 'bg-blue-50 dark:bg-blue-900/20',
-    border: 'border-blue-200 dark:border-blue-800',
-    icon: 'text-blue-500',
-    text: 'text-blue-800 dark:text-blue-200',
+    bg: 'bg-green-50 dark:bg-green-900/20',
+    border: 'border-green-200 dark:border-green-800',
+    icon: 'text-green-800',
+    text: 'text-green-800 dark:text-green-200',
   },
   success: {
     bg: 'bg-emerald-50 dark:bg-emerald-900/20',
@@ -25,16 +25,16 @@ const alertVariants = {
     text: 'text-amber-800 dark:text-amber-200',
   },
   error: {
-    bg: 'bg-red-50 dark:bg-red-900/20',
-    border: 'border-red-200 dark:border-red-800',
-    icon: 'text-red-500',
-    text: 'text-red-800 dark:text-red-200',
+    bg: 'bg-green-50 dark:bg-green-900/20',
+    border: 'border-green-200 dark:border-green-800',
+    icon: 'text-green-500',
+    text: 'text-green-800 dark:text-red-200',
   },
   promotional: {
-    bg: 'bg-blue-50 dark:bg-blue-900/20',
-    border: 'border-blue-200 dark:border-blue-800',
-    icon: 'text-blue-500',
-    text: 'text-blue-800 dark:text-blue-200',
+    bg: 'bg-green-50 dark:bg-green-900/20',
+    border: 'border-green-200 dark:border-green-800',
+    icon: 'text-green-800',
+    text: 'text-green-800 dark:text-green-200',
   },
 };
 
@@ -149,7 +149,7 @@ function TopBanner({
   return (
     <div
       className={cn(
-        'bg-blue-500 text-white',
+        'bg-green-500 text-white',
         'py-2 px-4',
         className
       )}

@@ -86,7 +86,7 @@ function Rating({
         <StarIcon
           key={i}
           filled={false}
-          className={cn(ratingSizes[size], 'text-indigo-200 dark:text-indigo-600')}
+          className={cn(ratingSizes[size], 'text-indigo-200 dark:text-green-600')}
         />
       );
     }

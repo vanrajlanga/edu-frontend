@@ -11,7 +11,7 @@ function CourseFinderBanner({ className }) {
           {/* Two-tone background */}
           <div className="flex flex-col md:flex-row">
             {/* Left Side - Illustration Area */}
-            <div className="relative bg-gradient-to-br from-blue-50 to-sky-50 px-8 py-8 md:py-0 md:w-[280px] flex items-center justify-center">
+            <div className="relative bg-gradient-to-br from-green-50 to-green-100 px-8 py-8 md:py-0 md:w-[280px] flex items-center justify-center">
               {/* Illustration */}
               <div className="w-40 h-32 md:w-48 md:h-36">
                 <svg viewBox="0 0 200 150" className="w-full h-full">
@@ -85,7 +85,7 @@ function CourseFinderBanner({ className }) {
             </div>
 
             {/* Right Side - Content Area */}
-            <div className="flex-1 bg-gradient-to-r from-blue-500 to-blue-600 px-8 py-8 md:py-10 relative overflow-hidden">
+            <div className="flex-1 bg-gradient-to-r from-green-800 to-green-900 px-8 py-8 md:py-10 relative overflow-hidden">
               {/* Background Pattern */}
               <div className="absolute inset-0 opacity-10">
                 <svg className="w-full h-full" viewBox="0 0 400 150" preserveAspectRatio="xMidYMid slice">
@@ -115,10 +115,10 @@ function CourseFinderBanner({ className }) {
                   className={cn(
                     'inline-flex items-center gap-2',
                     'px-8 py-3.5',
-                    'bg-blue-700 hover:bg-blue-800',
+                    'bg-green-950 hover:bg-green-800',
                     'text-white font-semibold text-base',
                     'rounded-lg',
-                    'shadow-lg shadow-blue-900/30 hover:shadow-xl',
+                    'shadow-lg shadow-green-900/30 hover:shadow-xl',
                     'transition-all duration-200'
                   )}
                 >

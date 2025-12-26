@@ -141,7 +141,7 @@ function ExploreCoursesSection({ className }) {
                 'w-10 h-10 rounded-full',
                 'bg-white border border-gray-200 shadow-lg',
                 'flex items-center justify-center',
-                'text-gray-500 hover:text-blue-500 hover:border-blue-300',
+                'text-gray-500 hover:text-green-800 hover:border-green-300',
                 'transition-all duration-200'
               )}
             >
@@ -177,7 +177,7 @@ function ExploreCoursesSection({ className }) {
                 'w-10 h-10 rounded-full',
                 'bg-white border border-gray-200 shadow-lg',
                 'flex items-center justify-center',
-                'text-gray-500 hover:text-blue-500 hover:border-blue-300',
+                'text-gray-500 hover:text-green-800 hover:border-green-300',
                 'transition-all duration-200'
               )}
             >

@@ -13,7 +13,7 @@ function QuickLink({ label, href = '#', className }) {
         'bg-white rounded-full',
         'border border-gray-200',
         'text-sm font-medium text-gray-700',
-        'hover:border-blue-300 hover:text-blue-600 hover:bg-blue-50',
+        'hover:border-green-300 hover:text-green-900 hover:bg-green-50',
         'hover:shadow-sm',
         'transition-all duration-200',
         'group',
@@ -25,12 +25,12 @@ function QuickLink({ label, href = '#', className }) {
         className={cn(
           'flex items-center justify-center',
           'w-5 h-5 rounded-full',
-          'bg-gray-100 group-hover:bg-blue-100',
+          'bg-gray-100 group-hover:bg-green-100',
           'transition-colors duration-200'
         )}
       >
         <svg
-          className="w-3 h-3 text-gray-400 group-hover:text-blue-500 transition-colors"
+          className="w-3 h-3 text-gray-400 group-hover:text-green-800 transition-colors"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"

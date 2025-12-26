@@ -70,7 +70,7 @@ function Navbar({ variant = 'default', className }) {
     <nav
       className={cn(
         'relative',
-        'bg-gradient-to-r from-blue-600 to-blue-500',
+        'bg-gradient-to-r from-green-900 to-green-700',
         'shadow-sm',
         className
       )}
@@ -85,7 +85,7 @@ function Navbar({ variant = 'default', className }) {
                 onClick={scrollLeft}
                 className={cn(
                   'absolute left-0 z-10 p-1',
-                  'bg-gradient-to-r from-blue-600 via-blue-600 to-transparent',
+                  'bg-gradient-to-r from-green-900 via-green-900 to-transparent',
                   'text-white/70 hover:text-white',
                   'pr-4'
                 )}
@@ -108,7 +108,7 @@ function Navbar({ variant = 'default', className }) {
                     'text-sm font-medium',
                     'transition-all duration-200',
                     index === 0
-                      ? 'text-blue-700 bg-white/90 shadow-sm'
+                      ? 'text-green-900 bg-white/90 shadow-sm'
                       : 'text-white/90 hover:text-white hover:bg-white/15'
                   )}
                 >
@@ -124,7 +124,7 @@ function Navbar({ variant = 'default', className }) {
                 onClick={scrollRight}
                 className={cn(
                   'absolute right-0 z-10 p-1',
-                  'bg-gradient-to-l from-blue-500 via-blue-500 to-transparent',
+                  'bg-gradient-to-l from-green-700 via-green-700 to-transparent',
                   'text-white/70 hover:text-white',
                   'pl-4'
                 )}

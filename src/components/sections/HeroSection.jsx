@@ -75,10 +75,10 @@ function HeroSection({ className }) {
   };
 
   return (
-    <section className={cn('relative overflow-hidden bg-gradient-to-b from-blue-50 via-white to-white', className)}>
+    <section className={cn('relative overflow-hidden bg-gradient-to-b from-green-50 via-white to-white', className)}>
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-24 -right-24 w-96 h-96 bg-blue-100/50 rounded-full blur-3xl" />
+        <div className="absolute -top-24 -right-24 w-96 h-96 bg-green-100/50 rounded-full blur-3xl" />
         <div className="absolute top-1/2 -left-24 w-72 h-72 bg-sky-100/40 rounded-full blur-3xl" />
       </div>
 
@@ -95,12 +95,12 @@ function HeroSection({ className }) {
             )}
           >
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 border border-blue-100 mb-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-50 border border-green-100 mb-6">
               <span className="flex h-2 w-2 relative">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
               </span>
-              <span className="text-sm font-medium text-blue-700">Trusted by 10 Lakh+ Students</span>
+              <span className="text-sm font-medium text-green-950">Trusted by 10 Lakh+ Students</span>
             </div>
 
             {/* Headline */}
@@ -109,7 +109,7 @@ function HeroSection({ className }) {
               <span className="relative inline-block">
                 <span
                   key={currentTextIndex}
-                  className="text-blue-600 animate-fade-in-up"
+                  className="text-green-900 animate-fade-in-up"
                 >
                   {animatedTexts[currentTextIndex]}
                 </span>
@@ -141,8 +141,8 @@ function HeroSection({ className }) {
                   'p-1.5 pl-4',
                   'shadow-lg shadow-gray-200/60',
                   'border border-gray-200',
-                  'hover:shadow-xl hover:border-blue-200',
-                  'focus-within:shadow-xl focus-within:border-blue-300 focus-within:ring-2 focus-within:ring-blue-100',
+                  'hover:shadow-xl hover:border-green-200',
+                  'focus-within:shadow-xl focus-within:border-green-300 focus-within:ring-2 focus-within:ring-green-100',
                   'transition-all duration-200'
                 )}
               >
@@ -172,7 +172,7 @@ function HeroSection({ className }) {
                     'px-3 py-1.5 rounded-full',
                     'text-sm text-gray-600',
                     'bg-gray-50 border border-gray-200',
-                    'hover:border-blue-300 hover:text-blue-600 hover:bg-blue-50',
+                    'hover:border-green-300 hover:text-green-900 hover:bg-green-50',
                     'transition-all duration-200'
                   )}
                 >
@@ -186,7 +186,7 @@ function HeroSection({ className }) {
               <Button
                 variant="primary"
                 size="lg"
-                className="shadow-lg shadow-blue-200/50"
+                className="shadow-lg shadow-green-200/50"
                 rightIcon={<Icon name="arrowRight" size="sm" />}
               >
                 Get Free Counselling
@@ -194,7 +194,7 @@ function HeroSection({ className }) {
               <Button
                 variant="outline"
                 size="lg"
-                leftIcon={<Icon name="play" size="sm" className="text-blue-500" />}
+                leftIcon={<Icon name="play" size="sm" className="text-green-800" />}
               >
                 How It Works
               </Button>
@@ -204,7 +204,7 @@ function HeroSection({ className }) {
             <div className="grid grid-cols-4 gap-4 max-w-md mx-auto lg:mx-0">
               {stats.map((stat) => (
                 <div key={stat.label} className="text-center lg:text-left">
-                  <div className="text-2xl lg:text-3xl font-bold text-blue-600">{stat.value}</div>
+                  <div className="text-2xl lg:text-3xl font-bold text-green-900">{stat.value}</div>
                   <div className="text-xs text-gray-500">{stat.label}</div>
                 </div>
               ))}
@@ -221,10 +221,10 @@ function HeroSection({ className }) {
           >
             <div className="relative">
               {/* Decorative background */}
-              <div className="absolute -inset-4 bg-gradient-to-br from-blue-100 to-sky-50 rounded-3xl -rotate-3" />
+              <div className="absolute -inset-4 bg-gradient-to-br from-green-100 to-green-100 rounded-3xl -rotate-3" />
 
               {/* Bento Grid */}
-              <div className="relative grid grid-cols-2 gap-3 p-3 bg-white rounded-2xl shadow-2xl shadow-blue-900/10">
+              <div className="relative grid grid-cols-2 gap-3 p-3 bg-white rounded-2xl shadow-2xl shadow-green-900/10">
                 {/* Large image - top left */}
                 <div className="col-span-1 row-span-2">
                   <CollegeCard college={featuredColleges[0]} size="large" />
@@ -244,9 +244,9 @@ function HeroSection({ className }) {
                 <div className="col-span-2">
                   <div className="grid grid-cols-2 gap-3">
                     <CollegeCard college={featuredColleges[3]} size="small" />
-                    <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl p-4 flex flex-col justify-center items-center text-white">
+                    <div className="bg-gradient-to-br from-green-800 to-green-900 rounded-xl p-4 flex flex-col justify-center items-center text-white">
                       <span className="text-3xl font-bold">500+</span>
-                      <span className="text-sm text-blue-100">Top Colleges</span>
+                      <span className="text-sm text-green-100">Top Colleges</span>
                       <Button
                         variant="outline"
                         size="sm"

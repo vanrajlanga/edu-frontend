@@ -18,7 +18,7 @@ function Avatar({
   name,
   size = 'md',
   ring = false,
-  ringColor = 'blue',
+  ringColor = 'green',
   className,
   ...props
 }) {
@@ -32,7 +32,7 @@ function Avatar({
     : '';
 
   const ringStyles = {
-    blue: 'ring-blue-500',
+    green: 'ring-green-500',
     slate: 'ring-slate-500',
     emerald: 'ring-emerald-500',
     amber: 'ring-amber-500',

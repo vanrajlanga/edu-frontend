@@ -33,11 +33,11 @@ function FilterTabs({
           'relative px-4 py-3 font-medium text-sm whitespace-nowrap',
           'transition-colors duration-[var(--duration-fast)]',
           isActive
-            ? 'text-blue-500'
+            ? 'text-green-800'
             : 'text-text-secondary hover:text-text-primary',
           isActive && [
             'after:absolute after:bottom-0 after:left-0 after:right-0',
-            'after:h-0.5 after:bg-blue-500 after:rounded-full',
+            'after:h-0.5 after:bg-green-500 after:rounded-full',
           ]
         ),
     },
@@ -48,8 +48,8 @@ function FilterTabs({
           'px-4 py-2 rounded-[var(--radius-full)] font-medium text-sm whitespace-nowrap',
           'transition-all duration-[var(--duration-fast)]',
           isActive
-            ? 'bg-blue-500 text-white'
-            : 'bg-surface-alt text-text-secondary hover:bg-blue-50 hover:text-blue-600'
+            ? 'bg-green-500 text-white'
+            : 'bg-surface-alt text-text-secondary hover:bg-green-50 hover:text-green-900'
         ),
     },
     boxed: {

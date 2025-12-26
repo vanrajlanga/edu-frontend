@@ -80,15 +80,15 @@ function Header({ transparent = false, className }) {
                   'text-sm font-medium',
                   'bg-gray-50 border border-gray-200',
                   'hover:bg-gray-100 hover:border-gray-300 transition-all duration-200',
-                  isGoalSelectorOpen && 'bg-blue-50 border-blue-200'
+                  isGoalSelectorOpen && 'bg-green-50 border-green-200'
                 )}
               >
-                <Icon name="graduationCap" size="sm" className="text-blue-500" />
+                <Icon name="graduationCap" size="sm" className="text-green-500" />
                 <span className="text-gray-700">
                   {selectedGoal ? selectedGoal.label : 'Select Goal'}
                 </span>
                 <span className="text-gray-400">&</span>
-                <Icon name="mapPin" size="sm" className="text-blue-500" />
+                <Icon name="mapPin" size="sm" className="text-green-500" />
                 <span className="text-gray-700">
                   {selectedCity ? selectedCity.label : 'City'}
                 </span>
@@ -120,7 +120,7 @@ function Header({ transparent = false, className }) {
                 'rounded-full',
                 'bg-gray-50 border border-gray-200',
                 'hover:bg-white hover:border-gray-300 hover:shadow-sm',
-                'focus-within:bg-white focus-within:border-blue-300 focus-within:shadow-sm focus-within:ring-2 focus-within:ring-blue-100',
+                'focus-within:bg-white focus-within:border-green-300 focus-within:shadow-sm focus-within:ring-2 focus-within:ring-green-100',
                 'transition-all duration-200'
               )}
             >
@@ -147,7 +147,7 @@ function Header({ transparent = false, className }) {
             >
               <Icon name="edit" size="sm" />
               <span>Write a Review</span>
-              <span className="px-1.5 py-0.5 text-xs font-semibold bg-gradient-to-r from-blue-500 to-sky-500 text-white rounded">
+              <span className="px-1.5 py-0.5 text-xs font-semibold bg-gradient-to-r from-amber-500 to-orange-500 text-white rounded">
                 Earn
               </span>
             </Link>
@@ -166,7 +166,7 @@ function Header({ transparent = false, className }) {
                   'text-sm font-medium text-gray-600',
                   'hover:text-gray-900 hover:bg-gray-50',
                   'transition-colors duration-200',
-                  isExploreOpen && 'text-blue-600 bg-blue-50'
+                  isExploreOpen && 'text-green-900 bg-green-50'
                 )}
               >
                 <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
@@ -209,11 +209,11 @@ function Header({ transparent = false, className }) {
                   'relative p-2 rounded-lg',
                   'text-gray-500 hover:text-gray-700 hover:bg-gray-50',
                   'transition-colors duration-200',
-                  isNotificationOpen && 'text-blue-600 bg-blue-50'
+                  isNotificationOpen && 'text-green-900 bg-green-50'
                 )}
               >
                 <Icon name="bell" size="md" />
-                <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-blue-500 rounded-full animate-pulse" />
+                <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-green-500 rounded-full animate-pulse" />
               </button>
 
               {/* Notification Dropdown */}
@@ -255,7 +255,7 @@ function Header({ transparent = false, className }) {
               <button className="px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">
                 Login
               </button>
-              <button className="px-5 py-2 text-sm font-medium text-white bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg hover:from-blue-600 hover:to-blue-700 shadow-sm hover:shadow transition-all">
+              <button className="px-5 py-2 text-sm font-medium text-white bg-gradient-to-r from-green-700 to-green-900 rounded-lg hover:from-green-800 hover:to-green-950 shadow-sm hover:shadow transition-all">
                 Sign Up
               </button>
             </div>
@@ -293,7 +293,7 @@ function Header({ transparent = false, className }) {
               }}
               className="flex items-center gap-2 w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 text-gray-700 hover:bg-gray-100 transition-colors"
             >
-              <Icon name="graduationCap" size="sm" className="text-blue-500" />
+              <Icon name="graduationCap" size="sm" className="text-green-500" />
               <span>
                 {selectedGoal && selectedCity
                   ? `${selectedGoal.label} • ${selectedCity.label}`
@@ -307,7 +307,7 @@ function Header({ transparent = false, className }) {
               <Link href="/write-review" className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-colors">
                 <Icon name="edit" size="md" />
                 <span>Write a Review</span>
-                <span className="ml-auto px-2 py-0.5 text-xs bg-gradient-to-r from-blue-500 to-sky-500 text-white rounded">Earn</span>
+                <span className="ml-auto px-2 py-0.5 text-xs bg-gradient-to-r from-amber-500 to-orange-500 text-white rounded">Earn</span>
               </Link>
               <Link href="/explore" className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-colors">
                 <Icon name="globe" size="md" />
@@ -320,7 +320,7 @@ function Header({ transparent = false, className }) {
               <button className="flex-1 px-4 py-2.5 text-sm font-medium text-gray-600 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
                 Login
               </button>
-              <button className="flex-1 px-4 py-2.5 text-sm font-medium text-white bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg hover:from-blue-600 hover:to-blue-700 transition-all">
+              <button className="flex-1 px-4 py-2.5 text-sm font-medium text-white bg-gradient-to-r from-green-700 to-green-900 rounded-lg hover:from-green-800 hover:to-green-950 transition-all">
                 Sign Up
               </button>
             </div>

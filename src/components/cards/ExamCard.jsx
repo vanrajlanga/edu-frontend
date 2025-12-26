@@ -91,7 +91,7 @@ function ExamCard({
         'bg-white rounded-xl',
         'border border-gray-200',
         'p-5',
-        'hover:border-blue-300 hover:shadow-lg',
+        'hover:border-green-300 hover:shadow-lg',
         'transition-all duration-200',
         'group',
         className
@@ -111,12 +111,12 @@ function ExamCard({
               'inline-block px-2.5 py-0.5 rounded text-xs font-medium mb-1',
               isOnline
                 ? 'bg-emerald-50 text-emerald-600'
-                : 'bg-blue-50 text-blue-600'
+                : 'bg-green-50 text-green-900'
             )}
           >
             {mode} Exam
           </span>
-          <h3 className="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors truncate">
+          <h3 className="text-lg font-bold text-gray-900 group-hover:text-green-900 transition-colors truncate">
             {name}
           </h3>
         </div>
@@ -148,7 +148,7 @@ function ExamCard({
           className={cn(
             'flex items-center justify-between py-1.5',
             'text-sm font-medium text-gray-700',
-            'hover:text-blue-600',
+            'hover:text-green-900',
             'transition-colors duration-200'
           )}
         >
@@ -160,7 +160,7 @@ function ExamCard({
           className={cn(
             'flex items-center justify-between py-1.5',
             'text-sm font-medium text-gray-700',
-            'hover:text-blue-600',
+            'hover:text-green-900',
             'transition-colors duration-200'
           )}
         >

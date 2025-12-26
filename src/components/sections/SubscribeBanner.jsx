@@ -10,7 +10,7 @@ function SubscribeBanner({ className }) {
         <div
           className={cn(
             'relative overflow-hidden',
-            'bg-blue-50',
+            'bg-green-50',
             'rounded-2xl',
             'px-6 py-6 md:px-12 md:py-8'
           )}
@@ -27,10 +27,10 @@ function SubscribeBanner({ className }) {
                 className={cn(
                   'inline-flex items-center justify-center',
                   'px-8 py-3',
-                  'bg-blue-600 hover:bg-blue-700',
+                  'bg-green-900 hover:bg-green-950',
                   'text-white font-semibold text-base',
                   'rounded-md',
-                  'shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/30',
+                  'shadow-md shadow-green-500/20 hover:shadow-lg hover:shadow-green-500/30',
                   'transition-all duration-200'
                 )}
               >

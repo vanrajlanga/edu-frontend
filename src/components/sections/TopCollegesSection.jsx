@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { cn } from '@/lib/cn';
 import { CollegeFilterTabs } from '../common/CollegeFilterTabs';
-import { CollegeListItem } from '../cards/CollegeListItem';
+import { TopCollegeCard } from '../cards/TopCollegeCard';
 
 // Primary filter tabs
 const primaryFilters = [
@@ -377,7 +377,7 @@ function TopCollegesSection({ className }) {
           </h2>
           <a
             href="/colleges"
-            className="text-blue-500 hover:text-blue-600 font-medium text-sm flex items-center gap-1 transition-colors"
+            className="text-green-800 hover:text-green-900 font-medium text-sm flex items-center gap-1 transition-colors"
           >
             View All Colleges
             <svg
@@ -420,7 +420,7 @@ function TopCollegesSection({ className }) {
         {/* College List */}
         <div className="space-y-3 lg:space-y-0">
           {colleges.map((college, index) => (
-            <CollegeListItem
+            <TopCollegeCard
               key={college.id}
               rank={college.rank}
               name={college.name}
@@ -447,8 +447,8 @@ function TopCollegesSection({ className }) {
             href={`/colleges${selectedPrimary ? `?course=${selectedPrimary}` : ''}`}
             className={cn(
               'inline-flex items-center gap-2 px-6 py-3',
-              'bg-blue-50 text-blue-600 font-semibold rounded-lg',
-              'hover:bg-blue-100 transition-colors duration-200'
+              'bg-green-50 text-green-900 font-semibold rounded-lg',
+              'hover:bg-green-100 transition-colors duration-200'
             )}
           >
             View All {selectedPrimary ? primaryFilters.find((f) => f.value === selectedPrimary)?.label : ''} Colleges

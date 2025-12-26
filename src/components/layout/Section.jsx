@@ -17,7 +17,7 @@ const sectionBackgrounds = {
   alt: 'bg-surface-alt',
   dark: 'bg-slate-900 text-white',
   gradient: 'gradient-mesh',
-  primary: 'bg-blue-50',
+  primary: 'bg-green-50',
 };
 
 function Section({
@@ -82,7 +82,7 @@ function SectionHeader({
             href={viewAllHref}
             className={cn(
               'inline-flex items-center gap-1.5',
-              'text-blue-500 hover:text-blue-600',
+              'text-green-800 hover:text-green-900',
               'font-medium text-sm',
               'transition-colors duration-[var(--duration-fast)]',
               'group'

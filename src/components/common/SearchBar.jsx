@@ -88,7 +88,7 @@ function SearchBar({
             'transition-all duration-[var(--duration-normal)]',
             sizeStyles[size],
             variantStyles[variant],
-            isFocused && 'ring-2 ring-blue-500/30 border-blue-500'
+            isFocused && 'ring-2 ring-green-500/30 border-green-800'
           )}
         >
           <Icon
@@ -196,7 +196,7 @@ function SearchBar({
                     onClick={() => handleSuggestionSelect(search)}
                     className={cn(
                       'px-3 py-1.5 rounded-[var(--radius-full)]',
-                      'bg-surface-alt hover:bg-blue-50 hover:text-blue-600',
+                      'bg-surface-alt hover:bg-green-50 hover:text-green-900',
                       'text-sm text-text-secondary',
                       'transition-colors'
                     )}
