@@ -5,20 +5,20 @@ import Link from 'next/link';
 import { cn } from '@/lib/cn';
 import { Icon } from '../ui/Icon';
 import { Badge } from '../ui/Badge';
+import { AllCoursesMenu } from '../common/AllCoursesMenu';
+import { staticQuickCourseTabs, fetchQuickTabs } from '@/lib/coursesData';
 
-// Navigation data
-const courseCategories = [
-  { label: 'All Courses', href: '/courses', icon: 'graduationCap' },
-  { label: 'B.Tech', href: '/courses/btech' },
-  { label: 'MBA', href: '/courses/mba' },
-  { label: 'M.Tech', href: '/courses/mtech' },
-  { label: 'MBBS', href: '/courses/mbbs' },
-  { label: 'B.Com', href: '/courses/bcom' },
-  { label: 'B.Sc', href: '/courses/bsc' },
-  { label: 'B.Sc (Nursing)', href: '/courses/bsc-nursing' },
-  { label: 'BA', href: '/courses/ba' },
-  { label: 'BBA', href: '/courses/bba' },
-  { label: 'BCA', href: '/courses/bca' },
+// Static fallback navigation data
+const staticCourseCategories = [
+  { label: 'B.Tech', href: '/btech-colleges' },
+  { label: 'MBA', href: '/mba-colleges' },
+  { label: 'M.Tech', href: '/mtech-colleges' },
+  { label: 'MBBS', href: '/mbbs-colleges' },
+  { label: 'B.Com', href: '/bcom-colleges' },
+  { label: 'B.Sc', href: '/bsc-colleges' },
+  { label: 'BA', href: '/ba-colleges' },
+  { label: 'BBA', href: '/bba-colleges' },
+  { label: 'BCA', href: '/bca-colleges' },
 ];
 
 const rightNavItems = [
@@ -37,7 +37,27 @@ const rightNavItems = [
 function Navbar({ variant = 'default', className }) {
   const [showLeftArrow, setShowLeftArrow] = useState(false);
   const [showRightArrow, setShowRightArrow] = useState(true);
+  const [isAllCoursesOpen, setIsAllCoursesOpen] = useState(false);
+  const [courseTabs, setCourseTabs] = useState(staticCourseCategories);
   const scrollContainerRef = useRef(null);
+
+  // Fetch dynamic course tabs on mount
+  useEffect(() => {
+    async function loadCourseTabs() {
+      try {
+        const data = await fetchQuickTabs();
+        if (data && data.length > 0) {
+          setCourseTabs(data.map(tab => ({
+            label: tab.name,
+            href: tab.slug
+          })));
+        }
+      } catch (error) {
+        console.error('Error loading course tabs:', error);
+      }
+    }
+    loadCourseTabs();
+  }, []);
 
   const checkScrollPosition = () => {
     const container = scrollContainerRef.current;
@@ -67,6 +87,7 @@ function Navbar({ variant = 'default', className }) {
   };
 
   return (
+    <>
     <nav
       className={cn(
         'relative',
@@ -94,12 +115,28 @@ function Navbar({ variant = 'default', className }) {
               </button>
             )}
 
+            {/* All Courses Button */}
+            <button
+              onClick={() => setIsAllCoursesOpen(true)}
+              className={cn(
+                'flex items-center gap-1.5 px-3 py-2 rounded-md whitespace-nowrap',
+                'text-sm font-medium',
+                'transition-all duration-200',
+                'text-green-900 bg-white/90 shadow-sm hover:bg-white',
+                'flex-shrink-0 mr-1'
+              )}
+            >
+              <Icon name="graduationCap" size="sm" />
+              All Courses
+              <Icon name="chevronDown" size="xs" />
+            </button>
+
             {/* Scrollable Container */}
             <div
               ref={scrollContainerRef}
               className="flex items-center gap-0.5 overflow-x-auto scrollbar-hide scroll-smooth"
             >
-              {courseCategories.map((item, index) => (
+              {courseTabs.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
@@ -107,12 +144,9 @@ function Navbar({ variant = 'default', className }) {
                     'flex items-center gap-1.5 px-3 py-2 rounded-md whitespace-nowrap',
                     'text-sm font-medium',
                     'transition-all duration-200',
-                    index === 0
-                      ? 'text-green-900 bg-white/90 shadow-sm'
-                      : 'text-white/90 hover:text-white hover:bg-white/15'
+                    'text-white/90 hover:text-white hover:bg-white/15'
                   )}
                 >
-                  {item.icon && <Icon name={item.icon} size="sm" />}
                   {item.label}
                 </Link>
               ))}
@@ -159,7 +193,15 @@ function Navbar({ variant = 'default', className }) {
           </div>
         </div>
       </div>
+
     </nav>
+
+    {/* All Courses Menu */}
+    <AllCoursesMenu
+      isOpen={isAllCoursesOpen}
+      onClose={() => setIsAllCoursesOpen(false)}
+    />
+    </>
   );
 }
 

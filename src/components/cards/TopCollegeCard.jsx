@@ -92,29 +92,29 @@ function TopCollegeCard({
           </div>
 
           {/* Stats Grid */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-6 lg:w-[400px] lg:flex-shrink-0">
             {/* Ranking */}
             <div className="bg-gray-50 rounded-lg p-3 lg:bg-transparent lg:p-0">
               <p className="text-xs text-gray-500 mb-1">Ranking</p>
-              <p className="font-semibold text-gray-900 text-sm">{rankingInfo}</p>
+              <p className="font-semibold text-gray-900 text-sm">{rankingInfo || '-'}</p>
             </div>
 
             {/* Cutoff */}
             <div className="bg-gray-50 rounded-lg p-3 lg:bg-transparent lg:p-0">
               <p className="text-xs text-gray-500 mb-1">Cutoff</p>
-              <p className="font-semibold text-gray-900 text-sm">{cutoff}</p>
+              <p className="font-semibold text-gray-900 text-sm">{cutoff || '-'}</p>
             </div>
 
             {/* Deadline */}
             <div className="bg-gray-50 rounded-lg p-3 lg:bg-transparent lg:p-0">
               <p className="text-xs text-gray-500 mb-1">Deadline</p>
-              <p className="font-semibold text-gray-900 text-sm">{deadline}</p>
+              <p className="font-semibold text-gray-900 text-sm">{deadline || '-'}</p>
             </div>
 
             {/* Fees */}
             <div className="bg-gray-50 rounded-lg p-3 lg:bg-transparent lg:p-0">
               <p className="text-xs text-gray-500 mb-1">Fees</p>
-              <p className="font-semibold text-green-600 text-sm">{fees}</p>
+              <p className="font-semibold text-green-600 text-sm">{fees || '-'}</p>
             </div>
           </div>
 

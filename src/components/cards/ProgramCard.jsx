@@ -65,12 +65,13 @@ function ProgramCard({
 }
 
 // Ranking Card
-function RankingCard({ className }) {
-  const rankings = [
-    { name: 'Collegedunia', count: 2918 },
-    { name: 'Indiatoday', count: 1812 },
-    { name: 'IIRF', count: 1755 },
-    { name: 'Outlook', count: 1380 },
+function RankingCard({ rankings = [], className }) {
+  // Default rankings if none provided
+  const displayRankings = rankings.length > 0 ? rankings : [
+    { name: 'NIRF', collegeCount: 0 },
+    { name: 'QS', collegeCount: 0 },
+    { name: 'India Today', collegeCount: 0 },
+    { name: 'Outlook', collegeCount: 0 },
   ];
 
   return (
@@ -83,12 +84,12 @@ function RankingCard({ className }) {
       className={className}
     >
       <div className="flex flex-wrap gap-2">
-        {rankings.map((item) => (
+        {displayRankings.map((item) => (
           <span
-            key={item.name}
+            key={item.name || item.code}
             className="px-3 py-1.5 text-sm text-gray-600 bg-gray-50 rounded-lg border border-gray-100"
           >
-            {item.name} - {item.count}
+            {item.code || item.name} - {item.collegeCount || item.count || 0}
           </span>
         ))}
       </div>
@@ -97,16 +98,16 @@ function RankingCard({ className }) {
 }
 
 // Find Colleges Card
-function FindCollegesCard({ className }) {
+function FindCollegesCard({ totalColleges = 19000, className }) {
   const links = [
-    { label: 'Best MBA colleges in India', href: '/colleges/mba' },
-    { label: 'Best BTech colleges in India', href: '/colleges/btech' },
+    { label: 'Best MBA colleges in India', href: '/mba-colleges' },
+    { label: 'Best BTech colleges in India', href: '/btech-colleges' },
   ];
 
   return (
     <ProgramCard
       title="Find Colleges"
-      description="Discover 19000+ colleges via preferences"
+      description={`Discover ${totalColleges.toLocaleString()}+ colleges via preferences`}
       ctaText="Discover Top Colleges in India"
       ctaHref="/colleges"
       illustration={<FindCollegesIllustration />}
@@ -174,8 +175,14 @@ function CompareCollegesCard({ className }) {
 }
 
 // Exams Card
-function ExamsCard({ className }) {
-  const exams = ['B.Com', 'B.Sc', 'B.Sc (Nursing)', 'BA', 'BBA/BMS', 'BCA', 'BE/B.Tech'];
+function ExamsCard({ exams = [], className }) {
+  // Default exams if none provided
+  const displayExams = exams.length > 0 ? exams : [
+    { shortName: 'JEE Main', slug: 'jee-main' },
+    { shortName: 'NEET', slug: 'neet-ug' },
+    { shortName: 'CAT', slug: 'cat' },
+    { shortName: 'GATE', slug: 'gate' },
+  ];
 
   return (
     <ProgramCard
@@ -187,13 +194,13 @@ function ExamsCard({ className }) {
       className={className}
     >
       <div className="flex flex-wrap gap-2">
-        {exams.map((exam) => (
+        {displayExams.slice(0, 7).map((exam) => (
           <Link
-            key={exam}
-            href={`/exams/${exam.toLowerCase().replace(/[^a-z]/g, '-')}`}
+            key={exam.slug || exam}
+            href={`/exams/${exam.slug || exam.toLowerCase().replace(/[^a-z]/g, '-')}`}
             className="px-3 py-1.5 text-sm text-gray-600 bg-gray-50 rounded-lg border border-gray-100 hover:border-green-200 hover:text-green-900 transition-colors"
           >
-            {exam}
+            {exam.shortName || exam.name || exam}
           </Link>
         ))}
       </div>
@@ -202,8 +209,14 @@ function ExamsCard({ className }) {
 }
 
 // College Predictor Card
-function CollegePredictorCard({ className }) {
-  const predictors = ['CUET', 'NEET', 'AYUSH NEET Counselling', 'JEE Advanced'];
+function CollegePredictorCard({ predictors = [], className }) {
+  // Default predictors if none provided
+  const displayPredictors = predictors.length > 0 ? predictors : [
+    { shortName: 'JEE Main', slug: 'jee-main' },
+    { shortName: 'NEET', slug: 'neet-ug' },
+    { shortName: 'CAT', slug: 'cat' },
+    { shortName: 'JEE Advanced', slug: 'jee-advanced' },
+  ];
 
   return (
     <ProgramCard
@@ -215,13 +228,13 @@ function CollegePredictorCard({ className }) {
       className={className}
     >
       <div className="flex flex-wrap gap-2">
-        {predictors.map((item) => (
+        {displayPredictors.map((item) => (
           <Link
-            key={item}
-            href={`/predictor/${item.toLowerCase().replace(/\s+/g, '-')}`}
+            key={item.slug || item}
+            href={`/predictor/${item.slug || item.toLowerCase().replace(/\s+/g, '-')}`}
             className="px-3 py-1.5 text-sm text-gray-600 bg-gray-50 rounded-lg border border-gray-100 hover:border-green-200 hover:text-green-900 transition-colors"
           >
-            {item}
+            {item.shortName || item.name || item}
           </Link>
         ))}
       </div>
@@ -230,12 +243,13 @@ function CollegePredictorCard({ className }) {
 }
 
 // Course Finder Card
-function CourseFinderCard({ className }) {
-  const courses = [
-    { name: 'BE/B.Tech', count: 964 },
-    { name: 'MBA/PGDM', count: 1090 },
-    { name: 'ME/M.Tech', count: 1232 },
-    { name: 'B.Sc', count: 1041 },
+function CourseFinderCard({ courses = [], className }) {
+  // Default courses if none provided
+  const displayCourses = courses.length > 0 ? courses : [
+    { name: 'B.Tech', slug: 'btech', count: 0 },
+    { name: 'MBA', slug: 'mba', count: 0 },
+    { name: 'M.Tech', slug: 'mtech', count: 0 },
+    { name: 'B.Sc', slug: 'bsc', count: 0 },
   ];
 
   return (
@@ -248,13 +262,13 @@ function CourseFinderCard({ className }) {
       className={className}
     >
       <div className="flex flex-wrap gap-2">
-        {courses.map((course) => (
+        {displayCourses.slice(0, 4).map((course) => (
           <Link
-            key={course.name}
-            href={`/courses/${course.name.toLowerCase().replace(/[^a-z]/g, '-')}`}
+            key={course.name || course.slug}
+            href={`/${course.slug || course.name.toLowerCase().replace(/[^a-z]/g, '-')}-colleges`}
             className="px-3 py-1.5 text-sm text-gray-600 bg-gray-50 rounded-lg border border-gray-100 hover:border-green-200 hover:text-green-900 transition-colors"
           >
-            {course.name} - {course.count}
+            {course.name} - {course.count || 0}
           </Link>
         ))}
       </div>

@@ -4,11 +4,11 @@ import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { cn } from '@/lib/cn';
 import { Icon } from '../ui/Icon';
-import { Button } from '../ui/Button';
 import { Logo } from '../common/Logo';
 import { GoalSelector } from '../common/GoalSelector';
 import { ExploreDropdown } from '../common/ExploreDropdown';
 import { NotificationDropdown } from '../common/NotificationDropdown';
+import { fetchStudyGoals } from '@/lib/api';
 
 function Header({ transparent = false, className }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -19,6 +19,7 @@ function Header({ transparent = false, className }) {
   const [isNotificationOpen, setIsNotificationOpen] = useState(false);
   const [selectedGoal, setSelectedGoal] = useState(null);
   const [selectedCity, setSelectedCity] = useState(null);
+  const [studyGoals, setStudyGoals] = useState([]);
 
   const goalSelectorRef = useRef(null);
   const exploreButtonRef = useRef(null);
@@ -34,10 +35,21 @@ function Header({ transparent = false, className }) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Fetch study goals for the dropdown
+  useEffect(() => {
+    const loadStudyGoals = async () => {
+      const data = await fetchStudyGoals();
+      if (data && data.length > 0) {
+        setStudyGoals(data);
+      }
+    };
+    loadStudyGoals();
+  }, []);
+
   // Handle goal selection
   const handleGoalSelect = ({ goal, city }) => {
-    setSelectedGoal(goal);
-    setSelectedCity(city);
+    if (goal) setSelectedGoal(goal);
+    if (city) setSelectedCity(city);
   };
 
   // Handle explore hover with delay
@@ -108,6 +120,7 @@ function Header({ transparent = false, className }) {
                 onClose={() => setIsGoalSelectorOpen(false)}
                 onSelect={handleGoalSelect}
                 triggerRef={goalSelectorRef}
+                studyGoals={studyGoals}
               />
             </div>
           </div>

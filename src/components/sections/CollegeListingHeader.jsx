@@ -5,8 +5,8 @@ import { PromoBanner } from '@/components/common/PromoBanner';
 import { Container } from '@/components/layout';
 import { cn } from '@/lib/cn';
 
-// Promo banners with actual images
-const promoBanners = [
+// Default promo banners (used when no custom banners are provided)
+const defaultBanners = [
   {
     id: 1,
     image: '/assets/images/default-write-review-1.svg',
@@ -31,8 +31,11 @@ function CollegeListingHeader({
   breadcrumbItems = [],
   pageTitle = 'List of Top Colleges in India Based on 2025 Ranking',
   showPromoBanners = true,
+  banners = null,
   className,
 }) {
+  // Use custom banners if provided, otherwise use defaults
+  const promoBanners = banners && banners.length > 0 ? banners : defaultBanners;
   return (
     <section className={cn('bg-white', className)}>
       <Container size="full" className="max-w-[1400px]">

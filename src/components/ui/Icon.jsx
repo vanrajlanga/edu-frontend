@@ -129,6 +129,12 @@ const icons = {
   plus: (
     <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
   ),
+  minus: (
+    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 12h-15" />
+  ),
+  arrowLeft: (
+    <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+  ),
   check: (
     <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
   ),

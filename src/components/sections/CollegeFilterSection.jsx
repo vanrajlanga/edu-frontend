@@ -71,6 +71,11 @@ const filterConfigs = [
       { id: 'msc', label: 'M.Sc' },
       { id: 'bcom', label: 'B.Com' },
       { id: 'mcom', label: 'M.Com' },
+      { id: 'ba', label: 'BA' },
+      { id: 'bca', label: 'BCA' },
+      { id: 'llb', label: 'LLB' },
+      { id: 'bed', label: 'B.Ed' },
+      { id: 'bsc-nursing', label: 'B.Sc Nursing' },
     ],
   },
   {
@@ -145,9 +150,9 @@ const filterConfigs = [
   },
 ];
 
-function CollegeFilterSection({ className, onFilterChange }) {
+function CollegeFilterSection({ className, onFilterChange, initialFilters = {} }) {
   const [activeFilterId, setActiveFilterId] = useState(null);
-  const [selectedFilters, setSelectedFilters] = useState({});
+  const [selectedFilters, setSelectedFilters] = useState(initialFilters);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleFilterClick = (filterId) => {
@@ -192,6 +197,28 @@ function CollegeFilterSection({ className, onFilterChange }) {
     });
   };
 
+  const handleRemoveFilter = (filterId, optionId) => {
+    setSelectedFilters((prev) => {
+      const currentOptions = prev[filterId] || [];
+      const newOptions = currentOptions.filter((id) => id !== optionId);
+
+      const newFilters = { ...prev };
+      if (newOptions.length === 0) {
+        delete newFilters[filterId];
+      } else {
+        newFilters[filterId] = newOptions;
+      }
+
+      onFilterChange?.(newFilters);
+      return newFilters;
+    });
+  };
+
+  const handleClearAll = () => {
+    setSelectedFilters({});
+    onFilterChange?.({});
+  };
+
   const handleModalApply = (filters) => {
     setSelectedFilters(filters);
     onFilterChange?.(filters);
@@ -222,8 +249,11 @@ function CollegeFilterSection({ className, onFilterChange }) {
           <FilterBar
             filters={filterConfigs}
             activeFilterId={activeFilterId}
+            selectedFilters={selectedFilters}
             onFilterClick={handleFilterClick}
             onAllFilterClick={handleAllFilterClick}
+            onRemoveFilter={handleRemoveFilter}
+            onClearAll={handleClearAll}
             renderDropdown={renderDropdown}
           />
         </Container>

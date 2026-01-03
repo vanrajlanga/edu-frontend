@@ -7,8 +7,11 @@ import { Icon } from '../ui/Icon';
 function FilterBar({
   filters = [],
   activeFilterId = null,
+  selectedFilters = {},
   onFilterClick,
   onAllFilterClick,
+  onRemoveFilter,
+  onClearAll,
   className,
   renderDropdown,
 }) {
@@ -77,6 +80,30 @@ function FilterBar({
     }
   };
 
+  // Get all selected filter chips
+  const getSelectedChips = () => {
+    const chips = [];
+    Object.entries(selectedFilters).forEach(([filterId, optionIds]) => {
+      const filter = filters.find(f => f.id === filterId);
+      if (filter && optionIds?.length > 0) {
+        optionIds.forEach(optionId => {
+          const option = filter.options?.find(o => o.id === optionId);
+          if (option) {
+            chips.push({
+              filterId,
+              optionId,
+              label: option.label,
+            });
+          }
+        });
+      }
+    });
+    return chips;
+  };
+
+  const selectedChips = getSelectedChips();
+  const hasSelectedFilters = selectedChips.length > 0;
+
   return (
     <div className={cn('bg-white border border-gray-200 rounded-xl p-2.5', className)}>
       <div className="flex items-center gap-2.5">
@@ -121,7 +148,9 @@ function FilterBar({
             className="flex gap-2 overflow-x-auto scrollbar-hide scroll-smooth"
           >
             {filters.map((filter) => {
-              const isActive = activeFilterId === filter.id;
+              const isOpen = activeFilterId === filter.id;
+              const hasSelection = selectedFilters[filter.id]?.length > 0;
+              const isHighlighted = isOpen || hasSelection;
               return (
                 <div key={filter.id} className="flex-shrink-0">
                   <button
@@ -131,16 +160,16 @@ function FilterBar({
                       'flex items-center gap-1.5 px-4 py-2.5 rounded-lg',
                       'border text-sm font-medium',
                       'whitespace-nowrap transition-all',
-                      isActive
+                      isHighlighted
                         ? 'bg-orange-50 border-orange-500 text-orange-700'
                         : 'bg-white border-gray-300 text-gray-700 hover:border-gray-400'
                     )}
                   >
                     <span>{filter.label}</span>
                     <Icon
-                      name={isActive ? "chevronUp" : "chevronDown"}
+                      name={isOpen ? "chevronUp" : "chevronDown"}
                       size="sm"
-                      className="opacity-60"
+                      className={isHighlighted ? 'text-orange-500' : 'opacity-60'}
                     />
                   </button>
                 </div>
@@ -167,6 +196,37 @@ function FilterBar({
           )}
         </div>
       </div>
+
+      {/* Selected Filter Chips */}
+      {hasSelectedFilters && (
+        <div className="flex items-center gap-2 mt-2.5 flex-wrap">
+          {selectedChips.map((chip, index) => (
+            <button
+              key={`${chip.filterId}-${chip.optionId}-${index}`}
+              onClick={() => onRemoveFilter?.(chip.filterId, chip.optionId)}
+              className={cn(
+                'flex items-center gap-1.5 px-3 py-1.5 rounded-full',
+                'bg-orange-50 border border-orange-300',
+                'text-orange-700 text-sm font-medium',
+                'hover:bg-orange-100 transition-colors'
+              )}
+            >
+              <span>{chip.label}</span>
+              <Icon name="close" size="xs" className="text-orange-500" />
+            </button>
+          ))}
+          <button
+            onClick={onClearAll}
+            className={cn(
+              'text-sm font-medium text-gray-600',
+              'hover:text-gray-900 transition-colors',
+              'ml-1'
+            )}
+          >
+            Clear All
+          </button>
+        </div>
+      )}
 
       {/* Render dropdown outside scrollable container using fixed positioning */}
       {activeFilterId && renderDropdown && (

@@ -1,86 +1,28 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
+import Link from 'next/link';
 import { cn } from '@/lib/cn';
 import { Icon } from '../ui/Icon';
 
-// Goal categories with their sub-items
-const goalCategories = [
+// Default goal categories (fallback)
+const defaultGoalCategories = [
   {
     id: 'engineering',
-    label: 'Engineering',
+    title: 'Engineering',
     icon: 'settings',
-    items: [
-      { id: 'btech', label: 'BE/B.Tech', href: '/courses/btech' },
-      { id: 'mtech', label: 'M.Tech', href: '/courses/mtech' },
-      { id: 'diploma', label: 'Diploma in Engineering', href: '/courses/diploma-engineering' },
+    courses: [
+      { label: 'BE/B.Tech', href: '/btech-colleges' },
+      { label: 'M.Tech', href: '/mtech-colleges' },
     ],
   },
   {
     id: 'management',
-    label: 'Management',
+    title: 'Management',
     icon: 'briefcase',
-    items: [
-      { id: 'mba', label: 'MBA/PGDM', href: '/courses/mba' },
-      { id: 'bba', label: 'BBA', href: '/courses/bba' },
-      { id: 'executive-mba', label: 'Executive MBA', href: '/courses/executive-mba' },
-    ],
-  },
-  {
-    id: 'commerce',
-    label: 'Commerce',
-    icon: 'chart',
-    items: [
-      { id: 'bcom', label: 'B.Com', href: '/courses/bcom' },
-      { id: 'mcom', label: 'M.Com', href: '/courses/mcom' },
-      { id: 'ca', label: 'CA', href: '/courses/ca' },
-    ],
-  },
-  {
-    id: 'arts',
-    label: 'Arts',
-    icon: 'book',
-    items: [
-      { id: 'ba', label: 'BA', href: '/courses/ba' },
-      { id: 'ma', label: 'MA', href: '/courses/ma' },
-      { id: 'bjmc', label: 'BJMC', href: '/courses/bjmc' },
-    ],
-  },
-  {
-    id: 'science',
-    label: 'Science',
-    icon: 'flask',
-    items: [
-      { id: 'bsc', label: 'B.Sc', href: '/courses/bsc' },
-      { id: 'msc', label: 'M.Sc', href: '/courses/msc' },
-    ],
-  },
-  {
-    id: 'medical',
-    label: 'Medical',
-    icon: 'heart',
-    items: [
-      { id: 'mbbs', label: 'MBBS', href: '/courses/mbbs' },
-      { id: 'bds', label: 'BDS', href: '/courses/bds' },
-      { id: 'pharmacy', label: 'B.Pharma', href: '/courses/bpharma' },
-    ],
-  },
-  {
-    id: 'computer',
-    label: 'Computer',
-    icon: 'code',
-    items: [
-      { id: 'bca', label: 'BCA', href: '/courses/bca' },
-      { id: 'mca', label: 'MCA', href: '/courses/mca' },
-    ],
-  },
-  {
-    id: 'law',
-    label: 'Law',
-    icon: 'shield',
-    items: [
-      { id: 'llb', label: 'LLB', href: '/courses/llb' },
-      { id: 'ballb', label: 'BA LLB', href: '/courses/ballb' },
+    courses: [
+      { label: 'MBA/PGDM', href: '/mba-colleges' },
+      { label: 'BBA', href: '/bba-colleges' },
     ],
   },
 ];
@@ -97,12 +39,21 @@ const popularCities = [
   { id: 'ahmedabad', label: 'Ahmedabad', state: 'Gujarat' },
 ];
 
-function GoalSelector({ isOpen, onClose, onSelect, triggerRef, className }) {
+function GoalSelector({ isOpen, onClose, onSelect, triggerRef, studyGoals = [], className }) {
   const [activeTab, setActiveTab] = useState('goal');
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState(null);
-  const [hoveredCategory, setHoveredCategory] = useState(goalCategories[0]);
+  const [hoveredCategory, setHoveredCategory] = useState(null);
   const dropdownRef = useRef(null);
+
+  // Use provided studyGoals or fallback to default
+  const goalCategories = studyGoals.length > 0 ? studyGoals : defaultGoalCategories;
+
+  // Set initial hovered category
+  useEffect(() => {
+    if (isOpen && goalCategories.length > 0 && !hoveredCategory) {
+      setHoveredCategory(goalCategories[0]);
+    }
+  }, [isOpen, goalCategories, hoveredCategory]);
 
   // Close on escape key
   useEffect(() => {
@@ -140,9 +91,9 @@ function GoalSelector({ isOpen, onClose, onSelect, triggerRef, className }) {
       city.state.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  const handleGoalSelect = (item) => {
+  const handleGoalSelect = (course) => {
     if (onSelect) {
-      onSelect({ goal: item, city: null });
+      onSelect({ goal: course, city: null });
     }
     setActiveTab('city');
     setSearchQuery('');
@@ -162,9 +113,9 @@ function GoalSelector({ isOpen, onClose, onSelect, triggerRef, className }) {
       ref={dropdownRef}
       className={cn(
         'absolute top-full left-0 mt-2',
-        'w-[520px]',
-        'bg-surface rounded-xl shadow-xl',
-        'border border-border',
+        'w-[560px]',
+        'bg-white rounded-xl shadow-xl',
+        'border border-gray-200',
         'overflow-hidden',
         'animate-in fade-in slide-in-from-top-2 duration-200',
         'z-50',
@@ -172,7 +123,7 @@ function GoalSelector({ isOpen, onClose, onSelect, triggerRef, className }) {
       )}
     >
       {/* Tabs */}
-      <div className="flex border-b border-border">
+      <div className="flex border-b border-gray-200">
         <button
           onClick={() => {
             setActiveTab('goal');
@@ -183,7 +134,7 @@ function GoalSelector({ isOpen, onClose, onSelect, triggerRef, className }) {
             'border-b-2 transition-colors',
             activeTab === 'goal'
               ? 'text-green-800 border-green-800 bg-green-50/50'
-              : 'text-text-secondary border-transparent hover:text-text-primary'
+              : 'text-gray-500 border-transparent hover:text-gray-700'
           )}
         >
           Select Goal
@@ -198,7 +149,7 @@ function GoalSelector({ isOpen, onClose, onSelect, triggerRef, className }) {
             'border-b-2 transition-colors',
             activeTab === 'city'
               ? 'text-green-800 border-green-800 bg-green-50/50'
-              : 'text-text-secondary border-transparent hover:text-text-primary'
+              : 'text-gray-500 border-transparent hover:text-gray-700'
           )}
         >
           Select City
@@ -206,22 +157,21 @@ function GoalSelector({ isOpen, onClose, onSelect, triggerRef, className }) {
       </div>
 
       {activeTab === 'goal' ? (
-        <div className="flex">
+        <div className="flex max-h-[400px]">
           {/* Left: Categories */}
-          <div className="w-44 border-r border-border bg-surface-alt/50">
+          <div className="w-48 border-r border-gray-100 bg-gray-50/50 overflow-y-auto">
             <div className="p-2">
               {goalCategories.map((category) => (
                 <button
                   key={category.id}
                   onMouseEnter={() => setHoveredCategory(category)}
-                  onClick={() => setSelectedCategory(category)}
                   className={cn(
                     'flex items-center gap-2 w-full px-3 py-2.5 rounded-lg',
                     'text-sm text-left',
                     'transition-colors duration-150',
                     hoveredCategory?.id === category.id
-                      ? 'bg-surface text-green-900 shadow-sm'
-                      : 'text-text-primary hover:bg-surface/80'
+                      ? 'bg-white text-green-900 shadow-sm'
+                      : 'text-gray-700 hover:bg-white/80'
                   )}
                 >
                   <div
@@ -229,45 +179,59 @@ function GoalSelector({ isOpen, onClose, onSelect, triggerRef, className }) {
                       'w-7 h-7 rounded-lg flex items-center justify-center',
                       hoveredCategory?.id === category.id
                         ? 'bg-green-100 text-green-800'
-                        : 'bg-slate-100 text-slate-500'
+                        : 'bg-gray-100 text-gray-500'
                     )}
                   >
-                    <Icon name={category.icon} size="sm" />
+                    <Icon name={category.icon || 'folder'} size="sm" />
                   </div>
-                  <span className="font-medium">{category.label}</span>
+                  <div>
+                    <span className="font-medium">{category.title}</span>
+                    {category.collegeCount > 0 && (
+                      <span className="block text-xs text-gray-400">{category.collegeCount} Colleges</span>
+                    )}
+                  </div>
                 </button>
               ))}
             </div>
           </div>
 
-          {/* Right: Sub-items */}
-          <div className="flex-1 p-3">
+          {/* Right: Courses */}
+          <div className="flex-1 p-3 overflow-y-auto">
             {hoveredCategory && (
               <>
-                <h4 className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-2 px-2">
-                  {hoveredCategory.label} Courses
+                <h4 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2 px-2">
+                  {hoveredCategory.title} Courses
                 </h4>
                 <div className="space-y-0.5">
-                  {hoveredCategory.items.map((item) => (
-                    <button
-                      key={item.id}
-                      onClick={() => handleGoalSelect(item)}
+                  {hoveredCategory.courses?.map((course, index) => (
+                    <Link
+                      key={index}
+                      href={course.href || '#'}
+                      onClick={() => {
+                        handleGoalSelect(course);
+                        onClose();
+                      }}
                       className={cn(
                         'flex items-center justify-between w-full',
                         'px-3 py-2.5 rounded-lg',
-                        'text-sm text-text-primary',
+                        'text-sm text-gray-700',
                         'hover:bg-green-50 hover:text-green-900',
                         'transition-colors duration-150',
                         'group'
                       )}
                     >
-                      <span className="font-medium">{item.label}</span>
+                      <span className="font-medium">
+                        {course.label}
+                        {course.collegeCount > 0 && (
+                          <span className="ml-1 text-xs text-gray-400">({course.collegeCount})</span>
+                        )}
+                      </span>
                       <Icon
                         name="chevronRight"
                         size="sm"
-                        className="text-text-muted group-hover:text-green-400 transition-colors"
+                        className="text-gray-300 group-hover:text-green-500 transition-colors"
                       />
-                    </button>
+                    </Link>
                   ))}
                 </div>
               </>
@@ -281,7 +245,7 @@ function GoalSelector({ isOpen, onClose, onSelect, triggerRef, className }) {
             <Icon
               name="search"
               size="sm"
-              className="absolute left-3 top-1/2 -translate-y-1/2 text-text-muted"
+              className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
             />
             <input
               type="text"
@@ -291,16 +255,16 @@ function GoalSelector({ isOpen, onClose, onSelect, triggerRef, className }) {
               autoFocus
               className={cn(
                 'w-full pl-9 pr-4 py-2.5',
-                'bg-surface-alt rounded-lg',
-                'border border-border focus:border-green-400',
-                'text-sm text-text-primary placeholder:text-text-muted',
+                'bg-gray-50 rounded-lg',
+                'border border-gray-200 focus:border-green-400',
+                'text-sm text-gray-700 placeholder:text-gray-400',
                 'outline-none transition-colors'
               )}
             />
           </div>
 
           {/* Cities Grid */}
-          <h4 className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-3">
+          <h4 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">
             Popular Cities
           </h4>
           <div className="grid grid-cols-2 gap-2">
@@ -310,25 +274,25 @@ function GoalSelector({ isOpen, onClose, onSelect, triggerRef, className }) {
                 onClick={() => handleCitySelect(city)}
                 className={cn(
                   'flex items-center gap-3 p-3',
-                  'rounded-lg border border-border',
+                  'rounded-lg border border-gray-200',
                   'text-left',
                   'hover:border-green-300 hover:bg-green-50',
                   'transition-all duration-150',
                   'group'
                 )}
               >
-                <div className="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center group-hover:bg-green-100 transition-colors">
+                <div className="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center group-hover:bg-green-100 transition-colors">
                   <Icon
                     name="mapPin"
                     size="sm"
-                    className="text-slate-500 group-hover:text-green-800 transition-colors"
+                    className="text-gray-500 group-hover:text-green-800 transition-colors"
                   />
                 </div>
                 <div>
-                  <div className="font-medium text-sm text-text-primary group-hover:text-green-900">
+                  <div className="font-medium text-sm text-gray-700 group-hover:text-green-900">
                     {city.label}
                   </div>
-                  <div className="text-xs text-text-muted">{city.state}</div>
+                  <div className="text-xs text-gray-400">{city.state}</div>
                 </div>
               </button>
             ))}

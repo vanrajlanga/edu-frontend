@@ -4,110 +4,29 @@ import { useState, useRef, useEffect } from 'react';
 import { cn } from '@/lib/cn';
 import { Icon } from '../ui/Icon';
 import { StudyGoalCard, StudyGoalSeeAllCard } from '../cards/StudyGoalCard';
-
-// Study goal categories data
-const studyGoals = [
-  {
-    id: 'engineering',
-    icon: 'settings',
-    title: 'Engineering',
-    collegeCount: 6347,
-    courses: [
-      { label: 'BE/B.Tech', href: '/courses/btech' },
-      { label: 'Diploma in Engineering', href: '/courses/diploma-engineering' },
-      { label: 'ME/M.Tech', href: '/courses/mtech' },
-    ],
-  },
-  {
-    id: 'management',
-    icon: 'chart',
-    title: 'Management',
-    collegeCount: 7977,
-    courses: [
-      { label: 'MBA/PGDM', href: '/courses/mba' },
-      { label: 'BBA/BMS', href: '/courses/bba' },
-      { label: 'Executive MBA', href: '/courses/executive-mba' },
-    ],
-  },
-  {
-    id: 'commerce',
-    icon: 'briefcase',
-    title: 'Commerce',
-    collegeCount: 5063,
-    courses: [
-      { label: 'B.Com', href: '/courses/bcom' },
-      { label: 'M.Com', href: '/courses/mcom' },
-    ],
-  },
-  {
-    id: 'arts',
-    icon: 'book',
-    title: 'Arts',
-    collegeCount: 5706,
-    courses: [
-      { label: 'BA', href: '/courses/ba' },
-      { label: 'MA', href: '/courses/ma' },
-      { label: 'BFA', href: '/courses/bfa' },
-      { label: 'BSW', href: '/courses/bsw' },
-    ],
-  },
-  {
-    id: 'medical',
-    icon: 'heart',
-    title: 'Medical',
-    collegeCount: 2490,
-    courses: [
-      { label: 'MBBS', href: '/courses/mbbs' },
-      { label: 'PG Medical', href: '/courses/pg-medical' },
-    ],
-  },
-  {
-    id: 'design',
-    icon: 'sparkles',
-    title: 'Design',
-    collegeCount: 1463,
-    courses: [
-      { label: 'B.Des', href: '/courses/bdes' },
-      { label: 'M.Des', href: '/courses/mdes' },
-    ],
-  },
-  {
-    id: 'science',
-    icon: 'flask',
-    title: 'Science',
-    collegeCount: 4521,
-    courses: [
-      { label: 'B.Sc', href: '/courses/bsc' },
-      { label: 'M.Sc', href: '/courses/msc' },
-    ],
-  },
-  {
-    id: 'law',
-    icon: 'shield',
-    title: 'Law',
-    collegeCount: 1892,
-    courses: [
-      { label: 'LLB', href: '/courses/llb' },
-      { label: 'BA LLB', href: '/courses/ballb' },
-      { label: 'LLM', href: '/courses/llm' },
-    ],
-  },
-  {
-    id: 'computer',
-    icon: 'code',
-    title: 'Computer Application',
-    collegeCount: 3245,
-    courses: [
-      { label: 'BCA', href: '/courses/bca' },
-      { label: 'MCA', href: '/courses/mca' },
-    ],
-  },
-];
+import { StudyGoalModal } from '../common/StudyGoalModal';
+import { fetchStudyGoals } from '@/lib/api';
 
 function StudyGoalSection({ className }) {
   const scrollContainerRef = useRef(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
+  const [studyGoals, setStudyGoals] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // Fetch study goals from API
+  useEffect(() => {
+    const loadStudyGoals = async () => {
+      setLoading(true);
+      const data = await fetchStudyGoals();
+      // Filter out categories with 0 colleges
+      const filteredData = data.filter(goal => goal.collegeCount > 0 || goal.courses.some(c => c.collegeCount > 0));
+      setStudyGoals(filteredData);
+      setLoading(false);
+    };
+    loadStudyGoals();
+  }, []);
 
   const checkScrollPosition = () => {
     const container = scrollContainerRef.current;
@@ -126,7 +45,7 @@ function StudyGoalSection({ className }) {
       checkScrollPosition();
       return () => container.removeEventListener('scroll', checkScrollPosition);
     }
-  }, []);
+  }, [studyGoals]);
 
   const scroll = (direction) => {
     const container = scrollContainerRef.current;
@@ -138,6 +57,27 @@ function StudyGoalSection({ className }) {
       });
     }
   };
+
+  // Loading skeleton
+  if (loading) {
+    return (
+      <section className={cn('py-12 bg-white', className)}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8">
+            Select Your Study Goal
+          </h2>
+          <div className="flex gap-4 overflow-hidden">
+            {[...Array(5)].map((_, index) => (
+              <div
+                key={index}
+                className="flex-shrink-0 w-[280px] h-[180px] bg-gray-100 rounded-xl animate-pulse"
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className={cn('py-12 bg-white', className)}>
@@ -179,13 +119,20 @@ function StudyGoalSection({ className }) {
                 title={goal.title}
                 collegeCount={goal.collegeCount}
                 courses={goal.courses}
-                href={`/courses/${goal.id}`}
+                href={goal.href}
               />
             ))}
 
             {/* See All Card */}
-            <StudyGoalSeeAllCard href="/courses" />
+            <StudyGoalSeeAllCard onClick={() => setIsModalOpen(true)} />
           </div>
+
+          {/* Study Goal Modal */}
+          <StudyGoalModal
+            isOpen={isModalOpen}
+            onClose={() => setIsModalOpen(false)}
+            studyGoals={studyGoals}
+          />
 
           {/* Right Arrow */}
           {canScrollRight && (

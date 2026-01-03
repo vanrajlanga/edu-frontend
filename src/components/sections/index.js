@@ -22,3 +22,4 @@ export { CollegeFilterSection } from './CollegeFilterSection';
 export { CollegeResultsSection } from './CollegeResultsSection';
 export { GridViewSection } from './GridViewSection';
 export { ListViewSection } from './ListViewSection';
+export { default as CourseContentSection } from './CourseContentSection';

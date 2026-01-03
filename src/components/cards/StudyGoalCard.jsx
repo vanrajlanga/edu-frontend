@@ -73,10 +73,10 @@ function StudyGoalCard({
 }
 
 // "See All" card variant
-function StudyGoalSeeAllCard({ href = '/courses', className }) {
+function StudyGoalSeeAllCard({ onClick, className }) {
   return (
-    <Link
-      href={href}
+    <button
+      onClick={onClick}
       className={cn(
         'flex-shrink-0 w-[200px]',
         'bg-white rounded-xl',
@@ -85,7 +85,7 @@ function StudyGoalSeeAllCard({ href = '/courses', className }) {
         'flex flex-col items-center justify-center',
         'hover:border-green-300 hover:shadow-md',
         'transition-all duration-200',
-        'group',
+        'group cursor-pointer',
         className
       )}
     >
@@ -103,7 +103,7 @@ function StudyGoalSeeAllCard({ href = '/courses', className }) {
       >
         <Icon name="arrowRight" size="md" className="text-green-800" />
       </div>
-    </Link>
+    </button>
   );
 }
 
