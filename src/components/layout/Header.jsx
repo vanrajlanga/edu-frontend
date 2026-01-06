@@ -9,6 +9,8 @@ import { GoalSelector } from '../common/GoalSelector';
 import { ExploreDropdown } from '../common/ExploreDropdown';
 import { NotificationDropdown } from '../common/NotificationDropdown';
 import { fetchStudyGoals } from '@/lib/api';
+import { useAuth } from '@/context/AuthContext';
+import { AuthModal, UserDropdown } from '../auth';
 
 function Header({ transparent = false, className }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -17,9 +19,13 @@ function Header({ transparent = false, className }) {
   const [isGoalSelectorOpen, setIsGoalSelectorOpen] = useState(false);
   const [isExploreOpen, setIsExploreOpen] = useState(false);
   const [isNotificationOpen, setIsNotificationOpen] = useState(false);
+  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
   const [selectedGoal, setSelectedGoal] = useState(null);
   const [selectedCity, setSelectedCity] = useState(null);
   const [studyGoals, setStudyGoals] = useState([]);
+
+  // Auth context
+  const { isAuthenticated, isLoading: authLoading } = useAuth();
 
   const goalSelectorRef = useRef(null);
   const exploreButtonRef = useRef(null);
@@ -263,14 +269,28 @@ function Header({ transparent = false, className }) {
               <Icon name="menu" size="md" />
             </button>
 
-            {/* Login/Signup - Desktop */}
+            {/* Login/Signup or User Dropdown - Desktop */}
             <div className="hidden lg:flex items-center gap-2 ml-2">
-              <button className="px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">
-                Login
-              </button>
-              <button className="px-5 py-2 text-sm font-medium text-white bg-gradient-to-r from-green-700 to-green-900 rounded-lg hover:from-green-800 hover:to-green-950 shadow-sm hover:shadow transition-all">
-                Sign Up
-              </button>
+              {authLoading ? (
+                <div className="w-9 h-9 rounded-full bg-gray-100 animate-pulse" />
+              ) : isAuthenticated ? (
+                <UserDropdown />
+              ) : (
+                <>
+                  <button
+                    onClick={() => setIsAuthModalOpen(true)}
+                    className="px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors"
+                  >
+                    Login
+                  </button>
+                  <button
+                    onClick={() => setIsAuthModalOpen(true)}
+                    className="px-5 py-2 text-sm font-medium text-white bg-gradient-to-r from-green-700 to-green-900 rounded-lg hover:from-green-800 hover:to-green-950 shadow-sm hover:shadow transition-all"
+                  >
+                    Sign Up
+                  </button>
+                </>
+              )}
             </div>
           </div>
         </div>
@@ -330,16 +350,42 @@ function Header({ transparent = false, className }) {
 
             {/* Auth Buttons */}
             <div className="flex gap-3 pt-4 border-t border-gray-200">
-              <button className="flex-1 px-4 py-2.5 text-sm font-medium text-gray-600 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
-                Login
-              </button>
-              <button className="flex-1 px-4 py-2.5 text-sm font-medium text-white bg-gradient-to-r from-green-700 to-green-900 rounded-lg hover:from-green-800 hover:to-green-950 transition-all">
-                Sign Up
-              </button>
+              {isAuthenticated ? (
+                <div className="flex-1 flex items-center justify-center">
+                  <UserDropdown />
+                </div>
+              ) : (
+                <>
+                  <button
+                    onClick={() => {
+                      setIsMobileMenuOpen(false);
+                      setIsAuthModalOpen(true);
+                    }}
+                    className="flex-1 px-4 py-2.5 text-sm font-medium text-gray-600 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
+                  >
+                    Login
+                  </button>
+                  <button
+                    onClick={() => {
+                      setIsMobileMenuOpen(false);
+                      setIsAuthModalOpen(true);
+                    }}
+                    className="flex-1 px-4 py-2.5 text-sm font-medium text-white bg-gradient-to-r from-green-700 to-green-900 rounded-lg hover:from-green-800 hover:to-green-950 transition-all"
+                  >
+                    Sign Up
+                  </button>
+                </>
+              )}
             </div>
           </div>
         </div>
       )}
+
+      {/* Auth Modal */}
+      <AuthModal
+        isOpen={isAuthModalOpen}
+        onClose={() => setIsAuthModalOpen(false)}
+      />
     </header>
   );
 }
