@@ -72,83 +72,139 @@ const examIcons = {
 
 function ExamCard({
   name,
+  fullName,
   icon = 'default',
   mode = 'Offline',
   participatingColleges,
   examDate,
   examLevel,
+  applicationForm,
+  resultAnnounce,
   applicationHref = '#',
   infoHref = '#',
+  examPatternHref = '#',
+  previousYearPaperHref = '#',
+  applyNowHref = '#',
+  showApplyButton = false,
+  variant = 'default', // 'default' for homepage, 'detailed' for exams page
   className,
 }) {
   const examIcon = examIcons[icon] || examIcons.default;
   const isOnline = mode.toLowerCase().includes('online');
+  const isDetailed = variant === 'detailed';
 
   return (
     <div
       className={cn(
-        'flex-shrink-0 w-[280px] sm:w-[300px]',
+        isDetailed ? 'w-full' : 'flex-shrink-0 w-[280px] sm:w-[300px]',
         'bg-white rounded-xl',
         'border border-gray-200',
-        'p-5',
+        isDetailed ? 'p-4' : 'p-5 sm:p-6',
         'hover:border-green-300 hover:shadow-lg',
         'transition-all duration-200',
         'group',
         className
       )}
     >
-      {/* Header - Icon + Mode + Name */}
-      <div className="flex items-start gap-4 mb-5">
-        {/* Exam Icon */}
-        <div className="w-12 h-12 flex-shrink-0">
-          {examIcon}
+      {/* Header - Icon + Name + Mode Badge */}
+      <div className="flex items-start justify-between gap-2.5 mb-3">
+        <div className="flex items-start gap-2.5 flex-1 min-w-0">
+          {/* Exam Icon */}
+          <div className={cn(
+            'flex-shrink-0',
+            isDetailed ? 'w-12 h-12' : 'w-12 h-12'
+          )}>
+            {examIcon}
+          </div>
+
+          {/* Name */}
+          <div className="flex-1 min-w-0">
+            <h3 className={cn(
+              'font-bold text-gray-900 group-hover:text-green-900 transition-colors leading-tight',
+              isDetailed ? 'text-base mb-0.5' : 'text-lg'
+            )}>
+              {name}
+            </h3>
+            {fullName && (
+              <p className="text-xs text-gray-600 line-clamp-1">
+                {fullName}
+              </p>
+            )}
+          </div>
         </div>
 
-        {/* Mode & Name */}
-        <div className="flex-1 min-w-0">
-          <span
-            className={cn(
-              'inline-block px-2.5 py-0.5 rounded text-xs font-medium mb-1',
-              isOnline
-                ? 'bg-emerald-50 text-emerald-600'
-                : 'bg-green-50 text-green-900'
-            )}
-          >
-            {mode} Exam
-          </span>
-          <h3 className="text-lg font-bold text-gray-900 group-hover:text-green-900 transition-colors truncate">
-            {name}
-          </h3>
-        </div>
+        {/* Mode Badge */}
+        <span
+          className={cn(
+            'flex-shrink-0 px-2.5 py-0.5 rounded-full text-xs font-medium whitespace-nowrap',
+            isOnline
+              ? 'bg-green-100 text-green-700 border border-green-200'
+              : 'bg-blue-100 text-blue-700 border border-blue-200'
+          )}
+        >
+          {mode} Exam
+        </span>
       </div>
 
       {/* Details */}
-      <div className="space-y-2.5 mb-5">
-        <div className="flex items-center justify-between">
-          <span className="text-sm text-gray-500">Participating Colleges</span>
-          <span className="text-sm font-semibold text-gray-900">{participatingColleges}</span>
-        </div>
-        <div className="flex items-center justify-between">
-          <span className="text-sm text-gray-500">Exam Date</span>
-          <span className="text-sm font-semibold text-gray-900">{examDate}</span>
-        </div>
-        <div className="flex items-center justify-between">
-          <span className="text-sm text-gray-500">Exam Level</span>
-          <span className="text-sm font-semibold text-gray-900">{examLevel}</span>
-        </div>
+      <div className={cn(
+        'mb-3',
+        isDetailed && 'bg-gray-50 rounded-lg p-2.5 space-y-2'
+      )}>
+        {isDetailed ? (
+          // Detailed view for exams page
+          <>
+            <div className="flex items-center justify-between py-1 border-b border-gray-200 last:border-0">
+              <span className="text-xs font-medium text-gray-600">Exam Date</span>
+              <span className="text-xs font-semibold text-gray-900 text-right">{examDate}</span>
+            </div>
+            {applicationForm && (
+              <div className="flex items-center justify-between py-1 border-b border-gray-200 last:border-0">
+                <span className="text-xs font-medium text-gray-600">Application Form</span>
+                <span className="text-xs font-semibold text-gray-900 text-right">{applicationForm}</span>
+              </div>
+            )}
+            {resultAnnounce && (
+              <div className="flex items-center justify-between py-1">
+                <span className="text-xs font-medium text-gray-600">Result Announce</span>
+                <span className="text-xs font-semibold text-gray-900 text-right">{resultAnnounce}</span>
+              </div>
+            )}
+          </>
+        ) : (
+          // Default view for homepage
+          <div className="space-y-2.5">
+            {participatingColleges && (
+              <div className="flex items-center justify-between">
+                <span className="text-sm text-gray-500">Participating Colleges</span>
+                <span className="text-sm font-semibold text-gray-900">{participatingColleges}</span>
+              </div>
+            )}
+            <div className="flex items-center justify-between">
+              <span className="text-sm text-gray-500">Exam Date</span>
+              <span className="text-sm font-semibold text-gray-900">{examDate}</span>
+            </div>
+            {examLevel && (
+              <div className="flex items-center justify-between">
+                <span className="text-sm text-gray-500">Exam Level</span>
+                <span className="text-sm font-semibold text-gray-900">{examLevel}</span>
+              </div>
+            )}
+          </div>
+        )}
       </div>
 
-      {/* Divider */}
-      <div className="border-t border-gray-100 mb-4" />
-
       {/* Action Links */}
-      <div className="space-y-2">
+      <div className={cn(
+        'space-y-1',
+        isDetailed ? 'mb-3' : 'border-t border-gray-100 pt-4'
+      )}>
         <Link
           href={applicationHref}
           className={cn(
-            'flex items-center justify-between py-1.5',
-            'text-sm font-medium text-gray-700',
-            'hover:text-green-900',
+            'flex items-center justify-between py-1',
+            'text-xs font-medium text-gray-700',
+            'hover:text-green-600',
             'transition-colors duration-200'
           )}
         >
@@ -156,18 +212,50 @@ function ExamCard({
           <Icon name="chevronRight" size="sm" className="text-gray-400" />
         </Link>
         <Link
-          href={infoHref}
+          href={isDetailed ? examPatternHref : infoHref}
           className={cn(
-            'flex items-center justify-between py-1.5',
-            'text-sm font-medium text-gray-700',
-            'hover:text-green-900',
+            'flex items-center justify-between py-1',
+            'text-xs font-medium text-gray-700',
+            'hover:text-green-600',
             'transition-colors duration-200'
           )}
         >
-          <span>Exam Info</span>
+          <span>{isDetailed ? 'Exam Pattern' : 'Exam Info'}</span>
           <Icon name="chevronRight" size="sm" className="text-gray-400" />
         </Link>
+        {isDetailed && (
+          <Link
+            href={previousYearPaperHref}
+            className={cn(
+              'flex items-center justify-between py-1',
+              'text-xs font-medium text-gray-700',
+              'hover:text-green-600',
+              'transition-colors duration-200'
+            )}
+          >
+            <span>Previous Year Paper</span>
+            <Icon name="chevronRight" size="sm" className="text-gray-400" />
+          </Link>
+        )}
       </div>
+
+      {/* Apply Now Button - Only shown when showApplyButton is true */}
+      {showApplyButton && (
+        <Link
+          href={applyNowHref}
+          className={cn(
+            'block w-full text-center',
+            'px-6 py-2 rounded-lg',
+            'bg-gradient-to-r from-green-600 to-emerald-600',
+            'hover:from-green-700 hover:to-emerald-700',
+            'text-white font-semibold text-sm',
+            'shadow-md hover:shadow-lg',
+            'transition-all duration-200'
+          )}
+        >
+          Apply Now
+        </Link>
+      )}
     </div>
   );
 }

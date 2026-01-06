@@ -20,3 +20,8 @@ export { NewsCard, categoryColors } from './NewsCard';
 export { StudyAbroadCard, countryLandmarks, countryAccents } from './StudyAbroadCard';
 export { GridCollegeCard } from './GridCollegeCard';
 export { ListCollegeCard } from './ListCollegeCard';
+export { default as CourseLevelCard } from './CourseLevelCard';
+export { default as CourseInterestCard } from './CourseInterestCard';
+export { default as ExamNewsCard } from './ExamNewsCard';
+export { default as ArticleCard } from './ArticleCard';
+export { default as PreviousYearPaperCard } from './PreviousYearPaperCard';

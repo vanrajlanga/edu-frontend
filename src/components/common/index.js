@@ -26,3 +26,4 @@ export { ApplicationFormsSection } from './ApplicationFormsSection';
 export { AdvertisementBanner } from './AdvertisementBanner';
 export { FilterSidebar } from './FilterSidebar';
 export { StreamDegreeFilters } from './StreamDegreeFilters';
+export { default as FAQItem } from './FAQItem';
