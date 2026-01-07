@@ -1,6 +1,59 @@
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000/api/v1';
 
 /**
+ * Fetch all colleges with filters and sorting
+ * @param {Object} options - Query options
+ * @param {number} options.page - Page number
+ * @param {number} options.limit - Results per page
+ * @param {string} options.search - Search query
+ * @param {string} options.state - State filter
+ * @param {string} options.city - City filter
+ * @param {string} options.college_type - College type filter
+ * @param {string} options.ownership - Ownership filter
+ * @param {string} options.sort_by - Sort field (popularity, rating, fees_high, fees_low, name)
+ * @param {string} options.sort_order - Sort direction (ASC, DESC)
+ * @returns {Promise<Object>} Response with colleges and pagination
+ */
+export async function fetchColleges(options = {}) {
+  try {
+    const params = new URLSearchParams();
+
+    // Add all options to params
+    Object.entries(options).forEach(([key, value]) => {
+      if (value !== undefined && value !== '' && value !== null) {
+        params.append(key, value.toString());
+      }
+    });
+
+    const url = `${API_BASE_URL}/colleges${params.toString() ? `?${params}` : ''}`;
+    const response = await fetch(url);
+
+    if (!response.ok) {
+      throw new Error(`Failed to fetch colleges: ${response.statusText}`);
+    }
+
+    const data = await response.json();
+
+    if (!data.success) {
+      throw new Error(data.message || 'Failed to fetch colleges');
+    }
+
+    return {
+      colleges: data.data,
+      pagination: data.pagination,
+      filters: data.filters
+    };
+  } catch (error) {
+    console.error('Error fetching colleges:', error);
+    return {
+      colleges: [],
+      pagination: { current_page: 1, total: 0, total_pages: 0 },
+      filters: {}
+    };
+  }
+}
+
+/**
  * Fetch colleges by course type with filters
  * @param {string} courseType - Course type (btech, mba, mbbs, etc.)
  * @param {Object} filters - Filter options
@@ -255,6 +308,44 @@ export async function fetchCollegeBySlug(slug) {
     return data.data;
   } catch (error) {
     console.error('Error fetching college:', error);
+    return null;
+  }
+}
+
+/**
+ * Request brochure download for a college
+ * @param {number} collegeId - College ID
+ * @returns {Promise<Object|null>} Brochure info or null
+ */
+export async function downloadBrochure(collegeId) {
+  try {
+    const token = typeof window !== 'undefined' ? localStorage.getItem('auth_token') : null;
+    const headers = {
+      'Content-Type': 'application/json',
+    };
+    if (token) {
+      headers['Authorization'] = `Bearer ${token}`;
+    }
+
+    const response = await fetch(`${API_BASE_URL}/brochures/download`, {
+      method: 'POST',
+      headers,
+      body: JSON.stringify({ college_id: collegeId }),
+    });
+
+    if (!response.ok) {
+      throw new Error(`Failed to download brochure: ${response.statusText}`);
+    }
+
+    const data = await response.json();
+
+    if (!data.success) {
+      throw new Error(data.message || 'Failed to download brochure');
+    }
+
+    return data.data;
+  } catch (error) {
+    console.error('Error downloading brochure:', error);
     return null;
   }
 }

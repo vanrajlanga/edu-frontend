@@ -468,10 +468,16 @@ function CollegeResultsSection({
   onViewAllRankings,
   viewMode = 'card',
   onViewModeChange,
+  sortBy: externalSortBy,
+  onSortChange: externalOnSortChange,
   className
 }) {
   const [displayCount, setDisplayCount] = useState(10);
-  const [sortBy, setSortBy] = useState('popularity');
+  const [internalSortBy, setInternalSortBy] = useState('popularity');
+
+  // Use external sort if provided, otherwise use internal
+  const sortBy = externalSortBy !== undefined ? externalSortBy : internalSortBy;
+  const setSortBy = externalOnSortChange || setInternalSortBy;
 
   const displayedColleges = colleges.slice(0, displayCount);
   const hasMore = displayCount < colleges.length;

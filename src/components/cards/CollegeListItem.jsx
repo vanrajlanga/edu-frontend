@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { cn } from '@/lib/cn';
 import { Icon } from '../ui/Icon';
+import { downloadBrochure } from '@/lib/api';
 
 function CollegeListItem({
   rank,
@@ -35,6 +36,8 @@ function CollegeListItem({
   className,
 }) {
   const [showAllRankings, setShowAllRankings] = useState(false);
+  const [downloadingBrochure, setDownloadingBrochure] = useState(false);
+  const [showNoBrochureModal, setShowNoBrochureModal] = useState(false);
 
   const handleCompareChange = (e) => {
     if (onAddToCompare && collegeData) {
@@ -74,6 +77,26 @@ function CollegeListItem({
     e.preventDefault();
     if (onViewAllRankings && collegeData) {
       onViewAllRankings(collegeData);
+    }
+  };
+
+  const handleDownloadBrochure = async (e) => {
+    e.preventDefault();
+    if (!collegeData?.id) return;
+
+    setDownloadingBrochure(true);
+    try {
+      const result = await downloadBrochure(collegeData.id);
+      if (result?.brochure_url) {
+        window.open(result.brochure_url, '_blank');
+      } else {
+        setShowNoBrochureModal(true);
+      }
+    } catch (error) {
+      console.error('Download error:', error);
+      setShowNoBrochureModal(true);
+    } finally {
+      setDownloadingBrochure(false);
     }
   };
 
@@ -131,11 +154,15 @@ function CollegeListItem({
                   Apply Now
                 </button>
                 <button
-                  onClick={handleApplyClick}
-                  className="text-green-600 text-xs font-medium hover:text-green-700 flex items-center gap-0.5"
+                  onClick={handleDownloadBrochure}
+                  disabled={downloadingBrochure}
+                  className={cn(
+                    "text-green-600 text-xs font-medium hover:text-green-700 flex items-center gap-0.5",
+                    downloadingBrochure && "opacity-50 cursor-not-allowed"
+                  )}
                 >
                   <Icon name="download" size="xs" />
-                  Download Brochure
+                  {downloadingBrochure ? 'Loading...' : 'Download Brochure'}
                 </button>
                 <label className="flex items-center gap-1 cursor-pointer">
                   <input

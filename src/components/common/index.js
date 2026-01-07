@@ -27,3 +27,6 @@ export { AdvertisementBanner } from './AdvertisementBanner';
 export { FilterSidebar } from './FilterSidebar';
 export { StreamDegreeFilters } from './StreamDegreeFilters';
 export { default as FAQItem } from './FAQItem';
+export { ActiveFilters } from './ActiveFilters';
+export { DownloadBrochureButton } from './DownloadBrochureButton';
+export { CompareWidget } from './CompareWidget';
