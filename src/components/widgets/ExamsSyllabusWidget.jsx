@@ -92,7 +92,7 @@ export default function ExamsSyllabusWidget({ className }) {
                     'flex items-center justify-between',
                     'py-1.5 px-2 rounded',
                     'text-sm text-gray-700',
-                    'hover:bg-green-50 hover:text-green-700',
+                    'hover:bg-blue-50 hover:text-blue-700',
                     'transition-colors duration-200'
                   )}
                 >

@@ -82,11 +82,11 @@ function Header({ transparent = false, className }) {
         className
       )}
     >
-      <div className="w-full px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+      <div className="w-full px-3 sm:px-4 lg:px-8">
+        <div className="flex items-center justify-between h-14 sm:h-16">
           {/* Left Section: Logo + Goal Selector */}
-          <div className="flex items-center gap-3 lg:gap-5">
-            <Logo size="md" variant="default" />
+          <div className="flex items-center gap-2 sm:gap-3 lg:gap-5">
+            <Logo size="sm" className="sm:size-md" variant="default" />
 
             {/* Goal & City Selector - Desktop */}
             <div className="hidden lg:block relative" ref={goalSelectorRef}>
@@ -98,15 +98,15 @@ function Header({ transparent = false, className }) {
                   'text-sm font-medium',
                   'bg-gray-50 border border-gray-200',
                   'hover:bg-gray-100 hover:border-gray-300 transition-all duration-200',
-                  isGoalSelectorOpen && 'bg-green-50 border-green-200'
+                  isGoalSelectorOpen && 'bg-blue-50 border-blue-200'
                 )}
               >
-                <Icon name="graduationCap" size="sm" className="text-green-500" />
+                <Icon name="graduationCap" size="sm" className="text-blue-500" />
                 <span className="text-gray-700">
                   {selectedGoal ? selectedGoal.label : 'Select Goal'}
                 </span>
                 <span className="text-gray-400">&</span>
-                <Icon name="mapPin" size="sm" className="text-green-500" />
+                <Icon name="mapPin" size="sm" className="text-blue-500" />
                 <span className="text-gray-700">
                   {selectedCity ? selectedCity.label : 'City'}
                 </span>
@@ -139,7 +139,7 @@ function Header({ transparent = false, className }) {
                 'rounded-full',
                 'bg-gray-50 border border-gray-200',
                 'hover:bg-white hover:border-gray-300 hover:shadow-sm',
-                'focus-within:bg-white focus-within:border-green-300 focus-within:shadow-sm focus-within:ring-2 focus-within:ring-green-100',
+                'focus-within:bg-white focus-within:border-blue-300 focus-within:shadow-sm focus-within:ring-2 focus-within:ring-blue-100',
                 'transition-all duration-200'
               )}
             >
@@ -153,7 +153,7 @@ function Header({ transparent = false, className }) {
           </div>
 
           {/* Right Section: Actions */}
-          <div className="flex items-center gap-1 lg:gap-2">
+          <div className="flex items-center gap-1 sm:gap-2 lg:gap-3">
             {/* Write Review - Desktop */}
             <Link
               href="/write-review"
@@ -185,7 +185,7 @@ function Header({ transparent = false, className }) {
                   'text-sm font-medium text-gray-600',
                   'hover:text-gray-900 hover:bg-gray-50',
                   'transition-colors duration-200',
-                  isExploreOpen && 'text-green-900 bg-green-50'
+                  isExploreOpen && 'text-blue-900 bg-blue-50'
                 )}
               >
                 <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
@@ -228,11 +228,11 @@ function Header({ transparent = false, className }) {
                   'relative p-2 rounded-lg',
                   'text-gray-500 hover:text-gray-700 hover:bg-gray-50',
                   'transition-colors duration-200',
-                  isNotificationOpen && 'text-green-900 bg-green-50'
+                  isNotificationOpen && 'text-blue-900 bg-blue-50'
                 )}
               >
                 <Icon name="bell" size="md" />
-                <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+                <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-blue-500 rounded-full animate-pulse" />
               </button>
 
               {/* Notification Dropdown */}
@@ -279,13 +279,13 @@ function Header({ transparent = false, className }) {
                 <>
                   <button
                     onClick={() => setIsAuthModalOpen(true)}
-                    className="px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors"
+                    className="px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors leading-none"
                   >
                     Login
                   </button>
                   <button
                     onClick={() => setIsAuthModalOpen(true)}
-                    className="px-5 py-2 text-sm font-medium text-white bg-gradient-to-r from-green-700 to-green-900 rounded-lg hover:from-green-800 hover:to-green-950 shadow-sm hover:shadow transition-all"
+                    className="px-4 sm:px-5 py-1.5 sm:py-2 text-xs sm:text-sm font-medium text-white bg-gradient-to-r from-blue-700 to-blue-900 rounded-lg hover:from-blue-800 hover:to-blue-950 shadow-sm hover:shadow transition-all leading-none whitespace-nowrap"
                   >
                     Sign Up
                   </button>
@@ -326,7 +326,7 @@ function Header({ transparent = false, className }) {
               }}
               className="flex items-center gap-2 w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 text-gray-700 hover:bg-gray-100 transition-colors"
             >
-              <Icon name="graduationCap" size="sm" className="text-green-500" />
+              <Icon name="graduationCap" size="sm" className="text-blue-500" />
               <span>
                 {selectedGoal && selectedCity
                   ? `${selectedGoal.label} • ${selectedCity.label}`
@@ -361,7 +361,7 @@ function Header({ transparent = false, className }) {
                       setIsMobileMenuOpen(false);
                       setIsAuthModalOpen(true);
                     }}
-                    className="flex-1 px-4 py-2.5 text-sm font-medium text-gray-600 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
+                    className="flex-1 px-4 py-2 text-sm font-medium text-gray-600 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors leading-none"
                   >
                     Login
                   </button>
@@ -370,7 +370,7 @@ function Header({ transparent = false, className }) {
                       setIsMobileMenuOpen(false);
                       setIsAuthModalOpen(true);
                     }}
-                    className="flex-1 px-4 py-2.5 text-sm font-medium text-white bg-gradient-to-r from-green-700 to-green-900 rounded-lg hover:from-green-800 hover:to-green-950 transition-all"
+                    className="flex-1 px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-blue-700 to-blue-900 rounded-lg hover:from-blue-800 hover:to-blue-950 transition-all leading-none whitespace-nowrap"
                   >
                     Sign Up
                   </button>

@@ -4,11 +4,11 @@ import { forwardRef } from 'react';
 import { cn } from '@/lib/cn';
 
 const buttonVariants = {
-  primary: 'bg-green-500 text-white hover:bg-green-900 shadow-green',
+  primary: 'bg-blue-500 text-white hover:bg-blue-900 shadow-green',
   secondary: 'bg-slate-800 text-white hover:bg-slate-900',
-  outline: 'border-2 border-green-800 text-green-800 hover:bg-green-50 dark:hover:bg-green-500/10',
+  outline: 'border-2 border-blue-800 text-blue-800 hover:bg-blue-50 dark:hover:bg-blue-500/10',
   ghost: 'text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800',
-  link: 'text-green-800 hover:text-green-900 underline-offset-4 hover:underline',
+  link: 'text-blue-800 hover:text-blue-900 underline-offset-4 hover:underline',
 };
 
 const buttonSizes = {

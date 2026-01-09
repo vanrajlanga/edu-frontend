@@ -89,7 +89,7 @@ export function UserDropdown() {
       >
         <div className={cn(
           'w-9 h-9 rounded-full flex items-center justify-center',
-          'bg-gradient-to-br from-green-500 to-green-600',
+          'bg-gradient-to-br from-blue-500 to-blue-600',
           'text-white text-sm font-semibold'
         )}>
           {initials}
@@ -115,7 +115,7 @@ export function UserDropdown() {
             <div className="flex items-center gap-3">
               <div className={cn(
                 'w-12 h-12 rounded-full flex items-center justify-center',
-                'bg-gradient-to-br from-green-500 to-green-600',
+                'bg-gradient-to-br from-blue-500 to-blue-600',
                 'text-white text-lg font-semibold'
               )}>
                 {initials}

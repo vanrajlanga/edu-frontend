@@ -53,7 +53,7 @@ function ProgramCard({
         href={ctaHref}
         className={cn(
           'inline-flex items-center gap-1 text-sm font-medium',
-          'text-gray-700 hover:text-green-900',
+          'text-gray-700 hover:text-blue-900',
           'transition-colors duration-200'
         )}
       >
@@ -118,7 +118,7 @@ function FindCollegesCard({ totalColleges = 19000, className }) {
           <Link
             key={link.label}
             href={link.href}
-            className="block text-sm text-gray-600 hover:text-green-900 transition-colors"
+            className="block text-sm text-gray-600 hover:text-blue-900 transition-colors"
           >
             {link.label}
           </Link>
@@ -153,7 +153,7 @@ function CompareCollegesCard({ className }) {
               </div>
               <div>
                 <span className="font-medium text-gray-800">{item.college1}</span>
-                <span className="block text-xs text-green-800">{item.course1}</span>
+                <span className="block text-xs text-blue-800">{item.course1}</span>
               </div>
             </div>
             <span className="px-2 py-0.5 text-xs bg-gray-100 rounded text-gray-500">vs</span>
@@ -163,7 +163,7 @@ function CompareCollegesCard({ className }) {
               </div>
               <div>
                 <span className="font-medium text-gray-800">{item.college2}</span>
-                <span className="block text-xs text-green-800">{item.course2}</span>
+                <span className="block text-xs text-blue-800">{item.course2}</span>
               </div>
             </div>
             <Icon name="chevronRight" size="sm" className="ml-auto text-gray-400" />
@@ -198,7 +198,7 @@ function ExamsCard({ exams = [], className }) {
           <Link
             key={exam.slug || exam}
             href={`/exams/${exam.slug || exam.toLowerCase().replace(/[^a-z]/g, '-')}`}
-            className="px-3 py-1.5 text-sm text-gray-600 bg-gray-50 rounded-lg border border-gray-100 hover:border-green-200 hover:text-green-900 transition-colors"
+            className="px-3 py-1.5 text-sm text-gray-600 bg-gray-50 rounded-lg border border-gray-100 hover:border-blue-200 hover:text-blue-900 transition-colors"
           >
             {exam.shortName || exam.name || exam}
           </Link>
@@ -232,7 +232,7 @@ function CollegePredictorCard({ predictors = [], className }) {
           <Link
             key={item.slug || item}
             href={`/predictor/${item.slug || item.toLowerCase().replace(/\s+/g, '-')}`}
-            className="px-3 py-1.5 text-sm text-gray-600 bg-gray-50 rounded-lg border border-gray-100 hover:border-green-200 hover:text-green-900 transition-colors"
+            className="px-3 py-1.5 text-sm text-gray-600 bg-gray-50 rounded-lg border border-gray-100 hover:border-blue-200 hover:text-blue-900 transition-colors"
           >
             {item.shortName || item.name || item}
           </Link>
@@ -266,7 +266,7 @@ function CourseFinderCard({ courses = [], className }) {
           <Link
             key={course.name || course.slug}
             href={`/${course.slug || course.name.toLowerCase().replace(/[^a-z]/g, '-')}-colleges`}
-            className="px-3 py-1.5 text-sm text-gray-600 bg-gray-50 rounded-lg border border-gray-100 hover:border-green-200 hover:text-green-900 transition-colors"
+            className="px-3 py-1.5 text-sm text-gray-600 bg-gray-50 rounded-lg border border-gray-100 hover:border-blue-200 hover:text-blue-900 transition-colors"
           >
             {course.name} - {course.count || 0}
           </Link>

@@ -44,11 +44,11 @@ function NewsletterSection({ className }) {
   };
 
   return (
-    <section className={cn('py-12 bg-gradient-to-r from-green-900 via-green-700 to-green-600 relative overflow-hidden', className)}>
+    <section className={cn('py-12 bg-gradient-to-r from-blue-900 via-blue-700 to-blue-600 relative overflow-hidden', className)}>
       {/* Decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-10">
-        <div className="absolute top-0 left-1/4 w-64 h-64 bg-green-300 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-green-400 rounded-full blur-3xl" />
+        <div className="absolute top-0 left-1/4 w-64 h-64 bg-blue-300 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-blue-400 rounded-full blur-3xl" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -56,14 +56,14 @@ function NewsletterSection({ className }) {
           {/* Compact Header with Icon */}
           <div className="text-center mb-6">
             <div className="flex items-center justify-center gap-3 mb-3">
-              <div className="w-12 h-12 rounded-full bg-green-300/20 backdrop-blur-sm flex items-center justify-center">
-                <Icon name="bell" size="lg" className="text-green-50" />
+              <div className="w-12 h-12 rounded-full bg-blue-300/20 backdrop-blur-sm flex items-center justify-center">
+                <Icon name="bell" size="lg" className="text-blue-50" />
               </div>
               <h2 className="text-3xl md:text-4xl font-bold text-white">
                 Subscribe To Our Newsletter
               </h2>
             </div>
-            <p className="text-green-50/90 text-base max-w-2xl mx-auto">
+            <p className="text-blue-50/90 text-base max-w-2xl mx-auto">
               Get College Notifications, Exam Notifications and News Updates directly in your inbox
             </p>
           </div>
@@ -87,7 +87,7 @@ function NewsletterSection({ className }) {
                     'w-full pl-10 pr-3 py-3 rounded-lg',
                     'border border-gray-300',
                     'text-gray-900 placeholder-gray-400 text-sm',
-                    'focus:border-green-800 focus:ring-1 focus:ring-green-800',
+                    'focus:border-blue-800 focus:ring-1 focus:ring-blue-800',
                     'transition-all duration-200 outline-none'
                   )}
                 />
@@ -109,7 +109,7 @@ function NewsletterSection({ className }) {
                     'w-full pl-10 pr-3 py-3 rounded-lg',
                     'border border-gray-300',
                     'text-gray-900 placeholder-gray-400 text-sm',
-                    'focus:border-green-800 focus:ring-1 focus:ring-green-800',
+                    'focus:border-blue-800 focus:ring-1 focus:ring-blue-800',
                     'transition-all duration-200 outline-none'
                   )}
                 />
@@ -129,7 +129,7 @@ function NewsletterSection({ className }) {
                     'w-full pl-10 pr-8 py-3 rounded-lg appearance-none',
                     'border border-gray-300',
                     'text-gray-900 text-sm',
-                    'focus:border-green-800 focus:ring-1 focus:ring-green-800',
+                    'focus:border-blue-800 focus:ring-1 focus:ring-blue-800',
                     'transition-all duration-200 outline-none',
                     'bg-white cursor-pointer',
                     !formData.course && 'text-gray-400'
@@ -158,7 +158,7 @@ function NewsletterSection({ className }) {
                 disabled={isSubmitting}
                 className={cn(
                   'w-full sm:w-auto px-8 py-3 rounded-lg',
-                  'bg-green-800 hover:bg-green-900',
+                  'bg-blue-800 hover:bg-blue-900',
                   'text-white font-semibold text-sm',
                   'shadow-md hover:shadow-lg',
                   'transition-all duration-200',

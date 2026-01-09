@@ -14,7 +14,7 @@ export default function PreviousYearPaperCard({ paper, className }) {
         'bg-gradient-to-br from-orange-50 to-amber-50',
         'rounded-xl p-4',
         'border border-orange-100',
-        'hover:border-green-400 hover:shadow-md',
+        'hover:border-blue-400 hover:shadow-md',
         'transition-all duration-200',
         'group',
         className
@@ -31,7 +31,7 @@ export default function PreviousYearPaperCard({ paper, className }) {
       <h4 className={cn(
         'text-sm font-semibold text-gray-900 text-center',
         'line-clamp-3 leading-snug min-h-[60px]',
-        'group-hover:text-green-700 transition-colors'
+        'group-hover:text-blue-700 transition-colors'
       )}>
         {title}
       </h4>

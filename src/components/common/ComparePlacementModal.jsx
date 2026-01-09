@@ -121,15 +121,15 @@ function ComparePlacementModal({ isOpen, onClose }) {
                           className="w-6 h-6 rounded-full object-cover border border-gray-200"
                         />
                       ) : (
-                        <div className="w-6 h-6 rounded-full bg-gradient-to-br from-green-100 to-green-200 border border-green-300 flex items-center justify-center flex-shrink-0">
-                          <span className="text-green-700 font-bold text-[10px]">
+                        <div className="w-6 h-6 rounded-full bg-gradient-to-br from-blue-100 to-blue-200 border border-blue-300 flex items-center justify-center flex-shrink-0">
+                          <span className="text-blue-700 font-bold text-[10px]">
                             {college.name.charAt(0)}
                           </span>
                         </div>
                       )}
                       <a
                         href="#"
-                        className="text-green-600 hover:underline text-xs font-medium"
+                        className="text-blue-600 hover:underline text-xs font-medium"
                       >
                         {college.name}
                       </a>

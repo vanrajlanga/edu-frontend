@@ -129,7 +129,7 @@ function ApplyModal({ isOpen, onClose, college }) {
                 {admissionFeatures.map((feature) => (
                   <div
                     key={feature.id}
-                    className="bg-white border border-gray-200 rounded-lg p-3 hover:border-green-400 hover:shadow-sm transition-all cursor-pointer"
+                    className="bg-white border border-gray-200 rounded-lg p-3 hover:border-blue-400 hover:shadow-sm transition-all cursor-pointer"
                   >
                     <div className="flex flex-col items-center text-center gap-2">
                       <div className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center">
@@ -155,7 +155,7 @@ function ApplyModal({ isOpen, onClose, college }) {
                           className="w-10 h-10 rounded-full object-cover"
                         />
                       ) : (
-                        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center">
+                        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
                           <span className="text-white font-bold text-base">
                             {testimonials[currentTestimonial].name.charAt(0)}
                           </span>
@@ -189,7 +189,7 @@ function ApplyModal({ isOpen, onClose, college }) {
                           onClick={() => setCurrentTestimonial(index)}
                           className={cn(
                             'w-1.5 h-1.5 rounded-full transition-colors',
-                            index === currentTestimonial ? 'bg-green-600' : 'bg-gray-300'
+                            index === currentTestimonial ? 'bg-blue-600' : 'bg-gray-300'
                           )}
                         />
                       ))}
@@ -216,8 +216,8 @@ function ApplyModal({ isOpen, onClose, college }) {
                   {college.logo ? (
                     <img src={college.logo} alt={college.name} className="w-12 h-12 rounded-full object-cover border-2 border-gray-200" />
                   ) : (
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-green-100 to-green-200 border-2 border-green-300 flex items-center justify-center">
-                      <span className="text-green-700 font-bold text-lg">{college.name?.charAt(0)}</span>
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-100 to-blue-200 border-2 border-blue-300 flex items-center justify-center">
+                      <span className="text-blue-700 font-bold text-lg">{college.name?.charAt(0)}</span>
                     </div>
                   )}
                   <div className="text-left flex-1">
@@ -240,7 +240,7 @@ function ApplyModal({ isOpen, onClose, college }) {
                         onChange={handleInputChange}
                         placeholder="Full Name *"
                         required
-                        className="w-full pl-9 pr-3 py-2 border border-gray-300 rounded-lg focus:border-green-500 focus:ring-1 focus:ring-green-100 outline-none text-sm"
+                        className="w-full pl-9 pr-3 py-2 border border-gray-300 rounded-lg focus:border-blue-500 focus:ring-1 focus:ring-blue-100 outline-none text-sm"
                       />
                     </div>
                   </div>
@@ -254,7 +254,7 @@ function ApplyModal({ isOpen, onClose, college }) {
                         onChange={handleInputChange}
                         placeholder="Email Address *"
                         required
-                        className="w-full pl-9 pr-3 py-2 border border-gray-300 rounded-lg focus:border-green-500 focus:ring-1 focus:ring-green-100 outline-none text-sm"
+                        className="w-full pl-9 pr-3 py-2 border border-gray-300 rounded-lg focus:border-blue-500 focus:ring-1 focus:ring-blue-100 outline-none text-sm"
                       />
                     </div>
                   </div>
@@ -277,7 +277,7 @@ function ApplyModal({ isOpen, onClose, college }) {
                           placeholder="Mobile Number *"
                           required
                           maxLength={10}
-                          className="w-full pl-9 pr-3 py-2 border border-gray-300 rounded-r-lg focus:border-green-500 focus:ring-1 focus:ring-green-100 outline-none text-sm"
+                          className="w-full pl-9 pr-3 py-2 border border-gray-300 rounded-r-lg focus:border-blue-500 focus:ring-1 focus:ring-blue-100 outline-none text-sm"
                         />
                       </div>
                     </div>
@@ -292,7 +292,7 @@ function ApplyModal({ isOpen, onClose, college }) {
                         onChange={handleInputChange}
                         placeholder="City You Live In *"
                         required
-                        className="w-full pl-9 pr-3 py-2 border border-gray-300 rounded-lg focus:border-green-500 focus:ring-1 focus:ring-green-100 outline-none text-sm"
+                        className="w-full pl-9 pr-3 py-2 border border-gray-300 rounded-lg focus:border-blue-500 focus:ring-1 focus:ring-blue-100 outline-none text-sm"
                       />
                     </div>
                   </div>
@@ -309,7 +309,7 @@ function ApplyModal({ isOpen, onClose, college }) {
                       onChange={handleInputChange}
                       placeholder="Course Interested In *"
                       required
-                      className="w-full pl-9 pr-3 py-2 border border-gray-300 rounded-lg focus:border-green-500 focus:ring-1 focus:ring-green-100 outline-none text-sm"
+                      className="w-full pl-9 pr-3 py-2 border border-gray-300 rounded-lg focus:border-blue-500 focus:ring-1 focus:ring-blue-100 outline-none text-sm"
                     />
                   </div>
                 </div>
@@ -361,11 +361,11 @@ function ApplyModal({ isOpen, onClose, college }) {
                   />
                   <label className="text-xs text-gray-700 leading-tight">
                     By submitting this form, you accept and agree to our{' '}
-                    <a href="#" className="text-green-600 hover:underline">
+                    <a href="#" className="text-blue-600 hover:underline">
                       Terms of Use
                     </a>{' '}
                     and{' '}
-                    <a href="#" className="text-green-600 hover:underline">
+                    <a href="#" className="text-blue-600 hover:underline">
                       Privacy Policy
                     </a>
                     .

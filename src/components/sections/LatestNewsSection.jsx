@@ -185,8 +185,8 @@ function LatestNewsSection({ className }) {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-green-100 flex items-center justify-center">
-              <Icon name="newspaper" size="lg" className="text-green-900" />
+            <div className="w-10 h-10 rounded-xl bg-blue-100 flex items-center justify-center">
+              <Icon name="newspaper" size="lg" className="text-blue-900" />
             </div>
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
               Latest News & Stories
@@ -196,7 +196,7 @@ function LatestNewsSection({ className }) {
           {/* View All Link */}
           <a
             href="/news"
-            className="inline-flex items-center gap-1 text-green-900 hover:text-green-950 font-medium text-sm group"
+            className="inline-flex items-center gap-1 text-blue-900 hover:text-blue-950 font-medium text-sm group"
           >
             View all news
             <Icon name="arrowRight" size="sm" className="group-hover:translate-x-1 transition-transform" />
@@ -213,8 +213,8 @@ function LatestNewsSection({ className }) {
                 'px-5 py-2.5 rounded-full text-sm font-medium whitespace-nowrap',
                 'border-2 transition-all duration-200',
                 activeTab === tab.id
-                  ? 'bg-green-900 text-white border-green-600 shadow-md'
-                  : 'bg-white text-gray-600 border-gray-200 hover:border-green-300 hover:text-green-900'
+                  ? 'bg-blue-900 text-white border-blue-600 shadow-md'
+                  : 'bg-white text-gray-600 border-gray-200 hover:border-blue-300 hover:text-blue-900'
               )}
             >
               {tab.label}
@@ -234,7 +234,7 @@ function LatestNewsSection({ className }) {
                 'w-10 h-10 rounded-full',
                 'bg-white border border-gray-200 shadow-lg',
                 'flex items-center justify-center',
-                'text-gray-500 hover:text-green-800 hover:border-green-300',
+                'text-gray-500 hover:text-blue-800 hover:border-blue-300',
                 'transition-all duration-200'
               )}
             >
@@ -270,7 +270,7 @@ function LatestNewsSection({ className }) {
                 'w-10 h-10 rounded-full',
                 'bg-white border border-gray-200 shadow-lg',
                 'flex items-center justify-center',
-                'text-gray-500 hover:text-green-800 hover:border-green-300',
+                'text-gray-500 hover:text-blue-800 hover:border-blue-300',
                 'transition-all duration-200'
               )}
             >

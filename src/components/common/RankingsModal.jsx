@@ -20,8 +20,8 @@ function RankingsModal({ isOpen, onClose, collegeName = 'IIM Ahmedabad', ranking
           {/* Header */}
           <div className="flex items-center justify-between px-4 py-3 border-b border-gray-200">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-full bg-gradient-to-br from-green-100 to-green-200 border border-green-300 flex items-center justify-center">
-                <span className="text-green-700 font-bold text-sm">
+              <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-100 to-blue-200 border border-blue-300 flex items-center justify-center">
+                <span className="text-blue-700 font-bold text-sm">
                   {collegeName?.charAt(0)}
                 </span>
               </div>

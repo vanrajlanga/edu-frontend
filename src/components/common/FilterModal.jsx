@@ -183,13 +183,13 @@ function FilterModal({ isOpen, onClose, onApply, selectedFilters = {} }) {
                         'w-full flex items-center justify-between px-4 py-3 rounded-lg text-left',
                         'text-sm font-medium transition-colors',
                         activeCategory === category.id
-                          ? 'bg-green-50 text-green-900 border border-green-200'
+                          ? 'bg-blue-50 text-blue-900 border border-blue-200'
                           : 'text-gray-700 hover:bg-gray-50'
                       )}
                     >
                       <span>{category.label}</span>
                       {selectedCount > 0 && (
-                        <span className="px-2 py-0.5 text-xs font-bold bg-green-700 text-white rounded-full">
+                        <span className="px-2 py-0.5 text-xs font-bold bg-blue-700 text-white rounded-full">
                           {selectedCount}
                         </span>
                       )}
@@ -210,7 +210,7 @@ function FilterModal({ isOpen, onClose, onApply, selectedFilters = {} }) {
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     placeholder={`Search ${filterCategories.find(c => c.id === activeCategory)?.label}...`}
-                    className="w-full pl-10 pr-4 py-2.5 rounded-lg border border-gray-300 text-sm focus:border-green-500 focus:ring-1 focus:ring-green-500 outline-none"
+                    className="w-full pl-10 pr-4 py-2.5 rounded-lg border border-gray-300 text-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none"
                   />
                 </div>
               </div>
@@ -228,8 +228,8 @@ function FilterModal({ isOpen, onClose, onApply, selectedFilters = {} }) {
                           'flex items-start gap-3 p-3 rounded-lg border text-left',
                           'transition-all duration-200',
                           isSelected
-                            ? 'bg-green-50 border-green-700'
-                            : 'bg-white border-gray-200 hover:border-green-300 hover:bg-green-50'
+                            ? 'bg-blue-50 border-blue-700'
+                            : 'bg-white border-gray-200 hover:border-blue-300 hover:bg-blue-50'
                         )}
                       >
                         {/* Checkbox */}
@@ -237,7 +237,7 @@ function FilterModal({ isOpen, onClose, onApply, selectedFilters = {} }) {
                           'w-5 h-5 rounded flex items-center justify-center flex-shrink-0 mt-0.5',
                           'border-2 transition-colors',
                           isSelected
-                            ? 'bg-green-700 border-green-700'
+                            ? 'bg-blue-700 border-blue-700'
                             : 'bg-white border-gray-300'
                         )}>
                           {isSelected && <Icon name="check" size="sm" className="text-white" />}
@@ -275,8 +275,8 @@ function FilterModal({ isOpen, onClose, onApply, selectedFilters = {} }) {
               onClick={handleApply}
               className={cn(
                 'px-8 py-2.5 rounded-lg text-sm font-semibold',
-                'bg-green-700 text-white',
-                'hover:bg-green-800 transition-colors',
+                'bg-blue-700 text-white',
+                'hover:bg-blue-800 transition-colors',
                 'shadow-sm hover:shadow'
               )}
             >

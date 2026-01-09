@@ -103,7 +103,7 @@ export default function CourseInterestSection() {
               variant="outline"
               size="lg"
               onClick={() => setShowAll(true)}
-              className="border-gray-300 hover:border-green-500 hover:text-green-700"
+              className="border-gray-300 hover:border-blue-500 hover:text-blue-700"
             >
               Show more streams
             </Button>

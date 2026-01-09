@@ -39,7 +39,7 @@ function BoardExamBlock({ title, links, className }) {
     <div className={cn('py-10', className)}>
       {/* Section Title */}
       <div className="flex items-center gap-3 mb-6">
-        <div className="w-1 h-8 bg-green-500 rounded-full" />
+        <div className="w-1 h-8 bg-blue-500 rounded-full" />
         <h3 className="text-xl md:text-2xl font-bold text-gray-900">
           {title}
         </h3>

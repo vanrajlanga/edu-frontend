@@ -127,8 +127,8 @@ function CollegeListItem({
               {logo ? (
                 <img src={logo} alt={name} className="w-10 h-10 rounded object-cover border border-gray-200" />
               ) : (
-                <div className="w-10 h-10 rounded bg-gradient-to-br from-green-50 to-green-100 border border-green-200 flex items-center justify-center">
-                  <span className="text-green-700 font-bold text-sm">{name?.charAt(0)}</span>
+                <div className="w-10 h-10 rounded bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-200 flex items-center justify-center">
+                  <span className="text-blue-700 font-bold text-sm">{name?.charAt(0)}</span>
                 </div>
               )}
             </div>
@@ -136,7 +136,7 @@ function CollegeListItem({
             {/* College Info */}
             <div className="flex-1 min-w-0">
               <Link href={href} className="group">
-                <h3 className="text-green-600 font-medium text-sm hover:underline group-hover:text-green-700 transition-colors mb-0 leading-tight">
+                <h3 className="text-blue-600 font-medium text-sm hover:underline group-hover:text-blue-700 transition-colors mb-0 leading-tight">
                   {name}
                 </h3>
               </Link>
@@ -157,7 +157,7 @@ function CollegeListItem({
                   onClick={handleDownloadBrochure}
                   disabled={downloadingBrochure}
                   className={cn(
-                    "text-green-600 text-xs font-medium hover:text-green-700 flex items-center gap-0.5",
+                    "text-blue-600 text-xs font-medium hover:text-blue-700 flex items-center gap-0.5",
                     downloadingBrochure && "opacity-50 cursor-not-allowed"
                   )}
                 >
@@ -169,7 +169,7 @@ function CollegeListItem({
                     type="checkbox"
                     checked={isCompared}
                     onChange={handleCompareChange}
-                    className="w-3.5 h-3.5 rounded border-gray-300 text-green-600 focus:ring-green-500"
+                    className="w-3.5 h-3.5 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
                   />
                   <span className="text-xs text-gray-700">Add To Compare</span>
                 </label>
@@ -191,7 +191,7 @@ function CollegeListItem({
 
         {/* Column 3: Course Fees */}
         <div className="col-span-2 border-r border-gray-200 pr-3">
-          <div className="text-green-600 font-bold text-sm mb-0 leading-tight">₹ {courseFees?.toLocaleString()}</div>
+          <div className="text-blue-600 font-bold text-sm mb-0 leading-tight">₹ {courseFees?.toLocaleString()}</div>
           <p className="text-xs text-gray-600 mb-0 leading-tight">{courseName}</p>
           <p className="text-xs text-gray-500 mb-0.5 leading-tight">- {totalFees}</p>
           <button
@@ -205,7 +205,7 @@ function CollegeListItem({
 
         {/* Column 4: Placement */}
         <div className="col-span-3 border-r border-gray-200 pr-3">
-          <div className="text-green-600 font-bold text-sm mb-0 leading-tight">₹ {avgPackage?.toLocaleString()}</div>
+          <div className="text-blue-600 font-bold text-sm mb-0 leading-tight">₹ {avgPackage?.toLocaleString()}</div>
           <p className="text-xs text-gray-600 mb-0 leading-tight">Average Package</p>
           <div className="text-sm font-semibold text-gray-900 mb-0 leading-tight">₹ {highestPackage?.toLocaleString()}</div>
           <p className="text-xs text-gray-600 mb-0 leading-tight">Highest Package</p>
@@ -238,7 +238,7 @@ function CollegeListItem({
           {bestIn && (
             <button
               onClick={handleViewReviewsClick}
-              className="flex items-center gap-0.5 text-green-600 text-xs font-medium hover:text-green-700 transition-colors"
+              className="flex items-center gap-0.5 text-blue-600 text-xs font-medium hover:text-blue-700 transition-colors"
             >
               <Icon name="check" size="xs" />
               <span>Best in {bestIn}</span>
@@ -269,7 +269,7 @@ function CollegeListItem({
             {hiddenRankingsCount > 0 && !showAllRankings && (
               <button
                 onClick={handleViewAllRankingsClick}
-                className="flex items-center gap-0.5 text-green-600 hover:text-green-700 text-xs font-medium mt-0.5"
+                className="flex items-center gap-0.5 text-blue-600 hover:text-blue-700 text-xs font-medium mt-0.5"
               >
                 <div className="flex -space-x-0.5">
                   {rankings.slice(2, 5).map((r, i) => (

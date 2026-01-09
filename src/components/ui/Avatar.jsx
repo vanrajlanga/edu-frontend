@@ -32,7 +32,7 @@ function Avatar({
     : '';
 
   const ringStyles = {
-    green: 'ring-green-500',
+    green: 'ring-blue-500',
     slate: 'ring-slate-500',
     emerald: 'ring-emerald-500',
     amber: 'ring-amber-500',

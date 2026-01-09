@@ -200,7 +200,7 @@ function TopUniversitiesSection({ className }) {
                 'w-12 h-12 rounded-full',
                 'bg-white border border-gray-200 shadow-lg',
                 'flex items-center justify-center',
-                'text-gray-500 hover:text-green-800 hover:border-green-300',
+                'text-gray-500 hover:text-blue-800 hover:border-blue-300',
                 'transition-all duration-200'
               )}
             >
@@ -246,7 +246,7 @@ function TopUniversitiesSection({ className }) {
                 'w-12 h-12 rounded-full',
                 'bg-white border border-gray-200 shadow-lg',
                 'flex items-center justify-center',
-                'text-gray-500 hover:text-green-800 hover:border-green-300',
+                'text-gray-500 hover:text-blue-800 hover:border-blue-300',
                 'transition-all duration-200'
               )}
             >

@@ -163,16 +163,16 @@ const countryLandmarks = {
 
 // Country themed gradients (using green palette)
 const countryAccents = {
-  usa: 'from-green-700 to-green-600',
-  uk: 'from-green-800 to-green-600',
-  canada: 'from-green-600 to-green-500',
-  australia: 'from-green-700 to-amber-500',
-  germany: 'from-green-800 to-gray-700',
-  france: 'from-green-800 to-green-600',
-  ireland: 'from-green-500 to-green-400',
-  newzealand: 'from-green-700 to-green-500',
-  singapore: 'from-green-600 to-green-400',
-  dubai: 'from-green-700 to-amber-600',
+  usa: 'from-blue-700 to-blue-600',
+  uk: 'from-blue-800 to-blue-600',
+  canada: 'from-blue-600 to-blue-500',
+  australia: 'from-blue-700 to-amber-500',
+  germany: 'from-blue-800 to-gray-700',
+  france: 'from-blue-800 to-blue-600',
+  ireland: 'from-blue-500 to-blue-400',
+  newzealand: 'from-blue-700 to-blue-500',
+  singapore: 'from-blue-600 to-blue-400',
+  dubai: 'from-blue-700 to-amber-600',
 };
 
 function StudyAbroadCard({
@@ -186,7 +186,7 @@ function StudyAbroadCard({
   className,
 }) {
   const landmark = countryLandmarks[countryCode] || countryLandmarks.usa;
-  const accent = countryAccents[countryCode] || 'from-green-800 to-green-900';
+  const accent = countryAccents[countryCode] || 'from-blue-800 to-blue-900';
 
   return (
     <div
@@ -214,7 +214,7 @@ function StudyAbroadCard({
             </h3>
             <a
               href={href}
-              className="inline-flex items-center gap-1 text-sm text-green-900 hover:text-green-950 font-medium group/link"
+              className="inline-flex items-center gap-1 text-sm text-blue-900 hover:text-blue-950 font-medium group/link"
             >
               Check {collegeCount.toLocaleString()} Colleges
               <Icon name="chevronRight" size="sm" className="group-hover/link:translate-x-0.5 transition-transform" />
@@ -230,7 +230,7 @@ function StudyAbroadCard({
       <div className="px-6 py-4 bg-slate-50 flex items-center gap-4">
         <div className="flex items-center gap-3 flex-1">
           <div className="w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center">
-            <Icon name="building" size="md" className="text-green-900" />
+            <Icon name="building" size="md" className="text-blue-900" />
           </div>
           <div>
             <p className="text-lg font-bold text-gray-900">{collegeCount.toLocaleString()}</p>
@@ -242,7 +242,7 @@ function StudyAbroadCard({
 
         <div className="flex items-center gap-3 flex-1">
           <div className="w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center">
-            <Icon name="currency" size="md" className="text-green-600" />
+            <Icon name="currency" size="md" className="text-blue-600" />
           </div>
           <div>
             <p className="text-lg font-bold text-gray-900">{avgCost}</p>
@@ -260,13 +260,13 @@ function StudyAbroadCard({
               <li key={index}>
                 <a
                   href={guide.href}
-                  className="flex items-center justify-between py-2 px-3 -mx-3 rounded-lg hover:bg-slate-50 text-sm text-gray-600 hover:text-green-900 transition-colors group/guide"
+                  className="flex items-center justify-between py-2 px-3 -mx-3 rounded-lg hover:bg-slate-50 text-sm text-gray-600 hover:text-blue-900 transition-colors group/guide"
                 >
                   <span>{guide.label}</span>
                   <Icon
                     name="chevronRight"
                     size="sm"
-                    className="text-gray-400 group-hover/guide:text-green-800 group-hover/guide:translate-x-0.5 transition-all"
+                    className="text-gray-400 group-hover/guide:text-blue-800 group-hover/guide:translate-x-0.5 transition-all"
                   />
                 </a>
               </li>
@@ -281,9 +281,9 @@ function StudyAbroadCard({
           href={href}
           className={cn(
             'block w-full py-3 px-4 rounded-xl text-center',
-            'bg-gradient-to-r from-green-800 to-green-900',
+            'bg-gradient-to-r from-blue-800 to-blue-900',
             'text-white font-medium text-sm',
-            'hover:from-green-900 hover:to-green-950',
+            'hover:from-blue-900 hover:to-blue-950',
             'shadow-sm hover:shadow-md',
             'transition-all duration-200'
           )}

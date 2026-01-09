@@ -28,7 +28,7 @@ export default function FAQItem({ faq, className }) {
           {/* Question */}
           <h3 className={cn(
             'text-base font-semibold text-gray-900 mb-2',
-            'group-hover:text-green-700 transition-colors'
+            'group-hover:text-blue-700 transition-colors'
           )}>
             {question}
           </h3>
@@ -47,7 +47,7 @@ export default function FAQItem({ faq, className }) {
         )}>
           <div className={cn(
             'w-6 h-6 flex items-center justify-center',
-            'text-gray-400 group-hover:text-green-600',
+            'text-gray-400 group-hover:text-blue-600',
             'transition-colors duration-200'
           )}>
             <svg
@@ -70,8 +70,8 @@ export default function FAQItem({ faq, className }) {
       {isOpen && (
         <div className="pb-5 px-1 animate-fadeIn">
           <div className={cn(
-            'bg-green-50 rounded-lg p-4',
-            'border-l-4 border-green-600'
+            'bg-blue-50 rounded-lg p-4',
+            'border-l-4 border-blue-600'
           )}>
             <p className="text-sm text-gray-700 leading-relaxed whitespace-pre-line">
               {answer}

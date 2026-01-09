@@ -21,11 +21,11 @@ function NewsTicker({ className }) {
   const getTypeStyles = (type) => {
     switch (type) {
       case 'alert':
-        return 'bg-green-500/10 text-red-600 border-green-200';
+        return 'bg-blue-500/10 text-red-600 border-blue-200';
       case 'new':
         return 'bg-emerald-500/10 text-emerald-600 border-emerald-200';
       default:
-        return 'bg-green-500/10 text-green-900 border-green-200';
+        return 'bg-blue-500/10 text-blue-900 border-blue-200';
     }
   };
 
@@ -79,13 +79,13 @@ function NewsTicker({ className }) {
               >
                 {getTypeLabel(item.type)}
               </span>
-              <span className="text-sm text-gray-700 group-hover:text-green-900 transition-colors">
+              <span className="text-sm text-gray-700 group-hover:text-blue-900 transition-colors">
                 {item.text}
               </span>
               <Icon
                 name="chevronRight"
                 size="xs"
-                className="text-gray-400 group-hover:text-green-800 transition-colors"
+                className="text-gray-400 group-hover:text-blue-800 transition-colors"
               />
             </a>
           ))}

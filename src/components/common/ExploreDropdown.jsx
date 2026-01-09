@@ -183,7 +183,7 @@ function ExploreDropdown({ isOpen, onClose, triggerRef, className }) {
                   <Icon
                     name={item.icon}
                     size="sm"
-                    className="text-green-800 flex-shrink-0"
+                    className="text-blue-800 flex-shrink-0"
                   />
                   <span className="text-sm text-gray-700 group-hover:text-gray-900">
                     {item.label}
@@ -208,7 +208,7 @@ function ExploreDropdown({ isOpen, onClose, triggerRef, className }) {
                   <Icon
                     name={item.icon}
                     size="sm"
-                    className="text-green-800 flex-shrink-0"
+                    className="text-blue-800 flex-shrink-0"
                   />
                   <div className="flex-1 min-w-0 flex items-center gap-2">
                     <span className="text-sm text-gray-700 group-hover:text-gray-900">

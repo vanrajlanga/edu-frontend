@@ -5,7 +5,7 @@ import { Icon } from '@/components/ui';
 
 const gradients = [
   'from-blue-500 to-blue-600',
-  'from-green-500 to-green-600',
+  'from-blue-500 to-blue-600',
   'from-sky-500 to-sky-600',
   'from-amber-500 to-amber-600',
   'from-purple-500 to-purple-600',
@@ -23,7 +23,7 @@ export default function ArticleCard({ article, index = 0, className }) {
         'flex-shrink-0 w-[210px]',
         'bg-white rounded-xl',
         'border border-gray-200',
-        'hover:border-green-300 hover:shadow-lg',
+        'hover:border-blue-300 hover:shadow-lg',
         'transition-all duration-200',
         'group overflow-hidden',
         className
@@ -63,13 +63,13 @@ export default function ArticleCard({ article, index = 0, className }) {
         <h4 className={cn(
           'text-sm font-semibold text-gray-900 mb-3',
           'line-clamp-2 leading-snug min-h-[40px]',
-          'group-hover:text-green-700 transition-colors'
+          'group-hover:text-blue-700 transition-colors'
         )}>
           {title}
         </h4>
 
         {/* Read More Link */}
-        <div className="flex items-center gap-1.5 text-green-600 group-hover:text-green-700 transition-colors">
+        <div className="flex items-center gap-1.5 text-blue-600 group-hover:text-blue-700 transition-colors">
           <span className="text-sm font-medium">Read More</span>
           <Icon name="chevronRight" size="sm" className="transform group-hover:translate-x-1 transition-transform" />
         </div>

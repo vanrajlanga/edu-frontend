@@ -29,10 +29,10 @@ export default function ExamHeroSection() {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-green-50 via-white to-blue-50">
+    <section className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-blue-50">
       {/* Decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-40">
-        <div className="absolute top-10 right-1/4 w-72 h-72 bg-green-200 rounded-full blur-3xl" />
+        <div className="absolute top-10 right-1/4 w-72 h-72 bg-blue-200 rounded-full blur-3xl" />
         <div className="absolute bottom-10 left-1/4 w-96 h-96 bg-blue-200 rounded-full blur-3xl" />
       </div>
 
@@ -45,7 +45,7 @@ export default function ExamHeroSection() {
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
                 <span className="text-gray-900">Entrance Exams</span>
                 <br />
-                <span className="text-green-600">In India</span>
+                <span className="text-blue-600">In India</span>
               </h1>
               <p className="text-gray-600 text-lg">
                 Explore comprehensive information about entrance exams, dates, syllabus, and preparation tips
@@ -60,8 +60,8 @@ export default function ExamHeroSection() {
                 'p-2 pl-6',
                 'shadow-lg shadow-gray-200/60',
                 'border border-gray-200',
-                'hover:shadow-xl hover:border-green-200',
-                'focus-within:shadow-xl focus-within:border-green-300 focus-within:ring-2 focus-within:ring-green-100',
+                'hover:shadow-xl hover:border-blue-200',
+                'focus-within:shadow-xl focus-within:border-blue-300 focus-within:ring-2 focus-within:ring-blue-100',
                 'transition-all duration-200'
               )}>
                 <Icon name="search" size="md" className="text-gray-400" />
@@ -76,7 +76,7 @@ export default function ExamHeroSection() {
                   type="submit"
                   className={cn(
                     'px-6 py-3 rounded-xl',
-                    'bg-green-600 hover:bg-green-700',
+                    'bg-blue-600 hover:bg-blue-700',
                     'text-white font-semibold',
                     'transition-all duration-200',
                     'flex items-center gap-2'

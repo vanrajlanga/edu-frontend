@@ -7,9 +7,9 @@ export default function NewsletterWidget({ className }) {
   return (
     <div
       className={cn(
-        'bg-gradient-to-br from-green-50 to-emerald-50',
+        'bg-gradient-to-br from-blue-50 to-blue-100',
         'rounded-lg p-4',
-        'border border-green-100',
+        'border border-blue-100',
         className
       )}
     >
@@ -19,7 +19,7 @@ export default function NewsletterWidget({ className }) {
           <h3 className="text-base font-bold text-gray-900 leading-tight">
             Subscribe to our
           </h3>
-          <h3 className="text-base font-bold text-green-600 leading-tight">
+          <h3 className="text-base font-bold text-blue-600 leading-tight">
             Newsletter
           </h3>
         </div>
@@ -78,8 +78,8 @@ export default function NewsletterWidget({ className }) {
         className={cn(
           'block w-full text-center',
           'px-4 py-2 rounded-lg',
-          'bg-gradient-to-r from-green-600 to-emerald-600',
-          'hover:from-green-700 hover:to-emerald-700',
+          'bg-gradient-to-r from-blue-600 to-blue-700',
+          'hover:from-blue-700 hover:to-blue-800',
           'text-white font-semibold text-xs',
           'shadow-md hover:shadow-lg',
           'transition-all duration-200',
@@ -91,13 +91,13 @@ export default function NewsletterWidget({ className }) {
       </a>
 
       {/* Trust Indicators */}
-      <div className="flex items-center justify-center gap-3 mt-3 pt-3 border-t border-green-200">
+      <div className="flex items-center justify-center gap-3 mt-3 pt-3 border-t border-blue-200">
         <div className="flex items-center gap-1 text-xs text-gray-600">
-          <Icon name="check" size="sm" className="text-green-600" />
+          <Icon name="check" size="sm" className="text-blue-600" />
           <span>100K+ Subscribers</span>
         </div>
         <div className="flex items-center gap-1 text-xs text-gray-600">
-          <Icon name="shield" size="sm" className="text-green-600" />
+          <Icon name="shield" size="sm" className="text-blue-600" />
           <span>No Spam</span>
         </div>
       </div>

@@ -27,10 +27,10 @@ export default function CourseHeroSection() {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-green-50 via-white to-white">
+    <section className="relative overflow-hidden bg-gradient-to-b from-blue-50 via-white to-white">
       {/* Background decoration - matching homepage */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-24 -right-24 w-96 h-96 bg-green-100/50 rounded-full blur-3xl" />
+        <div className="absolute -top-24 -right-24 w-96 h-96 bg-blue-100/50 rounded-full blur-3xl" />
         <div className="absolute top-1/2 -left-24 w-72 h-72 bg-sky-100/40 rounded-full blur-3xl" />
       </div>
 
@@ -41,7 +41,7 @@ export default function CourseHeroSection() {
           {/* Main Heading */}
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-8 leading-tight">
             <span className="text-gray-900">SEARCH FROM OVER 10000 </span>
-            <span className="text-green-900">COURSES</span>
+            <span className="text-blue-900">COURSES</span>
             <br />
             <span className="text-gray-600">IN INDIA</span>
           </h1>
@@ -55,8 +55,8 @@ export default function CourseHeroSection() {
                 'p-1.5 pl-6',
                 'shadow-lg shadow-gray-200/60',
                 'border border-gray-200',
-                'hover:shadow-xl hover:border-green-200',
-                'focus-within:shadow-xl focus-within:border-green-300 focus-within:ring-2 focus-within:ring-green-100',
+                'hover:shadow-xl hover:border-blue-200',
+                'focus-within:shadow-xl focus-within:border-blue-300 focus-within:ring-2 focus-within:ring-blue-100',
                 'transition-all duration-200'
               )}
             >
@@ -84,7 +84,7 @@ export default function CourseHeroSection() {
                     'px-3 py-1.5 rounded-full',
                     'text-gray-600',
                     'bg-white border border-gray-200',
-                    'hover:border-green-300 hover:text-green-900 hover:bg-green-50',
+                    'hover:border-blue-300 hover:text-blue-900 hover:bg-blue-50',
                     'transition-all duration-200',
                     'whitespace-nowrap'
                   )}

@@ -57,7 +57,7 @@ function RankingTableRow({
 
         {/* Name & Location */}
         <div className="min-w-0 flex-1">
-          <h3 className="text-sm font-medium text-gray-900 group-hover:text-green-900 transition-colors truncate">
+          <h3 className="text-sm font-medium text-gray-900 group-hover:text-blue-900 transition-colors truncate">
             {name}
             {shortName && (
               <span className="text-gray-500"> - [{shortName}]</span>

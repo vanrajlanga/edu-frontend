@@ -230,7 +230,7 @@ function CollegeRankingSection({ className }) {
                       'w-full px-4 py-2 text-left text-sm',
                       'hover:bg-gray-50 transition-colors',
                       selectedYear === year.value
-                        ? 'text-green-900 font-medium bg-green-50'
+                        ? 'text-blue-900 font-medium bg-blue-50'
                         : 'text-gray-700'
                     )}
                   >
@@ -291,8 +291,8 @@ function CollegeRankingSection({ className }) {
             href={`/rankings?agency=${selectedAgency}&year=${selectedYear}`}
             className={cn(
               'inline-flex items-center gap-2 px-6 py-3',
-              'text-green-900 font-semibold text-sm',
-              'hover:text-green-950',
+              'text-blue-900 font-semibold text-sm',
+              'hover:text-blue-950',
               'transition-colors duration-200'
             )}
           >

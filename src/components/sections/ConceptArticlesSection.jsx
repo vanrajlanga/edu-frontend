@@ -104,7 +104,7 @@ export default function ConceptArticlesSection() {
                 'px-5 py-2.5 rounded-full text-sm font-medium',
                 'border transition-all duration-200',
                 activeSubject === subject
-                  ? 'bg-white text-green-600 border-green-600 shadow-sm'
+                  ? 'bg-white text-blue-600 border-blue-600 shadow-sm'
                   : 'bg-gray-100 text-gray-700 border-transparent hover:bg-white hover:border-gray-200'
               )}
             >
@@ -132,7 +132,7 @@ export default function ConceptArticlesSection() {
                 'absolute -left-3 top-1/2 -translate-y-1/2 z-10',
                 'w-10 h-10 rounded-full',
                 'bg-white border-2 border-gray-300',
-                'hover:border-green-600 hover:bg-green-50',
+                'hover:border-blue-600 hover:bg-blue-50',
                 'shadow-lg hover:shadow-xl',
                 'transition-all duration-200',
                 'flex items-center justify-center'
@@ -162,7 +162,7 @@ export default function ConceptArticlesSection() {
               'absolute -right-3 top-1/2 -translate-y-1/2 z-10',
               'w-10 h-10 rounded-full',
               'bg-white border-2 border-gray-300',
-              'hover:border-green-600 hover:bg-green-50',
+              'hover:border-blue-600 hover:bg-blue-50',
               'shadow-lg hover:shadow-xl',
               'transition-all duration-200',
               'flex items-center justify-center'
@@ -192,7 +192,7 @@ export default function ConceptArticlesSection() {
                 'absolute -left-3 top-1/2 -translate-y-1/2 z-10',
                 'w-10 h-10 rounded-full',
                 'bg-white border-2 border-gray-300',
-                'hover:border-green-600 hover:bg-green-50',
+                'hover:border-blue-600 hover:bg-blue-50',
                 'shadow-lg hover:shadow-xl',
                 'transition-all duration-200',
                 'flex items-center justify-center'
@@ -222,7 +222,7 @@ export default function ConceptArticlesSection() {
               'absolute -right-3 top-1/2 -translate-y-1/2 z-10',
               'w-10 h-10 rounded-full',
               'bg-white border-2 border-gray-300',
-              'hover:border-green-600 hover:bg-green-50',
+              'hover:border-blue-600 hover:bg-blue-50',
               'shadow-lg hover:shadow-xl',
               'transition-all duration-200',
               'flex items-center justify-center'

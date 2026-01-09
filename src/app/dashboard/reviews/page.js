@@ -42,7 +42,7 @@ export default function MyReviewsPage() {
   const getStatusColor = (status) => {
     switch (status) {
       case 'approved':
-        return 'bg-green-100 text-green-700';
+        return 'bg-blue-100 text-blue-700';
       case 'pending':
         return 'bg-yellow-100 text-yellow-700';
       case 'rejected':
@@ -94,7 +94,7 @@ export default function MyReviewsPage() {
       {/* Loading State */}
       {isLoading && (
         <div className="bg-white rounded-xl border border-gray-200 p-12 text-center">
-          <div className="w-10 h-10 border-4 border-green-500 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+          <div className="w-10 h-10 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
           <p className="text-gray-500">Loading reviews...</p>
         </div>
       )}
@@ -160,7 +160,7 @@ export default function MyReviewsPage() {
                     <div className="mt-4 grid grid-cols-2 gap-4">
                       {review.pros && (
                         <div>
-                          <p className="text-xs font-medium text-green-600 mb-1">Pros</p>
+                          <p className="text-xs font-medium text-blue-600 mb-1">Pros</p>
                           <p className="text-sm text-gray-600 line-clamp-2">{review.pros}</p>
                         </div>
                       )}
@@ -192,7 +192,7 @@ export default function MyReviewsPage() {
                 {/* Actions */}
                 <Link
                   href={`/colleges/${review.college_slug}`}
-                  className="px-4 py-2 text-sm font-medium text-green-600 border border-green-200 rounded-lg hover:bg-green-50 transition-colors flex-shrink-0"
+                  className="px-4 py-2 text-sm font-medium text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors flex-shrink-0"
                 >
                   View College
                 </Link>
@@ -200,7 +200,7 @@ export default function MyReviewsPage() {
 
               {/* Admin Reply */}
               {review.admin_reply && (
-                <div className="mt-4 p-4 bg-gray-50 rounded-lg border-l-4 border-green-500">
+                <div className="mt-4 p-4 bg-gray-50 rounded-lg border-l-4 border-blue-500">
                   <p className="text-xs font-medium text-gray-500 mb-1">Response from College</p>
                   <p className="text-sm text-gray-700">{review.admin_reply}</p>
                 </div>

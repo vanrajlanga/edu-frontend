@@ -196,8 +196,8 @@ export default function ComparePage() {
                           className="w-16 h-16 rounded-lg object-cover border border-gray-200 mb-3"
                         />
                       ) : (
-                        <div className="w-16 h-16 rounded-lg bg-gradient-to-br from-green-50 to-green-100 border border-green-200 flex items-center justify-center mb-3">
-                          <span className="text-green-700 font-bold text-xl">
+                        <div className="w-16 h-16 rounded-lg bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-200 flex items-center justify-center mb-3">
+                          <span className="text-blue-700 font-bold text-xl">
                             {college.name?.charAt(0)}
                           </span>
                         </div>

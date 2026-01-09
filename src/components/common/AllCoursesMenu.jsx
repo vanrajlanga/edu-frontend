@@ -200,7 +200,7 @@ function AllCoursesMenu({ isOpen, onClose }) {
                 className={cn(
                   'w-full pl-10 pr-4 py-2.5',
                   'bg-gray-50 rounded-lg',
-                  'border border-gray-200 focus:border-green-400',
+                  'border border-gray-200 focus:border-blue-400',
                   'text-sm text-gray-900 placeholder:text-gray-400',
                   'outline-none transition-colors'
                 )}
@@ -212,7 +212,7 @@ function AllCoursesMenu({ isOpen, onClose }) {
           <div className="flex-1 overflow-y-auto">
             {isLoading ? (
               <div className="flex items-center justify-center py-12">
-                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-green-600" />
+                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600" />
               </div>
             ) : (
               <div className="py-2">
@@ -229,7 +229,7 @@ function AllCoursesMenu({ isOpen, onClose }) {
                     )}
                   >
                     <div>
-                      <span className="font-medium text-gray-900 group-hover:text-green-700">
+                      <span className="font-medium text-gray-900 group-hover:text-blue-700">
                         {course.name}
                       </span>
                       <span className="ml-2 text-sm text-gray-500">
@@ -239,7 +239,7 @@ function AllCoursesMenu({ isOpen, onClose }) {
                     <Icon
                       name="chevronRight"
                       size="sm"
-                      className="text-gray-400 group-hover:text-green-600"
+                      className="text-gray-400 group-hover:text-blue-600"
                     />
                   </button>
                 ))}
@@ -276,7 +276,7 @@ function AllCoursesMenu({ isOpen, onClose }) {
           <div className="flex-1 overflow-y-auto">
             {courseDetailsLoading ? (
               <div className="flex items-center justify-center py-12">
-                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-green-600" />
+                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600" />
               </div>
             ) : selectedCourse && (
               <div className="py-2">
@@ -307,7 +307,7 @@ function AllCoursesMenu({ isOpen, onClose }) {
                           className={cn(
                             'flex items-center justify-between',
                             'px-6 py-2.5',
-                            'text-sm text-gray-700 hover:text-green-700 hover:bg-gray-50',
+                            'text-sm text-gray-700 hover:text-blue-700 hover:bg-gray-50',
                             'transition-colors'
                           )}
                         >
@@ -320,7 +320,7 @@ function AllCoursesMenu({ isOpen, onClose }) {
                         className={cn(
                           'flex items-center gap-1',
                           'px-6 py-2.5',
-                          'text-sm font-medium text-green-700 hover:text-green-800',
+                          'text-sm font-medium text-blue-700 hover:text-blue-800',
                           'transition-colors'
                         )}
                       >
@@ -360,7 +360,7 @@ function AllCoursesMenu({ isOpen, onClose }) {
                           className={cn(
                             'flex items-center justify-between',
                             'px-6 py-2.5',
-                            'text-sm text-gray-700 hover:text-green-700 hover:bg-gray-50',
+                            'text-sm text-gray-700 hover:text-blue-700 hover:bg-gray-50',
                             'transition-colors'
                           )}
                         >
@@ -377,7 +377,7 @@ function AllCoursesMenu({ isOpen, onClose }) {
                           className={cn(
                             'flex items-center gap-1',
                             'px-6 py-2.5',
-                            'text-sm font-medium text-green-700 hover:text-green-800',
+                            'text-sm font-medium text-blue-700 hover:text-blue-800',
                             'transition-colors'
                           )}
                         >
@@ -396,7 +396,7 @@ function AllCoursesMenu({ isOpen, onClose }) {
                   className={cn(
                     'flex items-center justify-between',
                     'px-4 py-3',
-                    'text-gray-900 hover:text-green-700 hover:bg-gray-50',
+                    'text-gray-900 hover:text-blue-700 hover:bg-gray-50',
                     'transition-colors'
                   )}
                 >
@@ -453,7 +453,7 @@ function AllCoursesMenu({ isOpen, onClose }) {
                     className={cn(
                       'flex items-center justify-between',
                       'px-4 py-3',
-                      'text-gray-700 hover:text-green-700 hover:bg-gray-50',
+                      'text-gray-700 hover:text-blue-700 hover:bg-gray-50',
                       'transition-colors',
                       'group'
                     )}
@@ -471,7 +471,7 @@ function AllCoursesMenu({ isOpen, onClose }) {
                     <Icon
                       name="chevronRight"
                       size="sm"
-                      className="text-gray-400 group-hover:text-green-600"
+                      className="text-gray-400 group-hover:text-blue-600"
                     />
                   </Link>
                 ))}

@@ -20,7 +20,7 @@ function CourseCard({
         'bg-white rounded-xl',
         'border border-gray-200',
         'p-5',
-        'hover:border-green-300 hover:shadow-lg',
+        'hover:border-blue-300 hover:shadow-lg',
         'transition-all duration-200',
         'group',
         className
@@ -33,7 +33,7 @@ function CourseCard({
             'inline-flex items-center px-3 py-1',
             'text-xs font-medium rounded-full',
             'bg-gray-100 text-gray-600',
-            'group-hover:bg-green-50 group-hover:text-green-900',
+            'group-hover:bg-blue-50 group-hover:text-blue-900',
             'transition-colors duration-200'
           )}
         >
@@ -42,7 +42,7 @@ function CourseCard({
       </div>
 
       {/* Course Name */}
-      <h3 className="text-lg font-semibold text-gray-900 mb-4 group-hover:text-green-900 transition-colors">
+      <h3 className="text-lg font-semibold text-gray-900 mb-4 group-hover:text-blue-900 transition-colors">
         {name}
       </h3>
 
@@ -71,7 +71,7 @@ function CourseCard({
         className={cn(
           'flex items-center justify-between',
           'text-sm font-medium',
-          'text-gray-700 hover:text-green-900',
+          'text-gray-700 hover:text-blue-900',
           'transition-colors duration-200'
         )}
       >
@@ -79,7 +79,7 @@ function CourseCard({
         <Icon
           name="chevronRight"
           size="sm"
-          className="text-gray-400 group-hover:text-green-800 group-hover:translate-x-0.5 transition-all"
+          className="text-gray-400 group-hover:text-blue-800 group-hover:translate-x-0.5 transition-all"
         />
       </Link>
     </div>

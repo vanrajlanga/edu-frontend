@@ -202,7 +202,7 @@ export default function CollegeDetailClient({ slug, initialTab = 'overview' }) {
                   {/* Rating */}
                   {college.avg_rating && (
                     <div className="flex items-center gap-2">
-                      <div className="flex items-center gap-1 bg-green-600 text-white px-2 py-1 rounded">
+                      <div className="flex items-center gap-1 bg-blue-600 text-white px-2 py-1 rounded">
                         <span className="font-semibold">{parseFloat(college.avg_rating).toFixed(1)}</span>
                         <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                           <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
@@ -317,7 +317,7 @@ export default function CollegeDetailClient({ slug, initialTab = 'overview' }) {
                       <div className="space-y-3">
                         {college.approvals?.map((approval, index) => (
                           <div key={index} className="flex items-center gap-2">
-                            <span className="px-2 py-1 bg-green-100 text-green-700 text-sm rounded">
+                            <span className="px-2 py-1 bg-blue-100 text-blue-700 text-sm rounded">
                               {approval.approval_type}
                             </span>
                             {approval.grade && <span className="text-gray-600">Grade: {approval.grade}</span>}
@@ -436,8 +436,8 @@ export default function CollegeDetailClient({ slug, initialTab = 'overview' }) {
                           </h3>
                           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                             {placement.highest_package && (
-                              <div className="text-center p-3 bg-green-50 rounded-lg">
-                                <div className="text-xl font-bold text-green-600">
+                              <div className="text-center p-3 bg-blue-50 rounded-lg">
+                                <div className="text-xl font-bold text-blue-600">
                                   &#8377;{formatCurrency(placement.highest_package)}
                                 </div>
                                 <div className="text-sm text-gray-600">Highest Package</div>
@@ -623,12 +623,12 @@ export default function CollegeDetailClient({ slug, initialTab = 'overview' }) {
                       <h3 className="font-semibold text-gray-900 mb-4">Recognized By</h3>
                       <div className="flex flex-wrap gap-3">
                         {college.approvals.map((approval, index) => (
-                          <div key={index} className="flex items-center gap-2 px-4 py-2 bg-green-50 rounded-lg">
-                            <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                          <div key={index} className="flex items-center gap-2 px-4 py-2 bg-blue-50 rounded-lg">
+                            <svg className="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
                               <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                             </svg>
-                            <span className="font-medium text-green-700">{approval.approval_type}</span>
-                            {approval.grade && <span className="text-sm text-green-600">({approval.grade})</span>}
+                            <span className="font-medium text-blue-700">{approval.approval_type}</span>
+                            {approval.grade && <span className="text-sm text-blue-600">({approval.grade})</span>}
                           </div>
                         ))}
                       </div>
@@ -703,7 +703,7 @@ export default function CollegeDetailClient({ slug, initialTab = 'overview' }) {
                       <h2 className="text-xl font-semibold text-gray-900 mb-4">Review Summary</h2>
                       <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
                         <div className="text-center p-4 bg-gray-50 rounded-lg">
-                          <div className="text-2xl font-bold text-green-600">{college.review_summary.avg_overall || '-'}</div>
+                          <div className="text-2xl font-bold text-blue-600">{college.review_summary.avg_overall || '-'}</div>
                           <div className="text-sm text-gray-600">Overall</div>
                         </div>
                         <div className="text-center p-4 bg-gray-50 rounded-lg">
@@ -737,7 +737,7 @@ export default function CollegeDetailClient({ slug, initialTab = 'overview' }) {
                               <div>
                                 <h3 className="font-medium text-gray-900">{review.review_title || 'Student Review'}</h3>
                               </div>
-                              <div className="flex items-center gap-1 bg-green-600 text-white px-2 py-1 rounded">
+                              <div className="flex items-center gap-1 bg-blue-600 text-white px-2 py-1 rounded">
                                 <span className="font-semibold">{review.overall_rating}</span>
                                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
@@ -751,7 +751,7 @@ export default function CollegeDetailClient({ slug, initialTab = 'overview' }) {
                               <div className="mt-3 grid grid-cols-2 gap-4">
                                 {review.pros && (
                                   <div>
-                                    <span className="text-xs font-medium text-green-600">PROS</span>
+                                    <span className="text-xs font-medium text-blue-600">PROS</span>
                                     <p className="text-sm text-gray-600">{review.pros}</p>
                                   </div>
                                 )}
@@ -1117,7 +1117,7 @@ export default function CollegeDetailClient({ slug, initialTab = 'overview' }) {
                           </div>
                           <div className="px-4 py-3">
                             <div className="flex items-start gap-2">
-                              <span className="text-green-600 font-bold">A:</span>
+                              <span className="text-blue-600 font-bold">A:</span>
                               <p className="text-gray-700">{faq.answer}</p>
                             </div>
                           </div>

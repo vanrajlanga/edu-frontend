@@ -46,7 +46,7 @@ export default function AppliedCollegesPage() {
       case 'under_review':
         return 'bg-yellow-100 text-yellow-700';
       case 'accepted':
-        return 'bg-green-100 text-green-700';
+        return 'bg-blue-100 text-blue-700';
       case 'rejected':
         return 'bg-red-100 text-red-700';
       case 'draft':
@@ -82,7 +82,7 @@ export default function AppliedCollegesPage() {
       {/* Loading State */}
       {isLoading && (
         <div className="bg-white rounded-xl border border-gray-200 p-12 text-center">
-          <div className="w-10 h-10 border-4 border-green-500 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+          <div className="w-10 h-10 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
           <p className="text-gray-500">Loading applications...</p>
         </div>
       )}
@@ -101,7 +101,7 @@ export default function AppliedCollegesPage() {
           </p>
           <Link
             href="/colleges"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-green-600 to-green-700 text-white font-medium rounded-lg hover:from-green-700 hover:to-green-800 transition-all"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-medium rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all"
           >
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -165,7 +165,7 @@ export default function AppliedCollegesPage() {
                 <div className="flex items-center gap-2">
                   <Link
                     href={`/colleges/${app.college_slug}`}
-                    className="px-4 py-2 text-sm font-medium text-green-600 border border-green-200 rounded-lg hover:bg-green-50 transition-colors"
+                    className="px-4 py-2 text-sm font-medium text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 transition-colors"
                   >
                     View College
                   </Link>

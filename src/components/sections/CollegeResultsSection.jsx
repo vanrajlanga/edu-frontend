@@ -605,7 +605,7 @@ function CollegeResultsSection({
                 className={cn(
                   'p-2 rounded transition-colors',
                   viewMode === 'list'
-                    ? 'bg-white text-green-600 shadow-sm'
+                    ? 'bg-white text-blue-600 shadow-sm'
                     : 'text-gray-500 hover:text-gray-900'
                 )}
                 title="List View"
@@ -626,7 +626,7 @@ function CollegeResultsSection({
                 className={cn(
                   'p-2 rounded transition-colors',
                   viewMode === 'grid'
-                    ? 'bg-white text-green-600 shadow-sm'
+                    ? 'bg-white text-blue-600 shadow-sm'
                     : 'text-gray-500 hover:text-gray-900'
                 )}
                 title="Grid View"
@@ -645,7 +645,7 @@ function CollegeResultsSection({
                 className={cn(
                   'p-2 rounded transition-colors',
                   viewMode === 'card'
-                    ? 'bg-white text-green-600 shadow-sm'
+                    ? 'bg-white text-blue-600 shadow-sm'
                     : 'text-gray-500 hover:text-gray-900'
                 )}
                 title="Table View"
@@ -664,7 +664,7 @@ function CollegeResultsSection({
         {(() => {
           const TableHeader = ({ isFirst = false }) => (
             <div className={cn(
-              "bg-gradient-to-r from-green-600 to-green-500 text-white",
+              "bg-gradient-to-r from-blue-600 to-blue-500 text-white",
               isFirst ? "rounded-t-lg mt-3" : "rounded-t-lg"
             )}>
               <div className="grid grid-cols-12 gap-1.5 px-3 py-1.5">
@@ -728,7 +728,7 @@ function CollegeResultsSection({
                         />
                       </div>
                       {/* Table Header after Featured Carousel */}
-                      <div className="bg-gradient-to-r from-green-600 to-green-500 text-white rounded-t-lg mt-3">
+                      <div className="bg-gradient-to-r from-blue-600 to-blue-500 text-white rounded-t-lg mt-3">
                         <div className="grid grid-cols-12 gap-1.5 px-3 py-1.5">
                           <div className="col-span-1 font-semibold text-xs">CD Rank</div>
                           <div className="col-span-4 font-semibold text-xs">Colleges</div>
@@ -748,7 +748,7 @@ function CollegeResultsSection({
                         <ApplicationFormsSection />
                       </div>
                       {/* Table Header after Application Forms */}
-                      <div className="bg-gradient-to-r from-green-600 to-green-500 text-white rounded-t-lg mt-3">
+                      <div className="bg-gradient-to-r from-blue-600 to-blue-500 text-white rounded-t-lg mt-3">
                         <div className="grid grid-cols-12 gap-1.5 px-3 py-1.5">
                           <div className="col-span-1 font-semibold text-xs">CD Rank</div>
                           <div className="col-span-4 font-semibold text-xs">Colleges</div>
@@ -774,7 +774,7 @@ function CollegeResultsSection({
                         </Container>
                       </div>
                       {/* Table Header after Advertisement Banner */}
-                      <div className="bg-gradient-to-r from-green-600 to-green-500 text-white rounded-t-lg mt-3">
+                      <div className="bg-gradient-to-r from-blue-600 to-blue-500 text-white rounded-t-lg mt-3">
                         <div className="grid grid-cols-12 gap-1.5 px-3 py-1.5">
                           <div className="col-span-1 font-semibold text-xs">CD Rank</div>
                           <div className="col-span-4 font-semibold text-xs">Colleges</div>

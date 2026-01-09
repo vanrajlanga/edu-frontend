@@ -94,7 +94,7 @@ function CompareModal({ isOpen, onClose, selectedColleges = [], onRemoveCollege,
                   )}
 
                   {/* College Card */}
-                  <div className="relative bg-white border-2 border-gray-200 rounded-xl overflow-hidden hover:border-green-300 transition-colors">
+                  <div className="relative bg-white border-2 border-gray-200 rounded-xl overflow-hidden hover:border-blue-300 transition-colors">
                     {/* Remove Button */}
                     <button
                       onClick={() => onRemoveCollege(college.id)}
@@ -124,7 +124,7 @@ function CompareModal({ isOpen, onClose, selectedColleges = [], onRemoveCollege,
                         {college.logo ? (
                           <img src={college.logo} alt={college.name} className="w-full h-full rounded-full object-cover" />
                         ) : (
-                          <span className="text-green-700 font-bold text-2xl">{college.name?.charAt(0)}</span>
+                          <span className="text-blue-700 font-bold text-2xl">{college.name?.charAt(0)}</span>
                         )}
                       </div>
                       {/* VS Badge */}
@@ -150,7 +150,7 @@ function CompareModal({ isOpen, onClose, selectedColleges = [], onRemoveCollege,
               {/* Add College Slot */}
               {canAddMore && (
                 <div className="relative">
-                  <div className="bg-gray-50 border-2 border-dashed border-gray-300 rounded-xl p-6 h-full flex flex-col items-center justify-center hover:border-green-400 hover:bg-green-50/50 transition-colors">
+                  <div className="bg-gray-50 border-2 border-dashed border-gray-300 rounded-xl p-6 h-full flex flex-col items-center justify-center hover:border-blue-400 hover:bg-blue-50/50 transition-colors">
                     <button className="flex flex-col items-center gap-3 w-full">
                       <div className="w-12 h-12 rounded-full bg-white border-2 border-gray-300 flex items-center justify-center">
                         <Icon name="plus" size="lg" className="text-gray-400" />
@@ -166,7 +166,7 @@ function CompareModal({ isOpen, onClose, selectedColleges = [], onRemoveCollege,
                           value={searchCollege}
                           onChange={(e) => setSearchCollege(e.target.value)}
                           placeholder="Search College"
-                          className="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:border-green-500 focus:ring-2 focus:ring-green-100 outline-none"
+                          className="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none"
                         />
                         <Icon name="chevronDown" size="sm" className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" />
                       </div>
@@ -176,7 +176,7 @@ function CompareModal({ isOpen, onClose, selectedColleges = [], onRemoveCollege,
                           value={searchCourse}
                           onChange={(e) => setSearchCourse(e.target.value)}
                           placeholder="Search Course"
-                          className="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:border-green-500 focus:ring-2 focus:ring-green-100 outline-none"
+                          className="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none"
                         />
                         <Icon name="chevronDown" size="sm" className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" />
                       </div>
@@ -205,7 +205,7 @@ function CompareModal({ isOpen, onClose, selectedColleges = [], onRemoveCollege,
                 <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide">
                   {popularComparisons.map((comparison) => (
                     <div key={comparison.id} className="flex-shrink-0 w-40">
-                      <div className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-green-300 hover:shadow-md transition-all cursor-pointer">
+                      <div className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-blue-300 hover:shadow-md transition-all cursor-pointer">
                         {/* Image */}
                         <div className="relative h-24 bg-gradient-to-br from-gray-100 to-gray-200">
                           {comparison.image ? (

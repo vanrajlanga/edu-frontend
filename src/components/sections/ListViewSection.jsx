@@ -62,7 +62,7 @@ function ListViewSection({
                     className={cn(
                       'text-sm font-medium transition-all pb-1 border-b-2',
                       sortBy === option.id
-                        ? 'text-green-600 border-green-600'
+                        ? 'text-blue-600 border-blue-600'
                         : 'text-gray-600 border-transparent hover:text-gray-900'
                     )}
                   >
@@ -84,7 +84,7 @@ function ListViewSection({
                 className={cn(
                   'p-2 rounded transition-colors',
                   viewMode === 'card'
-                    ? 'bg-green-50'
+                    ? 'bg-blue-50'
                     : 'hover:bg-gray-100'
                 )}
                 title="List View"
@@ -92,7 +92,7 @@ function ListViewSection({
                 <Icon
                   name="menu"
                   size="sm"
-                  className={viewMode === 'card' ? 'text-green-600' : 'text-gray-600'}
+                  className={viewMode === 'card' ? 'text-blue-600' : 'text-gray-600'}
                 />
               </button>
               <button
@@ -100,7 +100,7 @@ function ListViewSection({
                 className={cn(
                   'p-2 rounded transition-colors',
                   viewMode === 'grid'
-                    ? 'bg-green-50'
+                    ? 'bg-blue-50'
                     : 'hover:bg-gray-100'
                 )}
                 title="Grid View"
@@ -108,7 +108,7 @@ function ListViewSection({
                 <Icon
                   name="grid"
                   size="sm"
-                  className={viewMode === 'grid' ? 'text-green-600' : 'text-gray-600'}
+                  className={viewMode === 'grid' ? 'text-blue-600' : 'text-gray-600'}
                 />
               </button>
               <button
@@ -116,7 +116,7 @@ function ListViewSection({
                 className={cn(
                   'p-2 rounded transition-colors',
                   viewMode === 'list'
-                    ? 'bg-green-50'
+                    ? 'bg-blue-50'
                     : 'hover:bg-gray-100'
                 )}
                 title="Table View"
@@ -124,7 +124,7 @@ function ListViewSection({
                 <svg
                   className={cn(
                     'w-5 h-5',
-                    viewMode === 'list' ? 'text-green-600' : 'text-gray-600'
+                    viewMode === 'list' ? 'text-blue-600' : 'text-gray-600'
                   )}
                   fill="currentColor"
                   viewBox="0 0 24 24"

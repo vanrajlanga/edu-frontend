@@ -58,8 +58,8 @@ export function CompareWidget() {
                         className="w-10 h-10 rounded object-cover border border-gray-200"
                       />
                     ) : (
-                      <div className="w-10 h-10 rounded bg-gradient-to-br from-green-50 to-green-100 border border-green-200 flex items-center justify-center">
-                        <span className="text-green-700 font-bold text-sm">
+                      <div className="w-10 h-10 rounded bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-200 flex items-center justify-center">
+                        <span className="text-blue-700 font-bold text-sm">
                           {college.name?.charAt(0)}
                         </span>
                       </div>

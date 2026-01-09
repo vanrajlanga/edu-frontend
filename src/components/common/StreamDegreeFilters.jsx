@@ -34,8 +34,8 @@ function FilterChip({ label, count, isActive, onClick }) {
       className={cn(
         'flex-shrink-0 px-4 py-2 rounded-full border transition-all text-sm font-medium whitespace-nowrap',
         isActive
-          ? 'bg-green-500 text-white border-green-500'
-          : 'bg-white text-gray-700 border-gray-300 hover:border-green-400'
+          ? 'bg-blue-500 text-white border-blue-500'
+          : 'bg-white text-gray-700 border-gray-300 hover:border-blue-400'
       )}
     >
       <span className="inline-flex items-center gap-1">
@@ -98,9 +98,9 @@ function StreamDegreeFilters({ className }) {
           {locationTags.map((tag) => (
             <button
               key={tag.id}
-              className="flex items-center gap-1 px-3 py-1 rounded-full bg-green-50 text-green-600 text-xs font-medium border border-green-200 hover:bg-green-100 transition-all"
+              className="flex items-center gap-1 px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-xs font-medium border border-blue-200 hover:bg-blue-100 transition-all"
             >
-              <span className="w-1.5 h-1.5 bg-green-600 rounded-full" />
+              <span className="w-1.5 h-1.5 bg-blue-600 rounded-full" />
               {tag.label} ({tag.count})
             </button>
           ))}

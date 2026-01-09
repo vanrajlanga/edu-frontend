@@ -117,7 +117,7 @@ function TopCollegesSection({ className }) {
           </h2>
           <a
             href="/colleges"
-            className="text-green-800 hover:text-green-900 font-medium text-sm flex items-center gap-1 transition-colors"
+            className="text-blue-800 hover:text-blue-900 font-medium text-sm flex items-center gap-1 transition-colors"
           >
             View All Colleges
             <svg
@@ -226,8 +226,8 @@ function TopCollegesSection({ className }) {
             href={`/colleges${selectedPrimary ? `?course=${selectedPrimary}` : ''}`}
             className={cn(
               'inline-flex items-center gap-2 px-6 py-3',
-              'bg-green-50 text-green-900 font-semibold rounded-lg',
-              'hover:bg-green-100 transition-colors duration-200'
+              'bg-blue-50 text-blue-900 font-semibold rounded-lg',
+              'hover:bg-blue-100 transition-colors duration-200'
             )}
           >
             View All {selectedPrimary ? primaryFilters.find((f) => f.value === selectedPrimary)?.label : ''} Colleges

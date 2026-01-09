@@ -73,9 +73,9 @@ function TabsTrigger({ value, disabled = false, className, children, ...props })
     underline: cn(
       'text-text-secondary hover:text-text-primary',
       isSelected && [
-        'text-green-800',
+        'text-blue-800',
         'after:absolute after:bottom-0 after:left-0 after:right-0',
-        'after:h-0.5 after:bg-green-500 after:rounded-full',
+        'after:h-0.5 after:bg-blue-500 after:rounded-full',
       ]
     ),
     pills: cn(
@@ -87,7 +87,7 @@ function TabsTrigger({ value, disabled = false, className, children, ...props })
     boxed: cn(
       'rounded-[var(--radius-md)]',
       isSelected
-        ? 'bg-green-500 text-white'
+        ? 'bg-blue-500 text-white'
         : 'text-text-secondary hover:text-text-primary hover:bg-surface'
     ),
   };

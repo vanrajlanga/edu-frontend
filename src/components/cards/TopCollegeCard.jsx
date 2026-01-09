@@ -23,7 +23,7 @@ function TopCollegeCard({
       className={cn(
         'block bg-white rounded-xl',
         'border border-gray-100',
-        'hover:border-green-200 hover:shadow-lg',
+        'hover:border-blue-200 hover:shadow-lg',
         'transition-all duration-200',
         'group',
         className
@@ -50,10 +50,10 @@ function TopCollegeCard({
             <div
               className={cn(
                 'w-14 h-14 rounded-lg',
-                'bg-gradient-to-br from-green-50 to-green-100',
-                'border border-green-100',
+                'bg-gradient-to-br from-blue-50 to-blue-100',
+                'border border-blue-100',
                 'flex items-center justify-center',
-                'text-green-500 font-bold text-xl'
+                'text-blue-500 font-bold text-xl'
               )}
             >
               {name.charAt(0)}
@@ -61,7 +61,7 @@ function TopCollegeCard({
 
             {/* College Name & Location (Mobile) */}
             <div className="lg:hidden flex-1 min-w-0">
-              <h3 className="font-semibold text-gray-900 truncate group-hover:text-green-600 transition-colors">
+              <h3 className="font-semibold text-gray-900 truncate group-hover:text-blue-600 transition-colors">
                 {name}
               </h3>
               <p className="text-sm text-gray-500 flex items-center gap-1">
@@ -73,7 +73,7 @@ function TopCollegeCard({
 
           {/* College Info (Desktop) */}
           <div className="hidden lg:block flex-1 min-w-0">
-            <h3 className="font-semibold text-gray-900 group-hover:text-green-600 transition-colors">
+            <h3 className="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
               {name}
             </h3>
             <div className="flex items-center gap-3 mt-1">
@@ -114,7 +114,7 @@ function TopCollegeCard({
             {/* Fees */}
             <div className="bg-gray-50 rounded-lg p-3 lg:bg-transparent lg:p-0">
               <p className="text-xs text-gray-500 mb-1">Fees</p>
-              <p className="font-semibold text-green-600 text-sm">{fees || '-'}</p>
+              <p className="font-semibold text-blue-600 text-sm">{fees || '-'}</p>
             </div>
           </div>
 
@@ -127,7 +127,7 @@ function TopCollegeCard({
               <span className="font-medium text-gray-900">{rating}</span>
               <span className="text-gray-400">({reviewCount} reviews)</span>
             </span>
-            <span className="text-green-500 text-sm font-medium flex items-center gap-1 group-hover:gap-2 transition-all">
+            <span className="text-blue-500 text-sm font-medium flex items-center gap-1 group-hover:gap-2 transition-all">
               View Details
               <Icon name="arrowRight" size="sm" />
             </span>
@@ -140,7 +140,7 @@ function TopCollegeCard({
                 'w-10 h-10 rounded-full',
                 'border border-gray-200',
                 'flex items-center justify-center',
-                'text-gray-400 group-hover:text-green-500 group-hover:border-green-300',
+                'text-gray-400 group-hover:text-blue-500 group-hover:border-blue-300',
                 'transition-all duration-200'
               )}
             >

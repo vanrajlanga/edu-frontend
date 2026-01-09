@@ -133,7 +133,7 @@ function GoalSelector({ isOpen, onClose, onSelect, triggerRef, studyGoals = [], 
             'flex-1 px-4 py-3 text-sm font-medium',
             'border-b-2 transition-colors',
             activeTab === 'goal'
-              ? 'text-green-800 border-green-800 bg-green-50/50'
+              ? 'text-blue-800 border-blue-800 bg-blue-50/50'
               : 'text-gray-500 border-transparent hover:text-gray-700'
           )}
         >
@@ -148,7 +148,7 @@ function GoalSelector({ isOpen, onClose, onSelect, triggerRef, studyGoals = [], 
             'flex-1 px-4 py-3 text-sm font-medium',
             'border-b-2 transition-colors',
             activeTab === 'city'
-              ? 'text-green-800 border-green-800 bg-green-50/50'
+              ? 'text-blue-800 border-blue-800 bg-blue-50/50'
               : 'text-gray-500 border-transparent hover:text-gray-700'
           )}
         >
@@ -170,7 +170,7 @@ function GoalSelector({ isOpen, onClose, onSelect, triggerRef, studyGoals = [], 
                     'text-sm text-left',
                     'transition-colors duration-150',
                     hoveredCategory?.id === category.id
-                      ? 'bg-white text-green-900 shadow-sm'
+                      ? 'bg-white text-blue-900 shadow-sm'
                       : 'text-gray-700 hover:bg-white/80'
                   )}
                 >
@@ -178,7 +178,7 @@ function GoalSelector({ isOpen, onClose, onSelect, triggerRef, studyGoals = [], 
                     className={cn(
                       'w-7 h-7 rounded-lg flex items-center justify-center',
                       hoveredCategory?.id === category.id
-                        ? 'bg-green-100 text-green-800'
+                        ? 'bg-blue-100 text-blue-800'
                         : 'bg-gray-100 text-gray-500'
                     )}
                   >
@@ -215,7 +215,7 @@ function GoalSelector({ isOpen, onClose, onSelect, triggerRef, studyGoals = [], 
                         'flex items-center justify-between w-full',
                         'px-3 py-2.5 rounded-lg',
                         'text-sm text-gray-700',
-                        'hover:bg-green-50 hover:text-green-900',
+                        'hover:bg-blue-50 hover:text-blue-900',
                         'transition-colors duration-150',
                         'group'
                       )}
@@ -229,7 +229,7 @@ function GoalSelector({ isOpen, onClose, onSelect, triggerRef, studyGoals = [], 
                       <Icon
                         name="chevronRight"
                         size="sm"
-                        className="text-gray-300 group-hover:text-green-500 transition-colors"
+                        className="text-gray-300 group-hover:text-blue-500 transition-colors"
                       />
                     </Link>
                   ))}
@@ -256,7 +256,7 @@ function GoalSelector({ isOpen, onClose, onSelect, triggerRef, studyGoals = [], 
               className={cn(
                 'w-full pl-9 pr-4 py-2.5',
                 'bg-gray-50 rounded-lg',
-                'border border-gray-200 focus:border-green-400',
+                'border border-gray-200 focus:border-blue-400',
                 'text-sm text-gray-700 placeholder:text-gray-400',
                 'outline-none transition-colors'
               )}
@@ -276,20 +276,20 @@ function GoalSelector({ isOpen, onClose, onSelect, triggerRef, studyGoals = [], 
                   'flex items-center gap-3 p-3',
                   'rounded-lg border border-gray-200',
                   'text-left',
-                  'hover:border-green-300 hover:bg-green-50',
+                  'hover:border-blue-300 hover:bg-blue-50',
                   'transition-all duration-150',
                   'group'
                 )}
               >
-                <div className="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center group-hover:bg-green-100 transition-colors">
+                <div className="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center group-hover:bg-blue-100 transition-colors">
                   <Icon
                     name="mapPin"
                     size="sm"
-                    className="text-gray-500 group-hover:text-green-800 transition-colors"
+                    className="text-gray-500 group-hover:text-blue-800 transition-colors"
                   />
                 </div>
                 <div>
-                  <div className="font-medium text-sm text-gray-700 group-hover:text-green-900">
+                  <div className="font-medium text-sm text-gray-700 group-hover:text-blue-900">
                     {city.label}
                   </div>
                   <div className="text-xs text-gray-400">{city.state}</div>

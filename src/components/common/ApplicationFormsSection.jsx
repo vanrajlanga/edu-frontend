@@ -84,9 +84,9 @@ const collegeApplications = [
 
 function CollegeCard({ college }) {
   return (
-    <div className="flex-shrink-0 w-[210px] bg-white border-2 border-gray-200 rounded-lg overflow-hidden hover:shadow-lg hover:border-green-300 transition-all duration-300 group">
+    <div className="flex-shrink-0 w-[210px] bg-white border-2 border-gray-200 rounded-lg overflow-hidden hover:shadow-lg hover:border-blue-300 transition-all duration-300 group">
       {/* College Image */}
-      <div className="relative h-[110px] bg-gradient-to-br from-green-50 to-green-100">
+      <div className="relative h-[110px] bg-gradient-to-br from-blue-50 to-blue-100">
         {college.image ? (
           <img
             src={college.image}
@@ -96,7 +96,7 @@ function CollegeCard({ college }) {
         ) : (
           <div className="w-full h-full flex items-center justify-center">
             <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-md">
-              <Icon name="building" size="lg" className="text-green-600" />
+              <Icon name="building" size="lg" className="text-blue-600" />
             </div>
           </div>
         )}
@@ -112,13 +112,13 @@ function CollegeCard({ college }) {
       <div className="p-3">
         {/* Best In Label */}
         <div className="inline-block mb-1.5">
-          <span className="text-[10px] font-semibold text-green-600 bg-green-50 px-1.5 py-0.5 rounded">
+          <span className="text-[10px] font-semibold text-blue-600 bg-blue-50 px-1.5 py-0.5 rounded">
             Best in {college.bestIn}
           </span>
         </div>
 
         {/* College Name */}
-        <h3 className="text-xs font-bold text-gray-900 mb-1 line-clamp-2 min-h-[32px] group-hover:text-green-600 transition-colors leading-tight">
+        <h3 className="text-xs font-bold text-gray-900 mb-1 line-clamp-2 min-h-[32px] group-hover:text-blue-600 transition-colors leading-tight">
           {college.name}
         </h3>
 
@@ -127,7 +127,7 @@ function CollegeCard({ college }) {
 
         {/* Fees */}
         <div className="mb-1.5">
-          <div className="text-sm font-bold text-green-600">
+          <div className="text-sm font-bold text-blue-600">
             {college.fees === 10000 ? college.feesLabel : formatINR(college.fees)}
           </div>
           {college.fees !== 10000 && (
@@ -269,7 +269,7 @@ function ApplicationFormsSection({ className }) {
               className={cn(
                 'w-8 h-8 rounded-full border-2 flex items-center justify-center transition-all',
                 canScrollLeft
-                  ? 'border-green-600 text-green-600 hover:bg-green-50'
+                  ? 'border-blue-600 text-blue-600 hover:bg-blue-50'
                   : 'border-gray-300 text-gray-300 cursor-not-allowed'
               )}
               aria-label="Scroll left"
@@ -282,7 +282,7 @@ function ApplicationFormsSection({ className }) {
               className={cn(
                 'w-8 h-8 rounded-full border-2 flex items-center justify-center transition-all',
                 canScrollRight
-                  ? 'border-green-600 text-green-600 hover:bg-green-50'
+                  ? 'border-blue-600 text-blue-600 hover:bg-blue-50'
                   : 'border-gray-300 text-gray-300 cursor-not-allowed'
               )}
               aria-label="Scroll right"

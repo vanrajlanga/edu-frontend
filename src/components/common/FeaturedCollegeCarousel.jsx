@@ -169,7 +169,7 @@ function FeaturedCollegeCarousel({ className, onApplyNow, onDownloadBrochure, on
                 {currentCollege.logo ? (
                   <img src={currentCollege.logo} alt={currentCollege.shortName} className="w-full h-full object-contain p-2" />
                 ) : (
-                  <span className="text-2xl font-bold text-green-600">{currentCollege.shortName}</span>
+                  <span className="text-2xl font-bold text-blue-600">{currentCollege.shortName}</span>
                 )}
               </div>
             </div>
@@ -194,7 +194,7 @@ function FeaturedCollegeCarousel({ className, onApplyNow, onDownloadBrochure, on
                 </button>
                 <button
                   onClick={() => onDownloadBrochure?.(currentCollege)}
-                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-green-600 hover:text-green-700 transition-colors"
+                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors"
                 >
                   <Icon name="download" size="xs" />
                   Download Brochure
@@ -213,7 +213,7 @@ function FeaturedCollegeCarousel({ className, onApplyNow, onDownloadBrochure, on
           {/* Middle Section - Fees */}
           <div className="col-span-3 border-l border-r border-gray-200 px-4">
             <div className="space-y-1">
-              <div className="text-2xl font-bold text-green-600">
+              <div className="text-2xl font-bold text-blue-600">
                 {formatINR(currentCollege.totalFees)}
               </div>
               <div className="text-xs text-gray-600 font-medium">
@@ -233,13 +233,13 @@ function FeaturedCollegeCarousel({ className, onApplyNow, onDownloadBrochure, on
           <div className="col-span-3 px-4">
             <div className="space-y-2">
               <div>
-                <div className="text-xl font-bold text-green-600">
+                <div className="text-xl font-bold text-blue-600">
                   {formatINR(currentCollege.avgPackage)}
                 </div>
                 <div className="text-xs text-gray-600">Average Package</div>
               </div>
               <div>
-                <div className="text-xl font-bold text-green-600">
+                <div className="text-xl font-bold text-blue-600">
                   {formatINR(currentCollege.highestPackage)}
                 </div>
                 <div className="text-xs text-gray-600">Highest Package</div>

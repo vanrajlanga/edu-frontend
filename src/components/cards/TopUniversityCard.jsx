@@ -52,7 +52,7 @@ function TopUniversityCard({
 
         {/* CD Rating Badge */}
         <div className="absolute top-3 right-3 flex items-center gap-1 bg-gray-800/80 text-white text-xs font-medium px-2 py-1 rounded">
-          <span className="text-green-400 font-bold">cd</span>
+          <span className="text-blue-400 font-bold">cd</span>
           <span>{cdRating}</span>
         </div>
 
@@ -63,7 +63,7 @@ function TopUniversityCard({
             {logo ? (
               <img src={logo} alt={shortName || name} className="w-full h-full object-contain p-1" />
             ) : (
-              <div className="w-full h-full bg-green-100 flex items-center justify-center text-green-900 font-bold text-lg">
+              <div className="w-full h-full bg-blue-100 flex items-center justify-center text-blue-900 font-bold text-lg">
                 {(shortName || name).charAt(0)}
               </div>
             )}
@@ -97,7 +97,7 @@ function TopUniversityCard({
 
         {/* Fees */}
         <p className="text-sm mb-3">
-          <span className="text-green-800 font-semibold">{fees}</span>
+          <span className="text-blue-800 font-semibold">{fees}</span>
           <span className="text-gray-500 ml-1">{feesLabel}</span>
         </p>
 
@@ -113,26 +113,26 @@ function TopUniversityCard({
         <div className="space-y-0">
           <Link
             href={`${href}/courses`}
-            className="flex items-center justify-between py-2.5 text-sm text-gray-700 hover:text-green-900 transition-colors group/link"
+            className="flex items-center justify-between py-2.5 text-sm text-gray-700 hover:text-blue-900 transition-colors group/link"
           >
             <span>View All Courses and fees</span>
-            <Icon name="chevronRight" size="sm" className="text-gray-400 group-hover/link:text-green-800 transition-colors" />
+            <Icon name="chevronRight" size="sm" className="text-gray-400 group-hover/link:text-blue-800 transition-colors" />
           </Link>
 
           <Link
             href={`${href}/brochure`}
-            className="flex items-center justify-between py-2.5 text-sm text-gray-700 hover:text-green-900 transition-colors border-t border-gray-100 group/link"
+            className="flex items-center justify-between py-2.5 text-sm text-gray-700 hover:text-blue-900 transition-colors border-t border-gray-100 group/link"
           >
             <span>Download Brochure</span>
-            <Icon name="chevronRight" size="sm" className="text-gray-400 group-hover/link:text-green-800 transition-colors" />
+            <Icon name="chevronRight" size="sm" className="text-gray-400 group-hover/link:text-blue-800 transition-colors" />
           </Link>
 
           <Link
             href={`${href}/compare`}
-            className="flex items-center justify-between py-2.5 text-sm text-gray-700 hover:text-green-900 transition-colors border-t border-gray-100 group/link"
+            className="flex items-center justify-between py-2.5 text-sm text-gray-700 hover:text-blue-900 transition-colors border-t border-gray-100 group/link"
           >
             <span>Compare</span>
-            <Icon name="chevronRight" size="sm" className="text-gray-400 group-hover/link:text-green-800 transition-colors" />
+            <Icon name="chevronRight" size="sm" className="text-gray-400 group-hover/link:text-blue-800 transition-colors" />
           </Link>
         </div>
       </div>

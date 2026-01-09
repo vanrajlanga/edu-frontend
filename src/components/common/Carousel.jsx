@@ -117,7 +117,7 @@ function Carousel({
               'bg-surface border border-border shadow-md',
               'flex items-center justify-center',
               'transition-all duration-[var(--duration-fast)]',
-              'hover:bg-green-50 hover:border-green-200 hover:text-green-800',
+              'hover:bg-blue-50 hover:border-blue-200 hover:text-blue-800',
               'disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-surface',
               'hidden md:flex'
             )}
@@ -135,7 +135,7 @@ function Carousel({
               'bg-surface border border-border shadow-md',
               'flex items-center justify-center',
               'transition-all duration-[var(--duration-fast)]',
-              'hover:bg-green-50 hover:border-green-200 hover:text-green-800',
+              'hover:bg-blue-50 hover:border-blue-200 hover:text-blue-800',
               'disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-surface',
               'hidden md:flex'
             )}
@@ -157,7 +157,7 @@ function Carousel({
               className={cn(
                 'w-2 h-2 rounded-full transition-all duration-[var(--duration-fast)]',
                 index === activeDot
-                  ? 'w-6 bg-green-500'
+                  ? 'w-6 bg-blue-500'
                   : 'bg-slate-200 dark:bg-slate-700 hover:bg-slate-300'
               )}
               aria-label={`Go to slide ${index + 1}`}

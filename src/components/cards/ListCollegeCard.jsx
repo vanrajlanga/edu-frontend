@@ -41,7 +41,7 @@ function ListCollegeCard({
           {image ? (
             <img src={image} alt={name} className="w-full h-full object-cover" />
           ) : (
-            <div className="w-full h-full bg-gradient-to-br from-blue-50 via-green-50 to-gray-50" />
+            <div className="w-full h-full bg-gradient-to-br from-blue-50 via-blue-50 to-gray-50" />
           )}
 
           {/* Media Count Badge - Top Left */}
@@ -70,8 +70,8 @@ function ListCollegeCard({
               {logo ? (
                 <img src={logo} alt={name} className="w-full h-full object-contain" />
               ) : (
-                <div className="w-full h-full bg-gradient-to-br from-green-100 to-green-200 rounded flex items-center justify-center">
-                  <Icon name="graduationCap" size="lg" className="text-green-600" />
+                <div className="w-full h-full bg-gradient-to-br from-blue-100 to-blue-200 rounded flex items-center justify-center">
+                  <Icon name="graduationCap" size="lg" className="text-blue-600" />
                 </div>
               )}
             </div>
@@ -81,7 +81,7 @@ function ListCollegeCard({
         {/* Middle - College Info */}
         <div className="flex-1 min-w-0">
           {/* College Name */}
-          <h3 className="text-base font-bold text-gray-900 mb-1 hover:text-green-600 transition-colors">
+          <h3 className="text-base font-bold text-gray-900 mb-1 hover:text-blue-600 transition-colors">
             <a href={href}>{name}</a>
           </h3>
 
@@ -95,14 +95,14 @@ function ListCollegeCard({
           {/* Fees and Rating */}
           <div className="flex items-start gap-6 mb-3">
             <div>
-              <div className="text-xl font-bold text-green-600">
+              <div className="text-xl font-bold text-blue-600">
                 {formatINR(courseFees)}
               </div>
               <div className="text-[11px] text-gray-600">{courseName} - Total Fees</div>
             </div>
             <div>
               <div className="flex items-baseline gap-1">
-                <span className="text-xl font-bold text-green-600">{rating}</span>
+                <span className="text-xl font-bold text-blue-600">{rating}</span>
                 <span className="text-sm text-gray-500">/ 5</span>
               </div>
               <div className="text-[11px] text-gray-600">Based on {reviewCount} User reviews</div>
@@ -111,17 +111,17 @@ function ListCollegeCard({
 
           {/* Action Buttons */}
           <div className="flex items-center gap-3 mb-3">
-            <button className="px-3 py-1.5 rounded-full border border-gray-300 text-xs font-medium text-gray-700 hover:border-green-500 hover:bg-green-50 hover:text-green-600 transition-all flex items-center gap-1.5">
+            <button className="px-3 py-1.5 rounded-full border border-gray-300 text-xs font-medium text-gray-700 hover:border-blue-500 hover:bg-blue-50 hover:text-blue-600 transition-all flex items-center gap-1.5">
               <Icon name="graduationCap" size="xs" />
               Admission 2026
             </button>
-            <button className="px-3 py-1.5 rounded-full border border-gray-300 text-xs font-medium text-gray-700 hover:border-green-500 hover:bg-green-50 hover:text-green-600 transition-all flex items-center gap-1.5">
+            <button className="px-3 py-1.5 rounded-full border border-gray-300 text-xs font-medium text-gray-700 hover:border-blue-500 hover:bg-blue-50 hover:text-blue-600 transition-all flex items-center gap-1.5">
               <Icon name="star" size="xs" />
               Reviews
             </button>
             <button
               onClick={() => onCompareFees?.(courseName)}
-              className="px-3 py-1.5 rounded-full border border-gray-300 text-xs font-medium text-gray-700 hover:border-green-500 hover:bg-green-50 hover:text-green-600 transition-all flex items-center gap-1.5"
+              className="px-3 py-1.5 rounded-full border border-gray-300 text-xs font-medium text-gray-700 hover:border-blue-500 hover:bg-blue-50 hover:text-blue-600 transition-all flex items-center gap-1.5"
             >
               <Icon name="menu" size="xs" />
               Courses & Fees
@@ -132,8 +132,8 @@ function ListCollegeCard({
           <div className="relative flex items-center gap-3">
             {/* Static Badge */}
             <div className="flex-shrink-0">
-              <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                <Icon name="award" size="sm" className="text-green-600" />
+              <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                <Icon name="award" size="sm" className="text-blue-600" />
               </div>
             </div>
 
@@ -143,7 +143,7 @@ function ListCollegeCard({
                 {/* Rankings */}
                 {rankings.slice(0, 5).map((ranking, idx) => (
                   <div key={idx} className="flex items-center gap-2 flex-shrink-0">
-                    <span className="text-base font-bold text-green-600">#{ranking.rank}</span>
+                    <span className="text-base font-bold text-blue-600">#{ranking.rank}</span>
                     <span className="text-sm text-gray-500">out of {ranking.total}</span>
                     <span className="text-base font-bold text-gray-900">{ranking.agency}</span>
                   </div>
@@ -157,13 +157,13 @@ function ListCollegeCard({
         <div className="flex flex-col gap-2 w-48 flex-shrink-0">
           <button
             onClick={() => onApplyNow?.(collegeData)}
-            className="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-2.5 px-3 rounded-lg transition-all flex items-center justify-center gap-2 text-sm"
+            className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2.5 px-3 rounded-lg transition-all flex items-center justify-center gap-2 text-sm"
           >
             Apply Now
             <Icon name="arrowRight" size="sm" />
           </button>
 
-          <button className="w-full border-2 border-gray-300 text-gray-700 hover:border-green-500 hover:bg-green-50 hover:text-green-600 font-semibold py-2 px-3 rounded-lg transition-all flex items-center justify-center gap-2 text-sm">
+          <button className="w-full border-2 border-gray-300 text-gray-700 hover:border-blue-500 hover:bg-blue-50 hover:text-blue-600 font-semibold py-2 px-3 rounded-lg transition-all flex items-center justify-center gap-2 text-sm">
             <Icon name="download" size="sm" />
             Brochure
           </button>
@@ -173,8 +173,8 @@ function ListCollegeCard({
             className={cn(
               'w-full border-2 font-semibold py-2 px-3 rounded-lg transition-all flex items-center justify-center gap-2 text-sm',
               isCompared
-                ? 'border-green-500 bg-green-50 text-green-600'
-                : 'border-gray-300 text-gray-700 hover:border-green-500 hover:bg-green-50 hover:text-green-600'
+                ? 'border-blue-500 bg-blue-50 text-blue-600'
+                : 'border-gray-300 text-gray-700 hover:border-blue-500 hover:bg-blue-50 hover:text-blue-600'
             )}
           >
             <Icon name="compare" size="sm" />
@@ -183,7 +183,7 @@ function ListCollegeCard({
 
           {/* Rating and Dropdown - Very Bottom */}
           <div className="flex items-center justify-end gap-2 mt-auto pt-4">
-            <span className="text-xl font-bold text-green-600 whitespace-nowrap">{rating}/5</span>
+            <span className="text-xl font-bold text-blue-600 whitespace-nowrap">{rating}/5</span>
             <span className="text-sm text-gray-600 whitespace-nowrap">({reviewCount} Users)</span>
             <button
               onClick={() => setIsReviewExpanded(!isReviewExpanded)}
@@ -217,7 +217,7 @@ function ListCollegeCard({
               <p className="text-sm text-gray-700 leading-relaxed">
                 I Chose IIT BOMBAY Mainly Because I Was Getting Electrical Dual Degree Only Here, But Also Chose It Explicitely Because Of The Clubs In IIT Bombay And Also The Opportunities To Do Whatever We Like Than The Lecture, Unlike Other Colleges.
               </p>
-              <button className="text-sm text-green-600 hover:text-green-700 font-medium mt-2">
+              <button className="text-sm text-blue-600 hover:text-blue-700 font-medium mt-2">
                 Read More
               </button>
             </div>

@@ -49,9 +49,9 @@ export default function CourseLevelCard({ level }) {
           {categories.map((category, index) => (
             <span
               key={index}
-              className="inline-flex items-baseline gap-1.5 px-2.5 py-1 bg-white hover:bg-green-50 border border-gray-300 hover:border-green-500 rounded-full text-xs transition-all duration-200 cursor-pointer group"
+              className="inline-flex items-baseline gap-1.5 px-2.5 py-1 bg-white hover:bg-blue-50 border border-gray-300 hover:border-blue-500 rounded-full text-xs transition-all duration-200 cursor-pointer group"
             >
-              <span className="font-bold text-green-600 group-hover:text-green-700">
+              <span className="font-bold text-blue-600 group-hover:text-blue-700">
                 {category.count}
               </span>
               <span className="text-gray-600 group-hover:text-gray-900 font-medium">

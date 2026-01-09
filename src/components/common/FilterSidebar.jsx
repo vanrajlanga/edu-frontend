@@ -58,7 +58,7 @@ function FilterSection({ title, items, selectedItems = [], onToggle }) {
               placeholder={`FIND ${title.toUpperCase()}`}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg text-sm placeholder-gray-400 focus:outline-none focus:border-green-500"
+              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg text-sm placeholder-gray-400 focus:outline-none focus:border-blue-500"
             />
           </div>
 
@@ -73,7 +73,7 @@ function FilterSection({ title, items, selectedItems = [], onToggle }) {
                   type="checkbox"
                   checked={selectedItems.includes(item.id)}
                   onChange={() => onToggle?.(item.id)}
-                  className="w-4 h-4 text-green-600 border-gray-300 rounded focus:ring-green-500"
+                  className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
                 />
                 <span className="text-sm text-gray-700 flex-1">
                   {item.label}- <span className="text-gray-500">[{item.count}]</span>

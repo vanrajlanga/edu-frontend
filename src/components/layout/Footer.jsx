@@ -121,9 +121,9 @@ function FooterLinkColumn({ title, links }) {
           <li key={index}>
             <a
               href={link.href}
-              className="text-sm text-gray-600 hover:text-green-900 transition-colors inline-flex items-center gap-1 group"
+              className="text-sm text-gray-600 hover:text-blue-900 transition-colors inline-flex items-center gap-1 group"
             >
-              <span className="w-0 h-0.5 bg-green-500 group-hover:w-2 transition-all duration-200" />
+              <span className="w-0 h-0.5 bg-blue-500 group-hover:w-2 transition-all duration-200" />
               {link.label}
             </a>
           </li>
@@ -152,7 +152,7 @@ function Footer({ className }) {
   return (
     <footer className={cn('bg-slate-50 relative', className)}>
       {/* Top Border Gradient */}
-      <div className="h-1 bg-gradient-to-r from-green-800 via-green-500 to-green-800" />
+      <div className="h-1 bg-gradient-to-r from-blue-800 via-blue-500 to-blue-800" />
 
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -161,7 +161,7 @@ function Footer({ className }) {
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div className="max-w-md">
               <a href="/" className="inline-flex items-center gap-2 mb-3">
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-green-800 to-green-600 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-800 to-blue-600 flex items-center justify-center">
                   <Icon name="graduationCap" size="lg" className="text-white" />
                 </div>
                 <span className="text-xl font-bold text-gray-900">EduPortal</span>
@@ -184,7 +184,7 @@ function Footer({ className }) {
                     'w-10 h-10 rounded-full flex items-center justify-center',
                     'bg-white border border-gray-200 shadow-sm',
                     'text-gray-500 hover:text-white',
-                    'hover:bg-green-500 hover:border-green-800',
+                    'hover:bg-blue-500 hover:border-blue-800',
                     'transition-all duration-200'
                   )}
                   aria-label={name}
@@ -211,7 +211,7 @@ function Footer({ className }) {
               <a
                 key={index}
                 href={link.href}
-                className="text-sm text-gray-600 hover:text-green-900 transition-colors"
+                className="text-sm text-gray-600 hover:text-blue-900 transition-colors"
               >
                 {link.label}
               </a>
@@ -233,8 +233,8 @@ function Footer({ className }) {
           'w-12 h-12 rounded-full',
           'bg-white border border-gray-200 shadow-lg',
           'flex items-center justify-center',
-          'text-gray-600 hover:text-green-900',
-          'hover:border-green-300 hover:shadow-xl',
+          'text-gray-600 hover:text-blue-900',
+          'hover:border-blue-300 hover:shadow-xl',
           'transition-all duration-300',
           showScrollTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'
         )}

@@ -88,7 +88,7 @@ export default function UpcomingExamsWidget({ className }) {
 
               {/* Exam Details */}
               <div className="flex-1 min-w-0">
-                <h4 className="text-sm font-semibold text-gray-900 mb-0.5 line-clamp-2 leading-snug group-hover:text-green-600 transition-colors">
+                <h4 className="text-sm font-semibold text-gray-900 mb-0.5 line-clamp-2 leading-snug group-hover:text-blue-600 transition-colors">
                   {exam.name}
                 </h4>
                 <p className="text-xs text-gray-500">

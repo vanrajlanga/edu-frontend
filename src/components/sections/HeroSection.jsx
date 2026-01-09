@@ -75,16 +75,16 @@ function HeroSection({ className }) {
   };
 
   return (
-    <section className={cn('relative overflow-hidden bg-gradient-to-b from-green-50 via-white to-white', className)}>
+    <section className={cn('relative overflow-hidden bg-gradient-to-b from-blue-50 via-white to-white', className)}>
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-24 -right-24 w-96 h-96 bg-green-100/50 rounded-full blur-3xl" />
+        <div className="absolute -top-24 -right-24 w-96 h-96 bg-blue-100/50 rounded-full blur-3xl" />
         <div className="absolute top-1/2 -left-24 w-72 h-72 bg-sky-100/40 rounded-full blur-3xl" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* pt-44 = 176px to account for fixed Header (64px) + Navbar (44px) + NewsTicker (36px) + spacing */}
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center min-h-[85vh] pt-44 pb-16 lg:pt-44 lg:pb-20">
+        {/* Responsive padding: accounts for Header (56px) + Navbar (40px) + NewsTicker (36px) = ~132px on mobile */}
+        <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center pt-36 pb-6 sm:pt-28 sm:pb-10 md:pt-32 md:pb-12 lg:pt-36 lg:pb-16">
 
           {/* Left Content */}
           <div
@@ -95,21 +95,21 @@ function HeroSection({ className }) {
             )}
           >
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-50 border border-green-100 mb-6">
-              <span className="flex h-2 w-2 relative">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+            <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full bg-blue-50 border border-blue-100 mb-3 sm:mb-4 lg:mb-5">
+              <span className="flex h-1.5 w-1.5 sm:h-2 sm:w-2 relative">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-full w-full bg-blue-500"></span>
               </span>
-              <span className="text-sm font-medium text-green-950">Trusted by 10 Lakh+ Students</span>
+              <span className="text-[10px] sm:text-xs lg:text-sm font-medium text-blue-950 whitespace-nowrap">Trusted by 10 Lakh+ Students</span>
             </div>
 
             {/* Headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+            <h1 className="text-[28px] leading-[1.2] sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-3 sm:mb-4 lg:mb-5">
               Find Your Perfect{' '}
               <span className="relative inline-block">
                 <span
                   key={currentTextIndex}
-                  className="text-green-900 animate-fade-in-up"
+                  className="text-blue-900 animate-fade-in-up"
                 >
                   {animatedTexts[currentTextIndex]}
                 </span>
@@ -128,12 +128,12 @@ function HeroSection({ className }) {
             </h1>
 
             {/* Subtitle */}
-            <p className="text-lg text-gray-600 mb-8 max-w-lg mx-auto lg:mx-0">
+            <p className="text-[13px] leading-relaxed sm:text-base lg:text-lg text-gray-600 mb-4 sm:mb-5 lg:mb-6 max-w-lg mx-auto lg:mx-0 px-2 sm:px-0">
               Discover top colleges, compare courses, and get expert guidance for your education journey
             </p>
 
             {/* Search Bar */}
-            <form onSubmit={handleSearch} className="max-w-xl mx-auto lg:mx-0 mb-6">
+            <form onSubmit={handleSearch} className="max-w-xl mx-auto lg:mx-0 mb-3 sm:mb-4 lg:mb-5">
               <div
                 className={cn(
                   'flex items-center gap-2',
@@ -141,38 +141,37 @@ function HeroSection({ className }) {
                   'p-1.5 pl-4',
                   'shadow-lg shadow-gray-200/60',
                   'border border-gray-200',
-                  'hover:shadow-xl hover:border-green-200',
-                  'focus-within:shadow-xl focus-within:border-green-300 focus-within:ring-2 focus-within:ring-green-100',
+                  'hover:shadow-xl hover:border-blue-200',
+                  'focus-within:shadow-xl focus-within:border-blue-300 focus-within:ring-2 focus-within:ring-blue-100',
                   'transition-all duration-200'
                 )}
               >
-                <Icon name="search" size="md" className="text-gray-400" />
                 <input
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Search colleges, exams, courses..."
-                  className="flex-1 py-2.5 bg-transparent border-0 outline-none text-gray-700 placeholder:text-gray-400"
+                  className="flex-1 py-2.5 text-[14px] sm:text-base bg-transparent border-0 outline-none text-gray-700 placeholder:text-gray-400"
                 />
-                <Button type="submit" variant="primary" size="md" className="px-6 rounded-full">
+                <Button type="submit" variant="primary" size="sm" className="sm:size-md px-5 sm:px-6 rounded-full text-sm shrink-0">
                   Search
                 </Button>
               </div>
             </form>
 
             {/* Popular Searches */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 mb-8">
-              <span className="text-gray-500 text-sm">Popular:</span>
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-1.5 sm:gap-2 mb-4 sm:mb-5 lg:mb-6 px-2 sm:px-0">
+              <span className="text-gray-500 text-[13px] sm:text-sm">Popular:</span>
               {popularSearches.map((term) => (
                 <button
                   key={term}
                   type="button"
                   onClick={() => setSearchQuery(term)}
                   className={cn(
-                    'px-3 py-1.5 rounded-full',
-                    'text-sm text-gray-600',
+                    'px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full',
+                    'text-[11px] sm:text-xs lg:text-sm text-gray-600',
                     'bg-gray-50 border border-gray-200',
-                    'hover:border-green-300 hover:text-green-900 hover:bg-green-50',
+                    'hover:border-blue-300 hover:text-blue-900 hover:bg-blue-50',
                     'transition-all duration-200'
                   )}
                 >
@@ -182,30 +181,31 @@ function HeroSection({ className }) {
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 mb-10">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-2.5 sm:gap-3 mb-5 sm:mb-6 lg:mb-8 px-2 sm:px-0">
               <Button
                 variant="primary"
-                size="lg"
-                className="shadow-lg shadow-green-200/50"
+                size="md"
+                className="shadow-lg shadow-blue-200/50 lg:size-lg text-sm sm:text-sm lg:text-base py-3 sm:py-2.5"
                 rightIcon={<Icon name="arrowRight" size="sm" />}
               >
                 Get Free Counselling
               </Button>
               <Button
                 variant="outline"
-                size="lg"
-                leftIcon={<Icon name="play" size="sm" className="text-green-800" />}
+                size="md"
+                className="lg:size-lg text-sm sm:text-sm lg:text-base py-3 sm:py-2.5"
+                leftIcon={<Icon name="play" size="sm" className="text-blue-800" />}
               >
                 How It Works
               </Button>
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-4 gap-4 max-w-md mx-auto lg:mx-0">
+            <div className="grid grid-cols-4 gap-3 sm:gap-4 max-w-md mx-auto lg:mx-0 px-2 sm:px-0">
               {stats.map((stat) => (
                 <div key={stat.label} className="text-center lg:text-left">
-                  <div className="text-2xl lg:text-3xl font-bold text-green-900">{stat.value}</div>
-                  <div className="text-xs text-gray-500">{stat.label}</div>
+                  <div className="text-[22px] sm:text-2xl lg:text-3xl font-bold text-blue-900 leading-none">{stat.value}</div>
+                  <div className="text-[11px] sm:text-xs text-gray-500 mt-1">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -214,17 +214,17 @@ function HeroSection({ className }) {
           {/* Right - Image Grid (Bento Style) */}
           <div
             className={cn(
-              'relative',
+              'relative hidden lg:block',
               'transition-all duration-700 ease-out delay-300',
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             )}
           >
             <div className="relative">
               {/* Decorative background */}
-              <div className="absolute -inset-4 bg-gradient-to-br from-green-100 to-green-100 rounded-3xl -rotate-3" />
+              <div className="absolute -inset-4 bg-gradient-to-br from-blue-100 to-blue-100 rounded-3xl -rotate-3" />
 
               {/* Bento Grid */}
-              <div className="relative grid grid-cols-2 gap-3 p-3 bg-white rounded-2xl shadow-2xl shadow-green-900/10">
+              <div className="relative grid grid-cols-2 gap-3 p-3 bg-white rounded-2xl shadow-2xl shadow-blue-900/10">
                 {/* Large image - top left */}
                 <div className="col-span-1 row-span-2">
                   <CollegeCard college={featuredColleges[0]} size="large" />
@@ -244,9 +244,9 @@ function HeroSection({ className }) {
                 <div className="col-span-2">
                   <div className="grid grid-cols-2 gap-3">
                     <CollegeCard college={featuredColleges[3]} size="small" />
-                    <div className="bg-gradient-to-br from-green-800 to-green-900 rounded-xl p-4 flex flex-col justify-center items-center text-white">
+                    <div className="bg-gradient-to-br from-blue-800 to-blue-900 rounded-xl p-4 flex flex-col justify-center items-center text-white">
                       <span className="text-3xl font-bold">500+</span>
-                      <span className="text-sm text-green-100">Top Colleges</span>
+                      <span className="text-sm text-blue-100">Top Colleges</span>
                       <Button
                         variant="outline"
                         size="sm"
@@ -261,8 +261,8 @@ function HeroSection({ className }) {
 
               {/* Floating badge */}
               <div className="absolute -top-3 -right-3 bg-white rounded-full px-4 py-2 shadow-lg border border-gray-100 flex items-center gap-2">
-                <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                  <Icon name="check" size="sm" className="text-green-600" />
+                <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                  <Icon name="check" size="sm" className="text-blue-600" />
                 </div>
                 <div className="text-left">
                   <div className="text-xs font-semibold text-gray-900">Verified</div>

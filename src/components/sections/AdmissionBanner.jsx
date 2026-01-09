@@ -10,7 +10,7 @@ function AdmissionBanner({ className }) {
         <div
           className={cn(
             'relative overflow-hidden',
-            'bg-gradient-to-r from-green-50 via-green-50 to-green-50',
+            'bg-gradient-to-r from-blue-50 via-blue-50 to-blue-50',
             'rounded-2xl',
             'px-6 py-10 md:px-12 md:py-12'
           )}
@@ -35,7 +35,7 @@ function AdmissionBanner({ className }) {
             <div className="flex-1 text-center md:text-left max-w-xl">
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3">
                 Know your chances of{' '}
-                <span className="text-green-900">Admission</span>
+                <span className="text-blue-900">Admission</span>
               </h2>
               <p className="text-gray-600 text-sm md:text-base">
                 Get personalized predictions based on your profile, scores, and preferences
@@ -109,10 +109,10 @@ function AdmissionBanner({ className }) {
                 className={cn(
                   'inline-flex items-center gap-3',
                   'px-8 py-4 md:px-10 md:py-5',
-                  'bg-green-900 hover:bg-green-950',
+                  'bg-blue-900 hover:bg-blue-950',
                   'text-white font-semibold text-lg',
                   'rounded-full',
-                  'shadow-lg shadow-green-500/25 hover:shadow-xl hover:shadow-green-500/30',
+                  'shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/30',
                   'transform hover:-translate-y-0.5',
                   'transition-all duration-200'
                 )}

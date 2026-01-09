@@ -87,7 +87,7 @@ function FilterDropdown({
       <div className="flex items-center justify-between px-4 py-3 border-t border-gray-100 bg-gray-50 rounded-b-lg">
         <button
           onClick={onViewAllFilters}
-          className="text-sm font-medium text-green-600 hover:text-green-700 transition-colors"
+          className="text-sm font-medium text-blue-600 hover:text-blue-700 transition-colors"
         >
           View All Filters
         </button>

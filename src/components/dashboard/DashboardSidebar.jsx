@@ -69,7 +69,7 @@ export function DashboardSidebar() {
         <div className="flex items-center gap-3">
           <div className={cn(
             'w-12 h-12 rounded-full flex items-center justify-center',
-            'bg-gradient-to-br from-green-500 to-green-600',
+            'bg-gradient-to-br from-blue-500 to-blue-600',
             'text-white text-lg font-semibold'
           )}>
             {initials}
@@ -94,11 +94,11 @@ export function DashboardSidebar() {
                     'flex items-center gap-3 px-4 py-3 rounded-lg',
                     'text-sm font-medium transition-colors',
                     isActive
-                      ? 'bg-green-50 text-green-700'
+                      ? 'bg-blue-50 text-blue-700'
                       : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
                   )}
                 >
-                  <span className={isActive ? 'text-green-600' : 'text-gray-400'}>
+                  <span className={isActive ? 'text-blue-600' : 'text-gray-400'}>
                     {item.icon}
                   </span>
                   {item.label}

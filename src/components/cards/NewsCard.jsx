@@ -6,10 +6,10 @@ import { Icon } from '../ui/Icon';
 // Category color mapping
 const categoryColors = {
   exam: {
-    bg: 'bg-green-50',
-    text: 'text-green-900',
-    border: 'border-green-100',
-    accent: 'bg-green-500',
+    bg: 'bg-blue-50',
+    text: 'text-blue-900',
+    border: 'border-blue-100',
+    accent: 'bg-blue-500',
   },
   college: {
     bg: 'bg-emerald-50',
@@ -19,9 +19,9 @@ const categoryColors = {
   },
   admission: {
     bg: 'bg-purple-50',
-    text: 'text-green-900',
+    text: 'text-blue-900',
     border: 'border-purple-100',
-    accent: 'bg-green-800',
+    accent: 'bg-blue-800',
   },
 };
 
@@ -91,7 +91,7 @@ function NewsCard({
         </div>
 
         {/* Title */}
-        <h3 className="text-base font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-green-900 transition-colors">
+        <h3 className="text-base font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-blue-900 transition-colors">
           {title}
         </h3>
 
@@ -101,7 +101,7 @@ function NewsCard({
         </p>
 
         {/* Read More */}
-        <div className="flex items-center gap-1 text-sm font-medium text-green-900 group-hover:gap-2 transition-all">
+        <div className="flex items-center gap-1 text-sm font-medium text-blue-900 group-hover:gap-2 transition-all">
           <span>Read more</span>
           <Icon name="arrowRight" size="sm" className="group-hover:translate-x-1 transition-transform" />
         </div>

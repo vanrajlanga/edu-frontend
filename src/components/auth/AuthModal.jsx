@@ -66,9 +66,9 @@ function OTPInput({ value, onChange, length = 4 }) {
           className={cn(
             'w-10 h-12 text-center text-lg font-semibold',
             'border-2 border-gray-200 rounded-lg',
-            'focus:border-green-500 focus:ring-2 focus:ring-green-100',
+            'focus:border-blue-500 focus:ring-2 focus:ring-blue-100',
             'transition-all duration-200',
-            digit && 'border-green-500 bg-green-50'
+            digit && 'border-blue-500 bg-blue-50'
           )}
           autoFocus={index === 0}
         />
@@ -239,7 +239,7 @@ export function AuthModal({ isOpen, onClose }) {
         </button>
 
         {/* Header with gradient */}
-        <div className="bg-gradient-to-r from-green-600 to-green-700 px-6 py-8 text-white">
+        <div className="bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-8 text-white">
           <div className="flex items-center gap-3 mb-2">
             <div className="p-2 bg-white/20 rounded-lg">
               <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -252,7 +252,7 @@ export function AuthModal({ isOpen, onClose }) {
               {step === 'register' && 'Complete Profile'}
             </h2>
           </div>
-          <p className="text-green-100 text-sm">
+          <p className="text-blue-100 text-sm">
             {step === 'phone' && 'Get access to college brochures, favorites and dashboard'}
             {step === 'otp' && `OTP sent to +91 ${phone}`}
             {step === 'register' && 'A few more details to complete your profile'}
@@ -283,7 +283,7 @@ export function AuthModal({ isOpen, onClose }) {
                     value={phone}
                     onChange={(e) => setPhone(e.target.value.replace(/\D/g, '').slice(0, 10))}
                     placeholder="Enter your phone number"
-                    className="flex-1 px-4 py-3 border border-gray-200 rounded-r-lg focus:ring-2 focus:ring-green-100 focus:border-green-500 transition-all"
+                    className="flex-1 px-4 py-3 border border-gray-200 rounded-r-lg focus:ring-2 focus:ring-blue-100 focus:border-blue-500 transition-all"
                     autoFocus
                   />
                 </div>
@@ -329,14 +329,14 @@ export function AuthModal({ isOpen, onClose }) {
                 <div className="mt-4 text-center">
                   {countdown > 0 ? (
                     <p className="text-sm text-gray-500">
-                      Resend OTP in <span className="text-green-600 font-medium">{countdown}s</span>
+                      Resend OTP in <span className="text-blue-600 font-medium">{countdown}s</span>
                     </p>
                   ) : (
                     <button
                       type="button"
                       onClick={handleResendOTP}
                       disabled={isLoading}
-                      className="text-sm text-green-600 hover:text-green-700 font-medium"
+                      className="text-sm text-blue-600 hover:text-blue-700 font-medium"
                     >
                       Resend OTP
                     </button>
@@ -394,7 +394,7 @@ export function AuthModal({ isOpen, onClose }) {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     placeholder="Enter your name"
-                    className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-green-100 focus:border-green-500 transition-all"
+                    className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-100 focus:border-blue-500 transition-all"
                     autoFocus
                   />
                 </div>
@@ -408,7 +408,7 @@ export function AuthModal({ isOpen, onClose }) {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Enter your email"
-                    className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-green-100 focus:border-green-500 transition-all"
+                    className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-100 focus:border-blue-500 transition-all"
                   />
                 </div>
 
@@ -421,7 +421,7 @@ export function AuthModal({ isOpen, onClose }) {
                     value={city}
                     onChange={(e) => setCity(e.target.value)}
                     placeholder="Enter your city"
-                    className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-green-100 focus:border-green-500 transition-all"
+                    className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-100 focus:border-blue-500 transition-all"
                   />
                 </div>
               </div>
@@ -445,9 +445,9 @@ export function AuthModal({ isOpen, onClose }) {
           {/* Terms */}
           <p className="mt-6 text-xs text-gray-500 text-center">
             By continuing, you agree to our{' '}
-            <a href="/terms" className="text-green-600 hover:underline">Terms of Service</a>
+            <a href="/terms" className="text-blue-600 hover:underline">Terms of Service</a>
             {' '}and{' '}
-            <a href="/privacy" className="text-green-600 hover:underline">Privacy Policy</a>
+            <a href="/privacy" className="text-blue-600 hover:underline">Privacy Policy</a>
           </p>
         </div>
       </div>

@@ -25,7 +25,7 @@ function Breadcrumb({ items = [] }) {
               ) : (
                 <Link
                   href={item.href}
-                  className="text-gray-600 hover:text-green-600 transition-colors"
+                  className="text-gray-600 hover:text-blue-600 transition-colors"
                 >
                   {item.label}
                 </Link>

@@ -40,7 +40,7 @@ function GridCollegeCard({
         {image ? (
           <img src={image} alt={name} className="w-full h-full object-cover" />
         ) : (
-          <div className="w-full h-full bg-gradient-to-br from-blue-50 via-green-50 to-gray-50" />
+          <div className="w-full h-full bg-gradient-to-br from-blue-50 via-blue-50 to-gray-50" />
         )}
 
         {/* Top Left Badges */}
@@ -82,8 +82,8 @@ function GridCollegeCard({
             {logo ? (
               <img src={logo} alt={name} className="w-full h-full object-contain" />
             ) : (
-              <div className="w-full h-full bg-gradient-to-br from-green-100 to-green-200 rounded flex items-center justify-center">
-                <Icon name="graduationCap" size="lg" className="text-green-600" />
+              <div className="w-full h-full bg-gradient-to-br from-blue-100 to-blue-200 rounded flex items-center justify-center">
+                <Icon name="graduationCap" size="lg" className="text-blue-600" />
               </div>
             )}
           </div>
@@ -93,7 +93,7 @@ function GridCollegeCard({
       {/* Card Content */}
       <div className="p-4">
         {/* College Name */}
-        <h3 className="text-sm font-bold text-gray-900 mb-1 line-clamp-2 min-h-[40px] hover:text-green-600 transition-colors">
+        <h3 className="text-sm font-bold text-gray-900 mb-1 line-clamp-2 min-h-[40px] hover:text-blue-600 transition-colors">
           <a href={href}>{name}</a>
         </h3>
 
@@ -109,7 +109,7 @@ function GridCollegeCard({
         <div className="grid grid-cols-2 gap-4 mb-3 pb-3 border-b border-gray-200">
           {/* Fees */}
           <div>
-            <div className="text-lg font-bold text-green-600">
+            <div className="text-lg font-bold text-blue-600">
               {formatINR(courseFees)}
             </div>
             <div className="text-[10px] text-gray-600">{courseName} - Total Fees</div>
@@ -118,7 +118,7 @@ function GridCollegeCard({
           {/* Rating */}
           <div>
             <div className="flex items-baseline gap-1">
-              <span className="text-lg font-bold text-green-600">{rating}</span>
+              <span className="text-lg font-bold text-blue-600">{rating}</span>
               <span className="text-sm text-gray-500">/ 5</span>
             </div>
             <div className="text-[10px] text-gray-600">Based on {reviewCount} User reviews</div>
@@ -144,15 +144,15 @@ function GridCollegeCard({
 
         {/* Action Links */}
         <div className="flex items-center justify-between mb-3 text-xs">
-          <button className="text-green-600 hover:text-green-700 font-semibold">
+          <button className="text-blue-600 hover:text-blue-700 font-semibold">
             Admission 2026
           </button>
-          <button className="text-green-600 hover:text-green-700 font-semibold">
+          <button className="text-blue-600 hover:text-blue-700 font-semibold">
             Reviews
           </button>
           <button
             onClick={() => onCompareFees?.(courseName)}
-            className="text-green-600 hover:text-green-700 font-semibold"
+            className="text-blue-600 hover:text-blue-700 font-semibold"
           >
             Courses & Fees
           </button>
@@ -165,14 +165,14 @@ function GridCollegeCard({
             className={cn(
               'flex items-center justify-center gap-1.5 py-2 rounded border-2 transition-all text-sm font-semibold',
               isCompared
-                ? 'border-green-500 bg-green-50 text-green-600'
-                : 'border-gray-300 text-gray-700 hover:border-green-500 hover:bg-green-50 hover:text-green-600'
+                ? 'border-blue-500 bg-blue-50 text-blue-600'
+                : 'border-gray-300 text-gray-700 hover:border-blue-500 hover:bg-blue-50 hover:text-blue-600'
             )}
           >
             <Icon name="compare" size="xs" />
             Compare
           </button>
-          <button className="flex items-center justify-center gap-1.5 py-2 rounded border-2 border-gray-300 text-gray-700 hover:border-green-500 hover:bg-green-50 hover:text-green-600 transition-all text-sm font-semibold">
+          <button className="flex items-center justify-center gap-1.5 py-2 rounded border-2 border-gray-300 text-gray-700 hover:border-blue-500 hover:bg-blue-50 hover:text-blue-600 transition-all text-sm font-semibold">
             <Icon name="download" size="xs" />
             Brochure
           </button>
@@ -181,7 +181,7 @@ function GridCollegeCard({
         {/* Apply Now Button */}
         <button
           onClick={() => onApplyNow?.(collegeData)}
-          className="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 rounded transition-all flex items-center justify-center gap-2"
+          className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 rounded transition-all flex items-center justify-center gap-2"
         >
           <Icon name="check" size="sm" />
           Apply Now

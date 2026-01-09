@@ -82,7 +82,7 @@ function StudyGoalModal({ isOpen, onClose, studyGoals = [] }) {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search courses..."
-                className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 text-sm focus:border-green-500 focus:ring-1 focus:ring-green-500 outline-none"
+                className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 text-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none"
                 autoFocus
               />
             </div>
@@ -104,12 +104,12 @@ function StudyGoalModal({ isOpen, onClose, studyGoals = [] }) {
                       <div
                         className={cn(
                           'w-10 h-10 rounded-full',
-                          'border-2 border-green-200',
+                          'border-2 border-blue-200',
                           'flex items-center justify-center',
-                          'bg-green-50'
+                          'bg-blue-50'
                         )}
                       >
-                        <Icon name={goal.icon} size="md" className="text-green-800" />
+                        <Icon name={goal.icon} size="md" className="text-blue-800" />
                       </div>
                       <div>
                         <h3 className="font-semibold text-gray-900">{goal.title}</h3>
@@ -128,8 +128,8 @@ function StudyGoalModal({ isOpen, onClose, studyGoals = [] }) {
                             'px-4 py-2 rounded-full',
                             'text-sm font-medium',
                             'border border-gray-200',
-                            'bg-white hover:bg-green-50',
-                            'hover:border-green-300 hover:text-green-800',
+                            'bg-white hover:bg-blue-50',
+                            'hover:border-blue-300 hover:text-blue-800',
                             'transition-all duration-200'
                           )}
                         >

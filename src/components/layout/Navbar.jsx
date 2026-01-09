@@ -91,13 +91,13 @@ function Navbar({ variant = 'default', className }) {
     <nav
       className={cn(
         'relative',
-        'bg-gradient-to-r from-green-900 to-green-700',
+        'bg-gradient-to-r from-blue-900 to-blue-700',
         'shadow-sm',
         className
       )}
     >
-      <div className="w-full px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-11">
+      <div className="w-full px-3 sm:px-4 lg:px-8">
+        <div className="flex items-center justify-between h-10 sm:h-11">
           {/* Left: Course Categories with horizontal scroll */}
           <div className="relative flex-1 flex items-center">
             {/* Left Scroll Arrow */}
@@ -106,7 +106,7 @@ function Navbar({ variant = 'default', className }) {
                 onClick={scrollLeft}
                 className={cn(
                   'absolute left-0 z-10 p-1',
-                  'bg-gradient-to-r from-green-900 via-green-900 to-transparent',
+                  'bg-gradient-to-r from-blue-900 via-blue-900 to-transparent',
                   'text-white/70 hover:text-white',
                   'pr-4'
                 )}
@@ -119,15 +119,16 @@ function Navbar({ variant = 'default', className }) {
             <button
               onClick={() => setIsAllCoursesOpen(true)}
               className={cn(
-                'flex items-center gap-1.5 px-3 py-2 rounded-md whitespace-nowrap',
-                'text-sm font-medium',
+                'flex items-center gap-1 sm:gap-1.5 px-2 sm:px-3 py-1.5 sm:py-2 rounded-md whitespace-nowrap',
+                'text-xs sm:text-sm font-medium',
                 'transition-all duration-200',
-                'text-green-900 bg-white/90 shadow-sm hover:bg-white',
+                'text-blue-900 bg-white/90 shadow-sm hover:bg-white',
                 'flex-shrink-0 mr-1'
               )}
             >
-              <Icon name="graduationCap" size="sm" />
-              All Courses
+              <Icon name="graduationCap" size="sm" className="hidden sm:block" />
+              <span className="hidden sm:inline">All Courses</span>
+              <span className="sm:hidden">All</span>
               <Icon name="chevronDown" size="xs" />
             </button>
 
@@ -141,8 +142,8 @@ function Navbar({ variant = 'default', className }) {
                   key={item.href}
                   href={item.href}
                   className={cn(
-                    'flex items-center gap-1.5 px-3 py-2 rounded-md whitespace-nowrap',
-                    'text-sm font-medium',
+                    'flex items-center gap-1.5 px-2 sm:px-3 py-1.5 sm:py-2 rounded-md whitespace-nowrap',
+                    'text-xs sm:text-sm font-medium',
                     'transition-all duration-200',
                     'text-white/90 hover:text-white hover:bg-white/15'
                   )}
@@ -158,7 +159,7 @@ function Navbar({ variant = 'default', className }) {
                 onClick={scrollRight}
                 className={cn(
                   'absolute right-0 z-10 p-1',
-                  'bg-gradient-to-l from-green-700 via-green-700 to-transparent',
+                  'bg-gradient-to-l from-blue-700 via-blue-700 to-transparent',
                   'text-white/70 hover:text-white',
                   'pl-4'
                 )}
@@ -169,22 +170,23 @@ function Navbar({ variant = 'default', className }) {
           </div>
 
           {/* Right: Study Abroad & Course Finder */}
-          <div className="hidden md:flex items-center gap-0.5 ml-4 pl-4 border-l border-white/20">
+          <div className="hidden sm:flex items-center gap-0.5 ml-2 sm:ml-4 pl-2 sm:pl-4 border-l border-white/20">
             {rightNavItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  'flex items-center gap-1.5 px-3 py-2 rounded-md whitespace-nowrap',
-                  'text-sm font-medium',
+                  'flex items-center gap-1 sm:gap-1.5 px-2 sm:px-3 py-1.5 sm:py-2 rounded-md whitespace-nowrap',
+                  'text-xs sm:text-sm font-medium',
                   'text-white/90 hover:text-white hover:bg-white/15',
                   'transition-all duration-200'
                 )}
               >
-                {item.icon && <Icon name={item.icon} size="sm" />}
-                {item.label}
+                {item.icon && <Icon name={item.icon} size="sm" className="hidden md:block" />}
+                <span className="hidden md:inline">{item.label}</span>
+                <span className="md:hidden">{item.label.split(' ')[0]}</span>
                 {item.badge && (
-                  <span className="px-1.5 py-0.5 text-xs font-bold bg-amber-400 text-amber-900 rounded">
+                  <span className="px-1 sm:px-1.5 py-0.5 text-[10px] sm:text-xs font-bold bg-amber-400 text-amber-900 rounded">
                     {item.badge}
                   </span>
                 )}
